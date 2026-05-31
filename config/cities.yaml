@@ -247,17 +247,37 @@ cities:
     display_name: 巴拿马城
 
 # Open-Meteo 支持的模型列表
+# global: 所有城市可用
+# europe: 仅欧洲城市（伦敦/巴黎/慕尼黑/阿姆斯特丹等）
+# 来源: https://open-meteo.com/en/docs
 models:
-  - ecmwf_ifs04
-  - gfs_seamless
-  - jma_seamless
-  - icon_seamless
-  - gem_seamless
+  global:
+    - gfs_seamless      # 🇺🇸 GFS — 全球基准模型
+    - jma_seamless      # 🇯🇵 JMA-GSM — 亚洲优势
+    - icon_seamless     # 🇩🇪 ICON-Global — ECMWF备选
+    - gem_seamless      # 🇨🇦 GEM — 美加强
+    - ukmo_seamless     # 🇬🇧 UKMO — 英国气象局全球模型
+  europe:
+    - icon_eu           # 🇪🇺 ICON-EU — 全欧区域模型
+    - icon_d2           # 🇩🇪 ICON-D2 — 中欧高分辨率
+
+# 区域映射（match规则: 城市key匹配）
+region_europe:
+  - amsterdam
+  - helsinki
+  - istanbul
+  - london
+  - madrid
+  - moscow
+  - munich
+  - paris
+  - warsaw
+  - ankara      # 土耳其，地理在欧洲侧，有欧洲模型覆盖
 
 # API 配置
 openmeteo:
   base_url: https://api.open-meteo.com/v1/forecast
-  forecast_days: 3
+  forecast_days: 16
   rate_limit_delay: 0.5  # 每秒最多2个请求
 
 # 输出目录

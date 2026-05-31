@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercury — 气温预报 & 交易系统</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f1a; color: #e0e0e0; min-height: 100vh; }
+  .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 24px; margin-bottom: 8px; background: linear-gradient(135deg, #6ec6ff, #00e5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { color: #888; font-size: 14px; margin-bottom: 24px; }
+  .card { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+  .card-title { font-size: 14px; color: #888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .city-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .city-item { background: #12121f; border-radius: 8px; padding: 12px; }
+  .city-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+  .city-temp { font-size: 28px; font-weight: 700; color: #6ec6ff; }
+  .city-range { font-size: 12px; color: #666; }
+  .status-bar { display: flex; gap: 16px; margin-bottom: 20px; }
+  .status-item { flex: 1; text-align: center; background: #1a1a2e; border-radius: 10px; padding: 12px 8px; }
+  .status-value { font-size: 22px; font-weight: 700; color: #6ec6ff; }
+  .status-label { font-size: 11px; color: #666; margin-top: 4px; }
+  .phase-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .phase-done { background: #1b5e20; color: #69f0ae; }
+  .phase-active { background: #1565c0; color: #82b1ff; }
+  .phase-pending { background: #1a1a2e; color: #555; border: 1px solid #2a2a4a; }
+  .refresh { text-align: center; margin-top: 20px; }
+  .refresh button { background: #1565c0; color: white; border: none; padding: 8px 24px; border-radius: 8px; font-size: 14px; cursor: pointer; }
+  .ip-hint { text-align: center; font-size: 11px; color: #444; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Mercury</h1>
+  <p class="subtitle">自建多模型集合气温预报 + Polymarket 自动交易</p>
+
+  <div class="status-bar">
+    <div class="status-item">
+      <div class="status-value" id="cities">40</div>
+      <div class="status-label">覆盖城市</div>
+    </div>
+    <div class="status-item">
+      <div class="status-value">4</div>
+      <div class="status-label">预报模型</div>
+    </div>
+    <div class="status-item">
+      <div class="status-value" id="uptime">--</div>
+      <div class="status-label">运行状态</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📋 实施阶段</div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div><span class="phase-tag phase-done">✅ Phase 1</span> 数据管道 — Open-Meteo + METAR</div>
+      <div><span class="phase-tag phase-active">🔄 Phase 2</span> 预报引擎 — 集合聚合 + 偏差校准</div>
+      <div><span class="phase-tag phase-pending">⬜ Phase 3</span> 实时修正 — METAR 驱动</div>
+      <div><span class="phase-tag phase-pending">⬜ Phase 4</span> 交易引擎 — 策略 + CLOB</div>
+      <div><span class="phase-tag phase-pending">⬜ Phase 5</span> 上线运行 — cron + 通知</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🌡️ 今日预报预览</div>
+    <div class="city-grid">
+      <div class="city-item">
+        <div class="city-name">北京 🇨🇳</div>
+        <div class="city-temp">36.1°C</div>
+        <div class="city-range">GFS 36.9 · JMA 38.0 · ICON 34.6 · GEM 34.8</div>
+      </div>
+      <div class="city-item">
+        <div class="city-name">伦敦 🇬🇧</div>
+        <div class="city-temp">22.5°C</div>
+        <div class="city-range">4 模型集合</div>
+      </div>
+      <div class="city-item">
+        <div class="city-name">纽约 🇺🇸</div>
+        <div class="city-temp">--</div>
+        <div class="city-range">待拉取</div>
+      </div>
+      <div class="city-item">
+        <div class="city-name">东京 🇯🇵</div>
+        <div class="city-temp">--</div>
+        <div class="city-range">待拉取</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="refresh">
+    <button onclick="location.reload()">刷新</button>
+  </div>
+  <div class="ip-hint" id="ip-hint">--</div>
+</div>
+
+<script>
+  document.getElementById('uptime').textContent = '🟢 在线';
+  document.getElementById('ip-hint').textContent = 'iPad 访问: http://192.168.3.22:3000';
+</script>
+</body>
+</html>
