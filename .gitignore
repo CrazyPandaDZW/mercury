@@ -1,0 +1,23 @@
+# Mercury — 自建气象预报 + Polymarket 自动交易系统
+
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 数据太大，不入库
+data/forecasts/
+data/metar/
+data/models/
+data/accuracy/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
