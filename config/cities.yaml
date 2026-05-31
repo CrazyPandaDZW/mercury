@@ -4,244 +4,244 @@
 cities:
   # ── 东亚 ──
   beijing:
-    lat: 39.9042
-    lon: 116.4074
+    lat: 40.08
+    lon: 116.585
     icao: ZBAA
     tz: Asia/Shanghai
     display_name: 北京
   shanghai:
-    lat: 31.2304
-    lon: 121.4737
+    lat: 31.198
+    lon: 121.336
     icao: ZSSS
     tz: Asia/Shanghai
     display_name: 上海
   tokyo:
-    lat: 35.6762
-    lon: 139.6503
+    lat: 35.5494
+    lon: 139.7798
     icao: RJTT
     tz: Asia/Tokyo
     display_name: 东京
   seoul:
-    lat: 37.5665
-    lon: 126.9780
+    lat: 37.558
+    lon: 126.791
     icao: RKSS
     tz: Asia/Seoul
     display_name: 首尔
   taipei:
-    lat: 25.0330
-    lon: 121.5654
+    lat: 25.0697
+    lon: 121.5517
     icao: RCSS
     tz: Asia/Taipei
     display_name: 台北
   hong-kong:
-    lat: 22.3193
-    lon: 114.1694
+    lat: 22.3089
+    lon: 113.9147
     icao: VHHH
     tz: Asia/Hong_Kong
     display_name: 香港
   chongqing:
-    lat: 29.4316
-    lon: 106.9123
+    lat: 29.7192
+    lon: 106.6417
     icao: ZUCK
     tz: Asia/Shanghai
     display_name: 重庆
   qingdao:
-    lat: 36.0671
-    lon: 120.3826
+    lat: 36.2661
+    lon: 120.3744
     icao: ZSQD
     tz: Asia/Shanghai
     display_name: 青岛
   wuhan:
-    lat: 30.5928
-    lon: 114.3055
+    lat: 30.7838
+    lon: 114.2081
     icao: ZHHH
     tz: Asia/Shanghai
     display_name: 武汉
 
   # ── 美国 ──
   atlanta:
-    lat: 33.7490
-    lon: -84.3880
+    lat: 33.6367
+    lon: -84.4281
     icao: KATL
     tz: America/New_York
     display_name: 亚特兰大
   austin:
-    lat: 30.2672
-    lon: -97.7431
+    lat: 30.1945
+    lon: -97.6699
     icao: KAUS
     tz: America/Chicago
     display_name: 奥斯汀
   chicago:
-    lat: 41.8781
-    lon: -87.6298
+    lat: 41.9786
+    lon: -87.9047
     icao: KORD
     tz: America/Chicago
     display_name: 芝加哥
   dallas:
-    lat: 32.7767
-    lon: -96.7970
+    lat: 32.8968
+    lon: -97.038
     icao: KDFW
     tz: America/Chicago
     display_name: 达拉斯
   denver:
-    lat: 39.7392
-    lon: -104.9903
+    lat: 39.8617
+    lon: -104.6732
     icao: KDEN
     tz: America/Denver
     display_name: 丹佛
   houston:
-    lat: 29.7604
-    lon: -95.3698
+    lat: 29.6454
+    lon: -95.2789
     icao: KHOU
     tz: America/Chicago
     display_name: 休斯顿
   los-angeles:
-    lat: 34.0522
-    lon: -118.2437
+    lat: 33.9416
+    lon: -118.4085
     icao: KLAX
     tz: America/Los_Angeles
     display_name: 洛杉矶
   miami:
-    lat: 25.7617
-    lon: -80.1918
+    lat: 25.7959
+    lon: -80.287
     icao: KMIA
     tz: America/New_York
     display_name: 迈阿密
   nyc:
-    lat: 40.7128
-    lon: -74.0060
+    lat: 40.6413
+    lon: -73.7781
     icao: KJFK
     tz: America/New_York
     display_name: 纽约
   san-francisco:
-    lat: 37.7749
-    lon: -122.4194
+    lat: 37.6188
+    lon: -122.3756
     icao: KSFO
     tz: America/Los_Angeles
     display_name: 旧金山
   seattle:
-    lat: 47.6062
-    lon: -122.3321
+    lat: 47.449
+    lon: -122.3093
     icao: KSEA
     tz: America/Los_Angeles
     display_name: 西雅图
 
   # ── 欧洲 ──
   amsterdam:
-    lat: 52.3676
-    lon: 4.9041
+    lat: 52.3086
+    lon: 4.7639
     icao: EHAM
     tz: Europe/Amsterdam
     display_name: 阿姆斯特丹
   ankara:
-    lat: 39.9334
-    lon: 32.8597
+    lat: 40.1281
+    lon: 32.9951
     icao: LTAC
     tz: Europe/Istanbul
     display_name: 安卡拉
   helsinki:
-    lat: 60.1699
-    lon: 24.9384
+    lat: 60.3172
+    lon: 24.9633
     icao: EFHK
     tz: Europe/Helsinki
     display_name: 赫尔辛基
   istanbul:
-    lat: 41.0082
-    lon: 28.9784
+    lat: 41.2753
+    lon: 28.7519
     icao: LTFM
     tz: Europe/Istanbul
     display_name: 伊斯坦布尔
   london:
-    lat: 51.5074
-    lon: -0.1278
+    lat: 51.4775
+    lon: -0.4614
     icao: EGLL
     tz: Europe/London
     display_name: 伦敦
   madrid:
-    lat: 40.4168
-    lon: -3.7038
+    lat: 40.4936
+    lon: -3.5668
     icao: LEMD
     tz: Europe/Madrid
     display_name: 马德里
   moscow:
-    lat: 55.7558
-    lon: 37.6173
+    lat: 55.5967
+    lon: 37.2683
     icao: UUWW
     tz: Europe/Moscow
     display_name: 莫斯科
   munich:
-    lat: 48.1351
-    lon: 11.5820
+    lat: 48.3538
+    lon: 11.7861
     icao: EDDM
     tz: Europe/Berlin
     display_name: 慕尼黑
   paris:
-    lat: 48.8566
-    lon: 2.3522
+    lat: 48.9694
+    lon: 2.4414
     icao: LFPB
     tz: Europe/Paris
     display_name: 巴黎
   tel-aviv:
-    lat: 32.0853
-    lon: 34.7818
+    lat: 32.0114
+    lon: 34.8867
     icao: LLBG
     tz: Asia/Jerusalem
     display_name: 特拉维夫
   warsaw:
-    lat: 52.2297
-    lon: 21.0122
+    lat: 52.1657
+    lon: 20.9671
     icao: EPWA
     tz: Europe/Warsaw
     display_name: 华沙
 
   # ── 热带 ──
   jakarta:
-    lat: -6.2088
-    lon: 106.8456
+    lat: -6.1256
+    lon: 106.6558
     icao: WIII
     tz: Asia/Jakarta
     display_name: 雅加达
   karachi:
-    lat: 24.8607
-    lon: 67.0011
+    lat: 24.9066
+    lon: 67.1608
     icao: OPKC
     tz: Asia/Karachi
     display_name: 卡拉奇
   kuala-lumpur:
-    lat: 3.1390
-    lon: 101.6869
+    lat: 2.7456
+    lon: 101.7099
     icao: WMKK
     tz: Asia/Kuala_Lumpur
     display_name: 吉隆坡
   manila:
-    lat: 14.5995
-    lon: 120.9842
+    lat: 14.5086
+    lon: 121.0196
     icao: RPLL
     tz: Asia/Manila
     display_name: 马尼拉
   singapore:
-    lat: 1.3521
-    lon: 103.8198
+    lat: 1.3592
+    lon: 103.9894
     icao: WSSS
     tz: Asia/Singapore
     display_name: 新加坡
 
   # ── 南半球 ──
   cape-town:
-    lat: -33.9249
-    lon: 18.4241
+    lat: -33.9694
+    lon: 18.5967
     icao: FACT
     tz: Africa/Johannesburg
     display_name: 开普敦
   mexico-city:
-    lat: 19.4326
-    lon: -99.1332
+    lat: 19.4363
+    lon: -99.0721
     icao: MMMX
     tz: America/Mexico_City
     display_name: 墨西哥城
   panama-city:
-    lat: 8.9824
-    lon: -79.5199
+    lat: 9.0714
+    lon: -79.3835
     icao: MPTO
     tz: America/Panama
     display_name: 巴拿马城
