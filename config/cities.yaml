@@ -252,6 +252,7 @@ cities:
 # 来源: https://open-meteo.com/en/docs
 models:
   global:
+    - ecmwf_ifs         # 🇪🇺 ECMWF — 全球预报黄金标准
     - gfs_seamless      # 🇺🇸 GFS — 全球基准模型
     - jma_seamless      # 🇯🇵 JMA-GSM — 亚洲优势
     - icon_seamless     # 🇩🇪 ICON-Global — ECMWF备选
