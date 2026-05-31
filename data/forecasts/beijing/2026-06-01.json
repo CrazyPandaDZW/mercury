@@ -1,0 +1,19 @@
+{
+  "city": "beijing",
+  "date": "2026-06-01",
+  "fetched_at": "2026-05-31T14:25:22.447522+00:00",
+  "t_max": {
+    "gfs_seamless": 36.9,
+    "jma_seamless": 38.0,
+    "icon_seamless": 34.6,
+    "gem_seamless": 34.8
+  },
+  "t_ensemble": 36.1,
+  "n_models": 4,
+  "models_available": [
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless"
+  ]
+}

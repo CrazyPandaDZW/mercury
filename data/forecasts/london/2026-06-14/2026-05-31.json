@@ -1,0 +1,309 @@
+{
+  "target_date": "2026-06-14",
+  "generated_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:22:56.186619+00:00",
+  "t_max": {
+    "gfs_seamless": 20.4
+  },
+  "t_ensemble": 20.4,
+  "n_models": 7,
+  "models_available": [
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless",
+    "icon_eu",
+    "icon_d2"
+  ],
+  "hourly": [
+    {
+      "hour": 0,
+      "temps": {
+        "gfs_seamless": 14.5,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 1,
+      "temps": {
+        "gfs_seamless": 14.0,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 2,
+      "temps": {
+        "gfs_seamless": 13.5,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 3,
+      "temps": {
+        "gfs_seamless": 13.1,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 4,
+      "temps": {
+        "gfs_seamless": 13.0,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 5,
+      "temps": {
+        "gfs_seamless": 13.2,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 6,
+      "temps": {
+        "gfs_seamless": 13.8,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 7,
+      "temps": {
+        "gfs_seamless": 14.6,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 8,
+      "temps": {
+        "gfs_seamless": 15.8,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 9,
+      "temps": {
+        "gfs_seamless": 17.2,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 10,
+      "temps": {
+        "gfs_seamless": 18.4,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 11,
+      "temps": {
+        "gfs_seamless": 18.9,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 12,
+      "temps": {
+        "gfs_seamless": 19.1,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 13,
+      "temps": {
+        "gfs_seamless": 19.3,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 14,
+      "temps": {
+        "gfs_seamless": 19.7,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 15,
+      "temps": {
+        "gfs_seamless": 20.2,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 16,
+      "temps": {
+        "gfs_seamless": 20.4,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 17,
+      "temps": {
+        "gfs_seamless": 20.2,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 18,
+      "temps": {
+        "gfs_seamless": 19.8,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 19,
+      "temps": {
+        "gfs_seamless": 19.1,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 20,
+      "temps": {
+        "gfs_seamless": 17.9,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 21,
+      "temps": {
+        "gfs_seamless": 16.5,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 22,
+      "temps": {
+        "gfs_seamless": 15.2,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    },
+    {
+      "hour": 23,
+      "temps": {
+        "gfs_seamless": 14.1,
+        "jma_seamless": null,
+        "icon_seamless": null,
+        "gem_seamless": null,
+        "ukmo_seamless": null,
+        "icon_eu": null,
+        "icon_d2": null
+      }
+    }
+  ]
+}

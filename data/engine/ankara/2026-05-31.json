@@ -1,0 +1,101 @@
+{
+  "city": "ankara",
+  "target_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:45:35.997365+00:00",
+  "generated_date": "2026-05-31",
+  "n_models": 7,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless",
+    "icon_eu"
+  ],
+  "blend_method": "deb_mae_weighted",
+  "t_ensemble": 20.0,
+  "t_std": 0.46,
+  "t_range": [
+    19.2,
+    20.6
+  ],
+  "t_calibrated": 20.2,
+  "bias_correction": -0.21,
+  "bias_source": "polywx-bootstrap (bias=-0.21°C)",
+  "buckets_normal": {
+    "19": 0.0639,
+    "20": 0.6788,
+    "21": 0.2548,
+    "22": 0.0024
+  },
+  "buckets_voting": {
+    "19": 0.0,
+    "20": 0.0,
+    "21": 0.0
+  },
+  "buckets_weighted_voting": {
+    "19": 0.2637,
+    "20": 0.5301,
+    "21": 0.2063
+  },
+  "buckets_range": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 19.4,
+      "deviation": -0.6,
+      "bucket": 19,
+      "weight": 0.138
+    },
+    "gfs_seamless": {
+      "t_max": 20.1,
+      "deviation": 0.1,
+      "bucket": 20,
+      "weight": 0.221
+    },
+    "jma_seamless": {
+      "t_max": 20.2,
+      "deviation": 0.2,
+      "bucket": 20,
+      "weight": 0.117
+    },
+    "icon_seamless": {
+      "t_max": 19.9,
+      "deviation": -0.1,
+      "bucket": 20,
+      "weight": 0.191
+    },
+    "gem_seamless": {
+      "t_max": 20.6,
+      "deviation": 0.6,
+      "bucket": 21,
+      "weight": 0.206
+    },
+    "ukmo_seamless": {
+      "t_max": 19.2,
+      "deviation": -0.8,
+      "bucket": 19,
+      "weight": 0.126
+    },
+    "icon_eu": {
+      "t_max": 19.9,
+      "deviation": -0.1,
+      "bucket": 20,
+      "weight": 0.143
+    }
+  },
+  "metar_t_max": 21.0,
+  "forecast_error": -0.8
+}

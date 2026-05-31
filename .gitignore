@@ -6,12 +6,6 @@ __pycache__/
 .venv/
 venv/
 
-# 数据太大，不入库
-data/forecasts/
-data/metar/
-data/models/
-data/accuracy/
-
 # IDE
 .vscode/
 .idea/

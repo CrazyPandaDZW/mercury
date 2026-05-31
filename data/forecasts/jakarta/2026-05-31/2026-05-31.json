@@ -1,0 +1,289 @@
+{
+  "target_date": "2026-05-31",
+  "generated_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:46:19.424781+00:00",
+  "t_max": {
+    "ecmwf_ifs": 29.0,
+    "gfs_seamless": 31.8,
+    "jma_seamless": 30.6,
+    "icon_seamless": 31.6,
+    "gem_seamless": 33.1,
+    "ukmo_seamless": 30.5
+  },
+  "t_ensemble": 31.1,
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "hourly": [
+    {
+      "hour": 0,
+      "temps": {
+        "ecmwf_ifs": 26.3,
+        "gfs_seamless": 28.7,
+        "jma_seamless": 28.3,
+        "icon_seamless": 26.6,
+        "gem_seamless": 25.8,
+        "ukmo_seamless": 25.6
+      }
+    },
+    {
+      "hour": 1,
+      "temps": {
+        "ecmwf_ifs": 26.6,
+        "gfs_seamless": 28.3,
+        "jma_seamless": 28.1,
+        "icon_seamless": 25.9,
+        "gem_seamless": 25.6,
+        "ukmo_seamless": 25.6
+      }
+    },
+    {
+      "hour": 2,
+      "temps": {
+        "ecmwf_ifs": 26.3,
+        "gfs_seamless": 27.6,
+        "jma_seamless": 27.9,
+        "icon_seamless": 25.5,
+        "gem_seamless": 25.7,
+        "ukmo_seamless": 25.2
+      }
+    },
+    {
+      "hour": 3,
+      "temps": {
+        "ecmwf_ifs": 25.8,
+        "gfs_seamless": 27.2,
+        "jma_seamless": 27.7,
+        "icon_seamless": 25.2,
+        "gem_seamless": 25.7,
+        "ukmo_seamless": 25.0
+      }
+    },
+    {
+      "hour": 4,
+      "temps": {
+        "ecmwf_ifs": 25.5,
+        "gfs_seamless": 26.9,
+        "jma_seamless": 27.5,
+        "icon_seamless": 25.0,
+        "gem_seamless": 25.7,
+        "ukmo_seamless": 24.9
+      }
+    },
+    {
+      "hour": 5,
+      "temps": {
+        "ecmwf_ifs": 25.5,
+        "gfs_seamless": 26.7,
+        "jma_seamless": 27.3,
+        "icon_seamless": 25.1,
+        "gem_seamless": 25.6,
+        "ukmo_seamless": 24.6
+      }
+    },
+    {
+      "hour": 6,
+      "temps": {
+        "ecmwf_ifs": 25.5,
+        "gfs_seamless": 26.8,
+        "jma_seamless": 27.3,
+        "icon_seamless": 25.2,
+        "gem_seamless": 25.3,
+        "ukmo_seamless": 24.4
+      }
+    },
+    {
+      "hour": 7,
+      "temps": {
+        "ecmwf_ifs": 26.2,
+        "gfs_seamless": 26.9,
+        "jma_seamless": 27.4,
+        "icon_seamless": 25.0,
+        "gem_seamless": 25.8,
+        "ukmo_seamless": 24.9
+      }
+    },
+    {
+      "hour": 8,
+      "temps": {
+        "ecmwf_ifs": 27.4,
+        "gfs_seamless": 27.6,
+        "jma_seamless": 27.7,
+        "icon_seamless": 25.7,
+        "gem_seamless": 27.8,
+        "ukmo_seamless": 25.8
+      }
+    },
+    {
+      "hour": 9,
+      "temps": {
+        "ecmwf_ifs": 27.7,
+        "gfs_seamless": 28.3,
+        "jma_seamless": 28.3,
+        "icon_seamless": 26.8,
+        "gem_seamless": 29.6,
+        "ukmo_seamless": 27.0
+      }
+    },
+    {
+      "hour": 10,
+      "temps": {
+        "ecmwf_ifs": 27.5,
+        "gfs_seamless": 29.6,
+        "jma_seamless": 29.0,
+        "icon_seamless": 28.4,
+        "gem_seamless": 30.8,
+        "ukmo_seamless": 27.5
+      }
+    },
+    {
+      "hour": 11,
+      "temps": {
+        "ecmwf_ifs": 27.5,
+        "gfs_seamless": 30.8,
+        "jma_seamless": 29.7,
+        "icon_seamless": 30.4,
+        "gem_seamless": 32.0,
+        "ukmo_seamless": 28.5
+      }
+    },
+    {
+      "hour": 12,
+      "temps": {
+        "ecmwf_ifs": 28.0,
+        "gfs_seamless": 31.3,
+        "jma_seamless": 30.3,
+        "icon_seamless": 31.2,
+        "gem_seamless": 32.7,
+        "ukmo_seamless": 29.5
+      }
+    },
+    {
+      "hour": 13,
+      "temps": {
+        "ecmwf_ifs": 29.0,
+        "gfs_seamless": 31.7,
+        "jma_seamless": 30.6,
+        "icon_seamless": 31.5,
+        "gem_seamless": 33.1,
+        "ukmo_seamless": 29.1
+      }
+    },
+    {
+      "hour": 14,
+      "temps": {
+        "ecmwf_ifs": 28.5,
+        "gfs_seamless": 31.8,
+        "jma_seamless": 30.6,
+        "icon_seamless": 31.6,
+        "gem_seamless": 33.0,
+        "ukmo_seamless": 30.0
+      }
+    },
+    {
+      "hour": 15,
+      "temps": {
+        "ecmwf_ifs": 28.0,
+        "gfs_seamless": 31.6,
+        "jma_seamless": 30.4,
+        "icon_seamless": 30.5,
+        "gem_seamless": 32.4,
+        "ukmo_seamless": 30.5
+      }
+    },
+    {
+      "hour": 16,
+      "temps": {
+        "ecmwf_ifs": 27.5,
+        "gfs_seamless": 30.5,
+        "jma_seamless": 30.0,
+        "icon_seamless": 30.1,
+        "gem_seamless": 31.6,
+        "ukmo_seamless": 30.0
+      }
+    },
+    {
+      "hour": 17,
+      "temps": {
+        "ecmwf_ifs": 27.0,
+        "gfs_seamless": 29.8,
+        "jma_seamless": 29.6,
+        "icon_seamless": 29.5,
+        "gem_seamless": 30.7,
+        "ukmo_seamless": 29.4
+      }
+    },
+    {
+      "hour": 18,
+      "temps": {
+        "ecmwf_ifs": 26.4,
+        "gfs_seamless": 29.1,
+        "jma_seamless": 29.2,
+        "icon_seamless": 28.6,
+        "gem_seamless": 29.6,
+        "ukmo_seamless": 28.8
+      }
+    },
+    {
+      "hour": 19,
+      "temps": {
+        "ecmwf_ifs": 26.2,
+        "gfs_seamless": 28.9,
+        "jma_seamless": 28.8,
+        "icon_seamless": 27.8,
+        "gem_seamless": 28.5,
+        "ukmo_seamless": 28.6
+      }
+    },
+    {
+      "hour": 20,
+      "temps": {
+        "ecmwf_ifs": 26.0,
+        "gfs_seamless": 28.8,
+        "jma_seamless": 28.5,
+        "icon_seamless": 27.3,
+        "gem_seamless": 27.7,
+        "ukmo_seamless": 28.5
+      }
+    },
+    {
+      "hour": 21,
+      "temps": {
+        "ecmwf_ifs": 25.7,
+        "gfs_seamless": 28.7,
+        "jma_seamless": 28.2,
+        "icon_seamless": 26.9,
+        "gem_seamless": 27.3,
+        "ukmo_seamless": 28.5
+      }
+    },
+    {
+      "hour": 22,
+      "temps": {
+        "ecmwf_ifs": 25.3,
+        "gfs_seamless": 28.3,
+        "jma_seamless": 28.0,
+        "icon_seamless": 26.3,
+        "gem_seamless": 27.1,
+        "ukmo_seamless": 28.4
+      }
+    },
+    {
+      "hour": 23,
+      "temps": {
+        "ecmwf_ifs": 25.0,
+        "gfs_seamless": 28.1,
+        "jma_seamless": 27.7,
+        "icon_seamless": 26.0,
+        "gem_seamless": 27.1,
+        "ukmo_seamless": 28.0
+      }
+    }
+  ]
+}

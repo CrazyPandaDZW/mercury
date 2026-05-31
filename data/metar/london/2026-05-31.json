@@ -1,0 +1,166 @@
+{
+  "city": "london",
+  "station": "EGLL",
+  "date": "2026-05-31",
+  "fetched_at": "2026-05-31T15:40:55.952245+00:00",
+  "n_records": 31,
+  "records": [
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 00:20",
+      "temp_c": 17.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 00:50",
+      "temp_c": 17.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 01:20",
+      "temp_c": 16.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 01:50",
+      "temp_c": 16.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 02:20",
+      "temp_c": 15.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 02:50",
+      "temp_c": 15.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 03:20",
+      "temp_c": 15.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 03:50",
+      "temp_c": 14.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 04:20",
+      "temp_c": 15.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 04:50",
+      "temp_c": 15.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 05:20",
+      "temp_c": 15.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 05:50",
+      "temp_c": 16.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 06:20",
+      "temp_c": 16.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 06:50",
+      "temp_c": 17.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 07:20",
+      "temp_c": 18.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 07:50",
+      "temp_c": 18.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 08:20",
+      "temp_c": 18.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 08:50",
+      "temp_c": 18.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 09:20",
+      "temp_c": 19.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 09:50",
+      "temp_c": 20.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 10:20",
+      "temp_c": 20.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 10:50",
+      "temp_c": 21.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 11:20",
+      "temp_c": 21.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 11:50",
+      "temp_c": 21.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 12:20",
+      "temp_c": 22.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 12:50",
+      "temp_c": 22.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 13:20",
+      "temp_c": 22.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 13:50",
+      "temp_c": 22.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 14:20",
+      "temp_c": 22.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 14:50",
+      "temp_c": 23.0
+    },
+    {
+      "station": "EGLL",
+      "time_utc": "2026-05-31 15:20",
+      "temp_c": 22.0
+    }
+  ],
+  "t_max": 23.0,
+  "t_min": 14.0
+}
