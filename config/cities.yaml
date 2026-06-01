@@ -65,66 +65,77 @@ cities:
     icao: KATL
     tz: America/New_York
     display_name: 亚特兰大
+    unit: fahrenheit
   austin:
     lat: 30.1945
     lon: -97.6699
     icao: KAUS
     tz: America/Chicago
     display_name: 奥斯汀
+    unit: fahrenheit
   chicago:
     lat: 41.9786
     lon: -87.9047
     icao: KORD
     tz: America/Chicago
     display_name: 芝加哥
+    unit: fahrenheit
   dallas:
     lat: 32.8968
     lon: -97.038
     icao: KDFW
     tz: America/Chicago
     display_name: 达拉斯
+    unit: fahrenheit
   denver:
     lat: 39.8617
     lon: -104.6732
     icao: KDEN
     tz: America/Denver
     display_name: 丹佛
+    unit: fahrenheit
   houston:
     lat: 29.6454
     lon: -95.2789
     icao: KHOU
     tz: America/Chicago
     display_name: 休斯顿
+    unit: fahrenheit
   los-angeles:
     lat: 33.9416
     lon: -118.4085
     icao: KLAX
     tz: America/Los_Angeles
     display_name: 洛杉矶
+    unit: fahrenheit
   miami:
     lat: 25.7959
     lon: -80.287
     icao: KMIA
     tz: America/New_York
     display_name: 迈阿密
+    unit: fahrenheit
   nyc:
     lat: 40.6413
     lon: -73.7781
     icao: KJFK
     tz: America/New_York
     display_name: 纽约
+    unit: fahrenheit
   san-francisco:
     lat: 37.6188
     lon: -122.3756
     icao: KSFO
     tz: America/Los_Angeles
     display_name: 旧金山
+    unit: fahrenheit
   seattle:
     lat: 47.449
     lon: -122.3093
     icao: KSEA
     tz: America/Los_Angeles
     display_name: 西雅图
+    unit: fahrenheit
 
   # ── 欧洲 ──
   amsterdam:

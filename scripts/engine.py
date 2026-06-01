@@ -475,7 +475,7 @@ def compute_engine(city_key: str, target_date: str, use_deb: bool = False) -> di
     else:
         forecast_error = None
 
-    return {
+    result = {
         "city": city_key,
         "target_date": target_date,
         "generated_at": fc.get("generated_at"),
@@ -484,10 +484,10 @@ def compute_engine(city_key: str, target_date: str, use_deb: bool = False) -> di
         "models_available": models_available,
         "blend_method": blend_method,
         # 连续分布
-        "t_ensemble": t_mean,           # 加权均值（DEB）或等权均值
+        "t_ensemble": t_mean,
         "t_std": t_std,
         "t_range": list(t_range),
-        "t_calibrated": t_calibrated,   # 偏差校准后
+        "t_calibrated": t_calibrated,
         "bias_correction": round(bias_correction, 2),
         "bias_source": bias_source,
         # 离散桶概率
@@ -509,6 +509,13 @@ def compute_engine(city_key: str, target_date: str, use_deb: bool = False) -> di
         "snapshot_hour": snapshot_hour,
     }
 
+    # ── 华氏度转换（美国城市）──
+    city_cfg = load_config().get("cities", {}).get(city_key, {})
+    if city_cfg.get("unit") == "fahrenheit":
+        result = _convert_engine_to_fahrenheit(result)
+
+    return result
+
 
 def compute_std(t_values: list[float]) -> float:
     """计算等权标准差"""
@@ -518,6 +525,69 @@ def compute_std(t_values: list[float]) -> float:
     mean = sum(t_values) / n
     variance = sum((v - mean) ** 2 for v in t_values) / (n - 1)
     return round(math.sqrt(variance), 2)
+
+
+def _c2f(celsius: float) -> float:
+    """°C → °F"""
+    return round(celsius * 9.0 / 5.0 + 32.0, 1)
+
+
+def _convert_engine_to_fahrenheit(output: dict) -> dict:
+    """将引擎输出从 °C 转换为 °F（维持与 Polymarket 一致的离散桶格式）。"""
+    out = dict(output)
+    
+    # 连续值
+    out["t_ensemble"] = _c2f(output["t_ensemble"])
+    out["t_std"] = round(output["t_std"] * 9.0 / 5.0, 2)
+    out["t_range"] = [_c2f(v) for v in output["t_range"]]
+    out["t_calibrated"] = _c2f(output["t_calibrated"])
+    out["bias_correction"] = round(output["bias_correction"] * 9.0 / 5.0, 2)
+    out["unit"] = "fahrenheit"
+    
+    # METAR
+    if output.get("metar_t_max") is not None:
+        out["metar_t_max"] = _c2f(output["metar_t_max"])
+    if output.get("forecast_error") is not None:
+        out["forecast_error"] = round(output["forecast_error"] * 9.0 / 5.0, 1)
+    
+    # L1 曲线
+    out["l1_curve"] = {h: _c2f(v) for h, v in output["l1_curve"].items()}
+    
+    # 模型明细
+    models_f = {}
+    for m, detail in output.get("models", {}).items():
+        d = dict(detail)
+        d["t_max"] = _c2f(detail["t_max"])
+        d["deviation"] = round(detail["deviation"] * 9.0 / 5.0, 1)
+        d["bucket"] = round(_c2f(detail["t_max"]))
+        models_f[m] = d
+    out["models"] = models_f
+    
+    # 离散桶概率：用 °F 值重新计算
+    t_cal_f = out["t_calibrated"]
+    t_std_f = out["t_std"]
+    
+    # 投票法：model 的 °F t_max → 整数 °F 桶
+    model_tmax_f = {m: d["t_max"] for m, d in models_f.items()}
+    out["buckets_voting"] = bucket_prob_voting(model_tmax_f)
+    
+    # 加权投票
+    active_weights = {m: detail.get("weight", 0) for m, detail in output.get("models", {}).items()}
+    # 保留原始 °C 的权重（权重本身不变）
+    out["buckets_weighted_voting"] = bucket_prob_weighted_voting(model_tmax_f, active_weights)
+    
+    # 正态分布
+    f_values = list(model_tmax_f.values())
+    buckets_f = build_bucket_range(f_values + [t_cal_f])
+    probs_normal_f = {}
+    for b in buckets_f:
+        p = bucket_prob_normal(t_cal_f, t_std_f if t_std_f > 0.02 else 1.8, b)
+        if p > 0.001:
+            probs_normal_f[b] = round(p, 4)
+    out["buckets_normal"] = probs_normal_f
+    out["buckets_range"] = buckets_f
+    
+    return out
 
 
 def bucket_prob_weighted_voting(model_tmax: dict[str, float], weights: dict[str, float]) -> dict[int, float]:
@@ -581,13 +651,15 @@ def main():
         # 紧凑输出
         method_map = {"live_rmse_weighted": "LIVE", "deb_mae_weighted": "DEB"}
         method = method_map.get(output["blend_method"], "EQ")
-        err = f" err={output['forecast_error']:+}°C" if output['forecast_error'] is not None else ""
+        is_f = output.get("unit") == "fahrenheit"
+        unit = "°F" if is_f else "°C"
+        err = f" err={output['forecast_error']:+}{unit}" if output['forecast_error'] is not None else ""
         bias_str = f" bias={output['bias_correction']:+.1f}" if args.deb else ""
         top_buckets = sorted(output["buckets_normal"].items(), key=lambda x: -x[1])[:3]
-        bucket_str = " ".join(f"{b}°C:{p:.0%}" for b, p in top_buckets)
+        bucket_str = " ".join(f"{b}{unit}:{p:.0%}" for b, p in top_buckets)
 
-        print(f"  {display:12s} [{method}] ens={output['t_ensemble']}°C±{output['t_std']} "
-              f"cal={output['t_calibrated']}°C{bias_str}  top3:[{bucket_str}]{err}")
+        print(f"  {display:12s} [{method}] ens={output['t_ensemble']}{unit}±{output['t_std']} "
+              f"cal={output['t_calibrated']}{unit}{bias_str}  top3:[{bucket_str}]{err}")
 
         results.append(output)
 
@@ -597,12 +669,30 @@ def main():
 
     # 汇总
     if args.all and results:
-        with_err = [r for r in results if r["forecast_error"] is not None]
-        if with_err:
-            errors = [r["forecast_error"] for r in with_err]
-            mae = sum(abs(e) for e in errors) / len(errors)
-            print(f"\n  共 {len(results)} 城, {len(with_err)} 城有实测")
-            print(f"  MAE={mae:.1f}°C, 偏差={sum(errors)/len(errors):+.1f}°C")
+        # 分 °C 和 °F 统计
+        c_results = [r for r in results if r.get("unit") != "fahrenheit"]
+        f_results = [r for r in results if r.get("unit") == "fahrenheit"]
+        
+        all_with_err = [r for r in results if r["forecast_error"] is not None]
+        
+        if all_with_err:
+            errors_all = [r["forecast_error"] for r in all_with_err]
+            mae_all = sum(abs(e) for e in errors_all) / len(errors_all)
+            print(f"\n  共 {len(results)} 城, {len(all_with_err)} 城有实测")
+            
+            # °C 统计
+            c_err = [r for r in c_results if r["forecast_error"] is not None]
+            if c_err:
+                c_errors = [r["forecast_error"] for r in c_err]
+                c_mae = sum(abs(e) for e in c_errors) / len(c_errors)
+                print(f"  °C城: {len(c_err)}城 MAE={c_mae:.1f}°C")
+            
+            # °F 统计
+            f_err = [r for r in f_results if r["forecast_error"] is not None]
+            if f_err:
+                f_errors = [r["forecast_error"] for r in f_err]
+                f_mae = sum(abs(e) for e in f_errors) / len(f_errors)
+                print(f"  °F城: {len(f_err)}城 MAE={f_mae:.1f}°F (≈{f_mae*5/9:.1f}°C)")
 
 
 def snapshot_prediction(city_key: str, target_date: str) -> dict | None:
