@@ -188,9 +188,17 @@ class MercuryHandler(SimpleHTTPRequestHandler):
 
         # L1 融合曲线 — 冻结历史 + 动态未来
         frozen_l1 = eng.get("l1_curve", {}) if eng else {}
-        l1_curve = self._build_l1_curve(
-            city_key, target_date, eng, hourly, frozen_l1
+        is_fahrenheit = eng.get("unit") == "fahrenheit" if eng else False
+        
+        l1_curve_c = self._build_l1_curve(
+            city_key, target_date, eng, hourly, frozen_l1, is_fahrenheit
         )
+        
+        # 如果是 °F 城市，输出转 °F
+        if is_fahrenheit and l1_curve_c:
+            l1_curve = {h: round(v * 9.0 / 5.0 + 32.0, 1) for h, v in l1_curve_c.items()}
+        else:
+            l1_curve = l1_curve_c
 
         return {
             "city": city_key,
@@ -200,13 +208,25 @@ class MercuryHandler(SimpleHTTPRequestHandler):
             "l1_curve": l1_curve,
         }
 
-    def _build_l1_curve(self, city_key, target_date, eng, hourly, frozen_l1):
+    def _build_l1_curve(self, city_key, target_date, eng, hourly, frozen_l1, is_fahrenheit=False):
         """合并冻结 L1 + 动态 L1（未来时段用最新 METAR 重算权重）。
         
+        内部统一用 °C 计算，避免 °F/°C 混用导致曲线跳变。
         副作用：如果预测桶发生变化，追加快照到 snapshots.jsonl。
         """
         if not hourly or not eng or compute_live_weights is None:
             return frozen_l1
+
+        # ── °F 城市：frozen_l1 先转回 °C，内部统一单位 ──
+        if is_fahrenheit:
+            frozen_l1_c = {}
+            for h, v in frozen_l1.items():
+                try:
+                    frozen_l1_c[h] = round((float(v) - 32.0) * 5.0 / 9.0, 1)
+                except (ValueError, TypeError):
+                    frozen_l1_c[h] = v
+        else:
+            frozen_l1_c = frozen_l1
 
         # 获取当前当地时间
         from datetime import timezone as tz_utc
@@ -249,8 +269,8 @@ class MercuryHandler(SimpleHTTPRequestHandler):
             if h is None:
                 continue
             if h < current_hour:
-                if str(h) in frozen_l1:
-                    merged[str(h)] = frozen_l1[str(h)]
+                if str(h) in frozen_l1_c:
+                    merged[str(h)] = frozen_l1_c[str(h)]
             else:
                 temps = h_data.get("temps", {})
                 w_sum, w_total = 0.0, 0.0
@@ -263,7 +283,7 @@ class MercuryHandler(SimpleHTTPRequestHandler):
                     merged[str(h)] = round(w_sum / w_total, 1)
 
         # 如果未来时段缺失，用冻结值补
-        for h_str, v in frozen_l1.items():
+        for h_str, v in frozen_l1_c.items():
             if h_str not in merged:
                 merged[h_str] = v
 
