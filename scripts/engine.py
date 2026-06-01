@@ -559,35 +559,86 @@ def _convert_engine_to_fahrenheit(output: dict) -> dict:
         d = dict(detail)
         d["t_max"] = _c2f(detail["t_max"])
         d["deviation"] = round(detail["deviation"] * 9.0 / 5.0, 1)
-        d["bucket"] = round(_c2f(detail["t_max"]))
+        d["bucket"] = round(_c2f(detail["t_max"]) / 2.0) * 2  # 最近偶数°F下界
         models_f[m] = d
     out["models"] = models_f
     
-    # 离散桶概率：用 °F 值重新计算
+    # ── 2°F 区间桶（Polymarket US 格式: 70-71°F, 72-73°F...）──
     t_cal_f = out["t_calibrated"]
     t_std_f = out["t_std"]
     
-    # 投票法：model 的 °F t_max → 整数 °F 桶
+    # 投票法：四舍五入到最近偶数下界
     model_tmax_f = {m: d["t_max"] for m, d in models_f.items()}
-    out["buckets_voting"] = bucket_prob_voting(model_tmax_f)
+    out["buckets_voting"] = _bucket_prob_voting_2f(model_tmax_f)
     
     # 加权投票
     active_weights = {m: detail.get("weight", 0) for m, detail in output.get("models", {}).items()}
-    # 保留原始 °C 的权重（权重本身不变）
-    out["buckets_weighted_voting"] = bucket_prob_weighted_voting(model_tmax_f, active_weights)
+    out["buckets_weighted_voting"] = _bucket_prob_weighted_voting_2f(model_tmax_f, active_weights)
     
-    # 正态分布
+    # 正态分布：计算温度落入 [even, even+2) 的概率
     f_values = list(model_tmax_f.values())
-    buckets_f = build_bucket_range(f_values + [t_cal_f])
+    buckets_f = _build_bucket_range_2f(f_values + [t_cal_f])
     probs_normal_f = {}
     for b in buckets_f:
-        p = bucket_prob_normal(t_cal_f, t_std_f if t_std_f > 0.02 else 1.8, b)
+        p = _bucket_prob_normal_2f(t_cal_f, t_std_f if t_std_f > 0.02 else 3.6, b)
         if p > 0.001:
             probs_normal_f[b] = round(p, 4)
     out["buckets_normal"] = probs_normal_f
     out["buckets_range"] = buckets_f
     
+    # 桶标签映射
+    out["bucket_labels"] = {b: f"{b}-{b+1}°F" for b in buckets_f}
+    
     return out
+
+
+def _round_to_even_2f(t: float) -> int:
+    """四舍五入到最近的偶数（2°F区间下界）"""
+    return round(t / 2.0) * 2
+
+
+def _bucket_prob_normal_2f(t_mean: float, t_std: float, bucket_even: int) -> float:
+    """正态分布：温度落入 [even, even+2) °F 区间的概率"""
+    upper = normal_cdf((bucket_even + 2.0 - t_mean) / t_std)
+    lower = normal_cdf((bucket_even - t_mean) / t_std)
+    return max(0.0, upper - lower)
+
+
+def _bucket_prob_voting_2f(model_tmax: dict[str, float]) -> dict[int, float]:
+    """投票法（2°F区间）：每个模型投票给最近的偶数下界桶"""
+    votes = {}
+    for m, t in model_tmax.items():
+        bucket = _round_to_even_2f(t)
+        votes[bucket] = votes.get(bucket, 0) + 1
+    total = len(model_tmax)
+    return {b: round(c / total, 4) for b, c in votes.items()}
+
+
+def _bucket_prob_weighted_voting_2f(model_tmax: dict[str, float], weights: dict[str, float]) -> dict[int, float]:
+    """加权投票法（2°F区间）"""
+    votes = {}
+    weight_total = 0.0
+    for m, t in model_tmax.items():
+        w = weights.get(m, 0.0)
+        if w <= 0:
+            continue
+        bucket = _round_to_even_2f(t)
+        votes[bucket] = votes.get(bucket, 0.0) + w
+        weight_total += w
+    if weight_total == 0:
+        return {}
+    return {b: round(c / weight_total, 4) for b, c in votes.items()}
+
+
+def _build_bucket_range_2f(t_values: list[float], min_buckets: int = 5) -> list[int]:
+    """根据 °F 温度范围构建 2°F 偶数桶列表"""
+    t_min = min(t_values)
+    t_max = max(t_values)
+    center = _round_to_even_2f(sum(t_values) / len(t_values))
+
+    low = min(_round_to_even_2f(t_min) - 4, center - min_buckets * 2)
+    high = max(_round_to_even_2f(t_max) + 4, center + min_buckets * 2)
+    return list(range(low, high + 1, 2))
 
 
 def bucket_prob_weighted_voting(model_tmax: dict[str, float], weights: dict[str, float]) -> dict[int, float]:
@@ -656,7 +707,11 @@ def main():
         err = f" err={output['forecast_error']:+}{unit}" if output['forecast_error'] is not None else ""
         bias_str = f" bias={output['bias_correction']:+.1f}" if args.deb else ""
         top_buckets = sorted(output["buckets_normal"].items(), key=lambda x: -x[1])[:3]
-        bucket_str = " ".join(f"{b}{unit}:{p:.0%}" for b, p in top_buckets)
+        if is_f:
+            labels = output.get("bucket_labels", {})
+            bucket_str = " ".join(f"{labels.get(b, str(b))}:{p:.0%}" for b, p in top_buckets)
+        else:
+            bucket_str = " ".join(f"{b}°C:{p:.0%}" for b, p in top_buckets)
 
         print(f"  {display:12s} [{method}] ens={output['t_ensemble']}{unit}±{output['t_std']} "
               f"cal={output['t_calibrated']}{unit}{bias_str}  top3:[{bucket_str}]{err}")

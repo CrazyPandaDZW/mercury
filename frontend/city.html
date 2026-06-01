@@ -420,11 +420,13 @@ function renderBuckets(buckets, eng) {
   if (!entries.length) { panel.innerHTML = '<h3>温度桶概率分布</h3><p style="color:#8b949e">暂无数据</p>'; return; }
   const maxP = Math.max(...entries.map(e => e[1]));
   const cal = eng.t_calibrated;
+  const labels = eng.bucket_labels || {};
   let html = '<h3>温度桶概率分布</h3>';
   entries.forEach(([t, p]) => {
     const w = (p/maxP*100).toFixed(0);
-    const isPeak = cal != null && Math.abs(parseInt(t)-Math.round(cal)) <= 0;
-    html += `<div class="bucket-row"><span class="label">${t}${UNIT}</span><span class="bar"><span class="bar-fill ${isPeak?'peak':''}" style="width:${w}%"></span></span><span class="pct">${(p*100).toFixed(0)}%</span></div>`;
+    const label = labels[t] || `${t}${UNIT}`;
+    const isPeak = cal != null && (label === labels[Math.round(cal/2)*2]);
+    html += `<div class="bucket-row"><span class="label">${label}</span><span class="bar"><span class="bar-fill ${isPeak?'peak':''}" style="width:${w}%"></span></span><span class="pct">${(p*100).toFixed(0)}%</span></div>`;
   });
   html += `<div style="margin-top:8px;font-size:12px;color:#8b949e">μ = ${eng.t_calibrated?.toFixed(1)}${UNIT} · σ = ±${eng.t_std}${UNIT}</div>`;
   panel.innerHTML = html;
