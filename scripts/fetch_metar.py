@@ -29,8 +29,13 @@ def load_config():
         return yaml.safe_load(f)
 
 
-def fetch_metar(station: str, target_date: str) -> list[dict]:
-    """从 IEM 拉取指定日期 ASOS 逐时气象数据（温度/露点/风速/气压）"""
+def fetch_metar(station: str, target_date: str, max_retries: int = 2) -> list[dict]:
+    """从 IEM 拉取指定日期 ASOS 逐时气象数据（温度/露点/风速/气压）
+    
+    遇到 429 限速时自动重试，指数退避 2s→4s。
+    """
+    import time as _time
+    
     dt = datetime.strptime(target_date, "%Y-%m-%d")
 
     url = (
@@ -46,10 +51,24 @@ def fetch_metar(station: str, target_date: str) -> list[dict]:
     # 绕过系统代理直连 NOAA IEM（代理会 MITM SSL 证书导致验证失败）
     proxy_handler = urllib.request.ProxyHandler({})
     opener = urllib.request.build_opener(proxy_handler)
-    with opener.open(req, timeout=30) as resp:
-        text = resp.read().decode("utf-8")
-
-    return parse_iem_csv(text, station)
+    
+    last_error = None
+    for attempt in range(max_retries + 1):
+        try:
+            with opener.open(req, timeout=30) as resp:
+                text = resp.read().decode("utf-8")
+            return parse_iem_csv(text, station)
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < max_retries:
+                wait = 2 * (2 ** attempt)  # 2s, 4s
+                _time.sleep(wait)
+                last_error = e
+                continue
+            raise
+        except Exception:
+            raise
+    
+    raise last_error  # 不应到达这里
 
 
 def parse_iem_csv(text: str, station: str) -> list[dict]:
@@ -243,7 +262,7 @@ def main():
                 print(f"[{i+1}/{len(targets)}] {display:6s} ❌ {e}")
             fail += 1
 
-        time.sleep(0.3)  # 礼貌限速
+        time.sleep(1.5)  # NOAA IEM 限速：1.5s间隔避免429
 
     if not args.quiet:
         status = f"成功 {success}, 失败 {fail}"
