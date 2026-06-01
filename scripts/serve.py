@@ -197,6 +197,14 @@ class MercuryHandler(SimpleHTTPRequestHandler):
         # 如果是 °F 城市，输出转 °F
         if is_fahrenheit and l1_curve_c:
             l1_curve = {h: round(v * 9.0 / 5.0 + 32.0, 1) for h, v in l1_curve_c.items()}
+            # 同时转换 hourly 中所有模型温度
+            hourly_f = []
+            for h_data in (hourly or []):
+                hf = dict(h_data)
+                hf["temps"] = {m: round(t * 9.0 / 5.0 + 32.0, 1) if t is not None else None
+                               for m, t in h_data.get("temps", {}).items()}
+                hourly_f.append(hf)
+            hourly = hourly_f
         else:
             l1_curve = l1_curve_c
 
@@ -416,14 +424,30 @@ class MercuryHandler(SimpleHTTPRequestHandler):
         records = [r for r in all_records 
                    if r.get("time_local", "").startswith(target_date)]
         records.sort(key=lambda r: r.get("time_local", ""))
+
+        # ── °F 城市：温度值转 °F ──
+        is_f = config.get("cities", {}).get(city_key, {}).get("unit") == "fahrenheit"
+        if is_f:
+            for r in records:
+                if r.get("temp_c") is not None:
+                    r["temp_c"] = round(r["temp_c"] * 9.0 / 5.0 + 32.0, 1)
+                if r.get("dew_point_c") is not None:
+                    r["dew_point_c"] = round(r["dew_point_c"] * 9.0 / 5.0 + 32.0, 1)
+            t_max = data.get("t_max")
+            t_min = data.get("t_min")
+            t_avg = data.get("t_avg")
+        else:
+            t_max = data.get("t_max")
+            t_min = data.get("t_min")
+            t_avg = data.get("t_avg")
         
         return {
             "city": city_key,
             "date": target_date,
             "n_records": data.get("n_records", 0),
-            "t_max": data.get("t_max"),
-            "t_min": data.get("t_min"),
-            "t_avg": data.get("t_avg"),
+            "t_max": round(t_max * 9.0 / 5.0 + 32.0, 1) if is_f and t_max is not None else t_max,
+            "t_min": round(t_min * 9.0 / 5.0 + 32.0, 1) if is_f and t_min is not None else t_min,
+            "t_avg": round(t_avg * 9.0 / 5.0 + 32.0, 1) if is_f and t_avg is not None else t_avg,
             "fetch_count": data.get("fetch_count", 0),
             "records": records,
         }
