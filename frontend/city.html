@@ -165,8 +165,11 @@ function buildCityList(cities) {
     html += `<div class="divider"></div><h3>${region} ${label}</h3>`;
     group.forEach(c => {
       const active = c.key === CITY ? ' active' : '';
+      const polyLink = c.polymarket_event 
+        ? ` <a href="https://polymarket.com/event/${c.polymarket_event}" target="_blank" style="color:#3fb950;text-decoration:none;font-size:10px;margin-left:2px" title="Polymarket">Poly↗</a>`
+        : '';
       html += `<a class="city${active}" href="?city=${c.key}" data-city="${c.key}" onclick="selectCity(event, '${c.key}')">
-        ${c.name}
+        ${c.name}${polyLink}
       </a>`;
     });
   }

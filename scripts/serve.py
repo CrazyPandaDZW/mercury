@@ -103,6 +103,7 @@ class MercuryHandler(SimpleHTTPRequestHandler):
                     "name": v.get("display_name", k),
                     "icao": v.get("icao"),
                     "region": self._guess_region(k),
+                    "polymarket_event": v.get("polymarket_event", ""),
                 }
                 for k, v in config["cities"].items()
             ]
