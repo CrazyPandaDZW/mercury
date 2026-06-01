@@ -10,14 +10,29 @@ import argparse
 import json
 import os
 import sys
-from datetime import date
+from datetime import date, datetime
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
+from zoneinfo import ZoneInfo
 
 PROJECT_ROOT = Path(__file__).parent.parent
 FRONTEND_DIR = PROJECT_ROOT / "frontend"
 DATA_DIR = PROJECT_ROOT / "data"
+
+# 导入引擎权重计算（需在 PROJECT_ROOT 定义后）
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+try:
+    from engine import compute_live_weights, load_config as eng_load_config
+except ImportError:
+    compute_live_weights = None
+    eng_load_config = None
+
+
+def _prev_date(date_str: str) -> str:
+    """返回前一天日期字符串"""
+    from datetime import timedelta
+    return (datetime.strptime(date_str, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
 
 
 class MercuryHandler(SimpleHTTPRequestHandler):
@@ -171,12 +186,151 @@ class MercuryHandler(SimpleHTTPRequestHandler):
                 fc = json.load(f)
             hourly = fc.get("hourly", [])
 
+        # L1 融合曲线 — 冻结历史 + 动态未来
+        frozen_l1 = eng.get("l1_curve", {}) if eng else {}
+        l1_curve = self._build_l1_curve(
+            city_key, target_date, eng, hourly, frozen_l1
+        )
+
         return {
             "city": city_key,
             "date": target_date,
             "engine": eng,
             "hourly": hourly,
+            "l1_curve": l1_curve,
         }
+
+    def _build_l1_curve(self, city_key, target_date, eng, hourly, frozen_l1):
+        """合并冻结 L1 + 动态 L1（未来时段用最新 METAR 重算权重）。
+        
+        副作用：如果预测桶发生变化，追加快照到 snapshots.jsonl。
+        """
+        if not hourly or not eng or compute_live_weights is None:
+            return frozen_l1
+
+        # 获取当前当地时间
+        from datetime import timezone as tz_utc
+        try:
+            cfg = eng_load_config()
+            city_tz_name = cfg.get("cities", {}).get(city_key, {}).get("tz", "UTC")
+            now_local = datetime.now(tz_utc.utc).astimezone(ZoneInfo(city_tz_name))
+            current_hour = now_local.hour
+        except Exception:
+            return frozen_l1
+
+        # 加载最新 METAR（当天 + 前一天，用于时间衰减窗口）
+        metar_records = []
+        for d in [target_date, _prev_date(target_date)]:
+            mf = DATA_DIR / "metar" / city_key / f"{d}.json"
+            if mf.exists():
+                with open(mf) as f:
+                    md = json.load(f)
+                metar_records.extend(md.get("records", []))
+
+        if not metar_records:
+            return frozen_l1
+
+        # 用最新 METAR 重算实时权重
+        model_keys = eng.get("models_available", [])
+        try:
+            live_w, live_rmse, n_pts = compute_live_weights(
+                hourly, metar_records, model_keys, city_tz_name
+            )
+        except Exception:
+            return frozen_l1
+
+        if not live_w or len(live_w) < 2:
+            return frozen_l1
+
+        # 合并：过去小时冻结，未来小时用最新权重
+        merged = {}
+        for h_data in hourly:
+            h = h_data.get("hour")
+            if h is None:
+                continue
+            if h < current_hour:
+                if str(h) in frozen_l1:
+                    merged[str(h)] = frozen_l1[str(h)]
+            else:
+                temps = h_data.get("temps", {})
+                w_sum, w_total = 0.0, 0.0
+                for m, w in live_w.items():
+                    t = temps.get(m)
+                    if t is not None and w > 0:
+                        w_sum += t * w
+                        w_total += w
+                if w_total > 0:
+                    merged[str(h)] = round(w_sum / w_total, 1)
+
+        # 如果未来时段缺失，用冻结值补
+        for h_str, v in frozen_l1.items():
+            if h_str not in merged:
+                merged[h_str] = v
+
+        # ── 记录预测快照（用于回测预测-时间曲线） ──
+        self._record_prediction_snapshot(
+            city_key, target_date, merged, live_w, live_rmse,
+            n_pts, current_hour, now_local.isoformat()
+        )
+
+        return merged
+
+    def _record_prediction_snapshot(self, city_key, target_date, l1_curve,
+                                     live_weights, live_rmse, metar_count,
+                                     current_hour, now_iso):
+        """追加预测快照到 snapshots.jsonl（桶变化或距上次≥30分钟时记录）。"""
+        import os as _os
+        
+        # 从 L1 曲线提取预测最高温
+        vals = [v for v in l1_curve.values() if isinstance(v, (int, float))]
+        if not vals:
+            return
+        t_predicted = round(max(vals), 1)
+        current_bucket = round(t_predicted)
+        
+        snap_dir = DATA_DIR / "engine" / city_key
+        snap_dir.mkdir(parents=True, exist_ok=True)
+        snap_path = snap_dir / f"{target_date}_snapshots.jsonl"
+        
+        # 检查是否需要记录（防重复）
+        should_record = True
+        if snap_path.exists():
+            try:
+                with open(snap_path) as f:
+                    lines = f.readlines()
+                if lines:
+                    last = json.loads(lines[-1].strip())
+                    last_bucket = last.get("bucket")
+                    last_ts = last.get("time", "")
+                    
+                    # 桶没变 且 距上次不到30分钟 → 跳过
+                    if last_bucket == current_bucket:
+                        try:
+                            last_dt = datetime.fromisoformat(last_ts)
+                            now_dt = datetime.fromisoformat(now_iso)
+                            delta_m = (now_dt - last_dt).total_seconds() / 60
+                            if delta_m < 30:
+                                should_record = False
+                        except Exception:
+                            pass
+            except Exception:
+                pass
+        
+        if not should_record:
+            return
+        
+        snapshot = {
+            "time": now_iso,
+            "t_predicted": t_predicted,
+            "bucket": current_bucket,
+            "metar_count": metar_count,
+            "current_hour": current_hour,
+            "live_weights": live_weights,
+            "live_rmse": live_rmse,
+        }
+        
+        with open(snap_path, "a") as f:
+            f.write(json.dumps(snapshot, ensure_ascii=False) + "\n")
 
     def _get_metar(self, city_key, target_date=None):
         target_date = target_date or date.today().isoformat()
@@ -190,6 +344,59 @@ class MercuryHandler(SimpleHTTPRequestHandler):
         with open(mf) as f:
             data = json.load(f)
         
+        # 获取城市时区
+        import yaml
+        with open(PROJECT_ROOT / "config" / "cities.yaml") as fcfg:
+            config = yaml.safe_load(fcfg)
+        city_tz = config.get("cities", {}).get(city_key, {}).get("tz", "UTC")
+        try:
+            tz = ZoneInfo(city_tz)
+        except Exception:
+            tz = ZoneInfo("UTC")
+        
+        def _convert_records(raw_records, data_meta=None):
+            """UTC → 本地时间转换"""
+            out = []
+            for r in raw_records:
+                rec = dict(r)
+                utc_str = r.get("time_utc", "")
+                if utc_str:
+                    try:
+                        dt_utc = datetime.strptime(utc_str, "%Y-%m-%d %H:%M").replace(tzinfo=ZoneInfo("UTC"))
+                        dt_local = dt_utc.astimezone(tz)
+                        rec["time_local"] = dt_local.strftime("%Y-%m-%d %H:%M")
+                        rec["hour_local"] = dt_local.hour
+                        rec["hour_frac"] = dt_local.hour + dt_local.minute / 60
+                    except Exception:
+                        rec["time_local"] = utc_str
+                        h = int(utc_str.split(" ")[1].split(":")[0]) if " " in utc_str else 0
+                        rec["hour_local"] = h
+                        rec["hour_frac"] = h
+                out.append(rec)
+            return out
+
+        # 当天 METAR 记录
+        all_records = _convert_records(data.get("records", []))
+        
+        # 前一天 METAR：跨时区补全（如北京 UTC 16:00-23:30 属于本地次日 00:00-07:30）
+        from datetime import timedelta
+        dt = datetime.strptime(target_date, "%Y-%m-%d")
+        prev_date = (dt - timedelta(days=1)).strftime("%Y-%m-%d")
+        prev_mf = DATA_DIR / "metar" / city_key / f"{prev_date}.json"
+        if prev_mf.exists():
+            with open(prev_mf) as f:
+                prev_data = json.load(f)
+            prev_records = _convert_records(prev_data.get("records", []))
+            # 只保留本地时间落在 target_date 的记录
+            prev_records = [r for r in prev_records 
+                           if r.get("time_local", "").startswith(target_date)]
+            all_records.extend(prev_records)
+        
+        # 只保留本地时间在 target_date 的记录（排除当天文件中溢出的次日数据）
+        records = [r for r in all_records 
+                   if r.get("time_local", "").startswith(target_date)]
+        records.sort(key=lambda r: r.get("time_local", ""))
+        
         return {
             "city": city_key,
             "date": target_date,
@@ -198,7 +405,7 @@ class MercuryHandler(SimpleHTTPRequestHandler):
             "t_min": data.get("t_min"),
             "t_avg": data.get("t_avg"),
             "fetch_count": data.get("fetch_count", 0),
-            "records": data.get("records", []),
+            "records": records,
         }
 
     def log_message(self, format, *args):

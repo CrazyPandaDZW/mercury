@@ -10,7 +10,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .topbar { background:#161b22; border-bottom:1px solid #30363d; padding:12px 24px; display:flex; align-items:center; gap:16px; }
 .topbar a { color:#58a6ff; text-decoration:none; font-size:13px; }
 .topbar h2 { font-size:18px; }
-.container { max-width:1100px; margin:0 auto; padding:16px; }
+.container { max-width:1100px; width:100%; margin:0 auto; padding:16px; }
+@media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
 
 /* 概览栏 */
 .overview { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 20px; margin-bottom:12px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
@@ -27,10 +28,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .chart-panel h3 { font-size:14px; color:#8b949e; margin-bottom:8px; }
 .chart-svg { width:100%; }
 .chart-svg text { font-size:10px; fill:#8b949e; font-family:inherit; }
-.chart-svg .grid line { stroke:#21262d; stroke-width:0.5; }
+.chart-svg line.grid { stroke:#3a3f4b; stroke-width:0.5; }
 .chart-svg .axis line { stroke:#30363d; }
 .chart-legend { display:flex; gap:16px; margin-top:8px; font-size:11px; flex-wrap:wrap; }
-.chart-legend span { display:flex; align-items:center; gap:4px; }
+.chart-legend span { display:flex; align-items:center; gap:4px; cursor:pointer; user-select:none; }
+.chart-legend span.hidden-model { opacity:0.35; text-decoration:line-through; }
 .chart-legend .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
 .chart-legend .line { width:20px; height:2px; display:inline-block; }
 .tooltip { position:absolute; background:#21262d; border:1px solid #30363d; border-radius:4px; padding:6px 10px; font-size:11px; pointer-events:none; display:none; z-index:10; }
@@ -44,24 +46,25 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .weight-row { display:flex; align-items:center; gap:8px; padding:3px 0; }
 .weight-row .model { width:60px; font-size:12px; text-align:right; }
 .weight-row .temp { width:50px; font-size:12px; text-align:right; color:#8b949e; }
-.weight-row .bar { flex:1; height:16px; background:#21262d; border-radius:3px; overflow:hidden; }
-.weight-row .bar-fill { height:100%; border-radius:3px; transition:width .3s; }
+.weight-row .bar { flex:1; height:20px; background:#30363d; border-radius:4px; overflow:hidden; }
+.weight-row .bar-fill { display:block; height:100%; border-radius:4px; min-width:2px; transition:width .3s; }
 .weight-row .w-pct { width:40px; font-size:11px; color:#8b949e; text-align:right; }
+.weight-row .bias { width:50px; font-size:11px; text-align:right; }
 .deb-result { margin-top:10px; padding-top:8px; border-top:1px solid #21262d; font-size:14px; }
 .deb-result strong { color:#58a6ff; }
 
 /* 桶概率柱状图 */
 .bucket-row { display:flex; align-items:center; gap:6px; margin:1px 0; }
 .bucket-row .label { width:32px; text-align:right; font-size:11px; color:#8b949e; }
-.bucket-row .bar { flex:1; height:18px; background:#21262d; border-radius:3px; overflow:hidden; }
-.bucket-row .bar-fill { height:100%; background:#58a6ff; border-radius:3px; }
+.bucket-row .bar { flex:1; height:22px; background:#30363d; border-radius:4px; overflow:hidden; }
+.bucket-row .bar-fill { display:block; height:100%; background:#58a6ff; border-radius:4px; min-width:2px; }
 .bucket-row .bar-fill.peak { background:#3fb950; }
 .bucket-row .pct { width:36px; font-size:11px; color:#8b949e; text-align:right; }
 
 /* 数据选项卡 */
 .tabs { display:flex; gap:0; margin-bottom:0; }
 .tab { padding:8px 16px; font-size:13px; cursor:pointer; border:1px solid #30363d; border-bottom:none; border-radius:6px 6px 0 0; background:#0d1117; color:#8b949e; margin-right:2px; }
-.tab.active { background:#161b22; color:#e1e4e8; border-bottom:1px solid #161b22; margin-bottom:-1px; position:relative; z-index:1; }
+.tab.active { background:#161b22; color:#58a6ff; border-bottom:1px solid #161b22; border-top:2px solid #58a6ff; margin-bottom:-1px; position:relative; z-index:1; font-weight:600; }
 .tab-content { display:none; background:#161b22; border:1px solid #30363d; border-radius:0 0 8px 8px; padding:12px; overflow-x:auto; }
 .tab-content.active { display:block; }
 
@@ -119,7 +122,7 @@ const MODEL_COLORS = {
 };
 const MODEL_NAMES = { icon_seamless:'ICON', ecmwf_ifs:'ECMWF', gfs_seamless:'GFS', gem_seamless:'GEM', jma_seamless:'JMA', ukmo_seamless:'UKMO', icon_eu:'ICON-EU', icon_d2:'ICON-D2' };
 
-let currentDate = '2026-05-31';
+let currentDate = new Date().toISOString().split('T')[0];
 
 async function init() {
   // 从 API 获取可用日期
@@ -142,28 +145,49 @@ async function loadDate(dateStr) {
   const hourly = fc.hourly || [];
   const models = eng.models || {};
   const buckets = eng.buckets_normal || {};
+  const l1Curve = fc.l1_curve || {};
 
   renderOverview(eng, metar);
-  renderChart(hourly, metar);
-  renderWeights(models, eng);
+  renderChart(hourly, metar, eng, l1Curve);
+  renderWeights(models, eng, l1Curve);
   renderBuckets(buckets, eng);
   renderHourlyTable(hourly);
   renderMetarTable(metar);
 }
 
 // ── 概览栏 ──
+function isToday(dateStr) {
+  return dateStr === new Date().toISOString().split('T')[0];
+}
+
 function renderOverview(eng, metar) {
   const err = eng.forecast_error;
   const absErr = Math.abs(err || 0);
   const badge = absErr <= 1 ? 'good' : absErr <= 2 ? 'ok' : 'bad';
-  
+  const today = isToday(currentDate);
+
+  // 实测值显示逻辑
+  let metarDisplay, metarHint = '';
+  if (metar.t_max != null) {
+    metarDisplay = metar.t_max.toFixed(1) + '°C';
+    // 数据完整度提示
+    const n = metar.n_records || 0;
+    const fc = metar.fetch_count || 0;
+    if (today && n < 24 && fc < 3) {
+      metarHint = ` <span style="color:#d29922;font-size:11px" title="记录数不足全天一半，数据仍在采集中">⚠️ ${n}/48条</span>`;
+    }
+  } else {
+    metarDisplay = today ? '⏳ 等待实测' : '⚠️ 无数据';
+    if (today) metarHint = ' <span style="color:#8b949e;font-size:11px">全天数据将在次日生成</span>';
+  }
+
   document.getElementById('overview').innerHTML = `
     <span class="stat">日期: <select onchange="loadDate(this.value)" id="dateSelect">
       <option value="2026-05-31">2026-05-31</option>
       <option value="2026-06-01">2026-06-01</option>
     </select></span>
     <span class="stat">DEB预报: <strong>${eng.t_calibrated != null ? eng.t_calibrated.toFixed(1)+'°C' : '—'}</strong></span>
-    <span class="stat">实测: <strong>${metar.t_max != null ? metar.t_max.toFixed(1)+'°C' : '⏳'}</strong></span>
+    <span class="stat">实测: <strong>${metarDisplay}</strong>${metarHint}</span>
     <span class="stat">误差: <span class="err ${badge}">${err != null ? (err>0?'+':'')+err.toFixed(1)+'°C' : '—'}</span></span>
     <span class="stat">σ = ±${eng.t_std?.toFixed(1) || '—'}°C · ${eng.n_models || '—'}模型 · ${eng.blend_method || ''}</span>
   `;
@@ -171,91 +195,228 @@ function renderOverview(eng, metar) {
 }
 
 // ── SVG 曲线图 ──
-function renderChart(hourly, metar) {
+let _l1WeightsForTooltip = null;  // 由 renderChart 设置
+let _l1CurveForTooltip = null;    // 由 renderChart 设置
+function buildHourTooltip(h, hourMap, metarByHour, modelKeys) {
+  const data = hourMap[h];
+  if (!data) return '';
+  let lines = [`<b>${String(h).padStart(2,'0')}:00</b>`];
+  modelKeys.forEach(m => {
+    const t = data.temps[m];
+    if (t != null) lines.push(`${MODEL_NAMES[m]||m}: ${t}°C`);
+  });
+  // L1 融合值（从 API 快照读取）
+  if (_l1CurveForTooltip) {
+    const l1t = _l1CurveForTooltip[String(h)];
+    if (l1t != null) lines.push(`<b style="color:#fff">M1·L1: ${l1t}°C</b>`);
+  }
+  if (data.cloud != null && data.cloud > 0) lines.push(`云量: ${data.cloud}%`);
+  const metar = metarByHour[h];
+  if (metar) lines.push(`<span style="color:#f85149">METAR: ${metar.temp_c}°C</span>`);
+  return lines.join('<br>');
+}
+
+function renderChart(hourly, metar, eng, l1Curve) {
   const svg = document.getElementById('tempChart');
   const W = 1000, H = 360, PAD = { l:50, r:50, t:20, b:30 };
   const PW = W - PAD.l - PAD.r, PH = H - PAD.t - PAD.b;
 
-  // 计算温度范围
+  const useL1 = Object.keys(l1Curve || {}).length > 0;
+  _l1WeightsForTooltip = useL1 ? (eng?.models || null) : null;
+  _l1CurveForTooltip = l1Curve || null;
+
+  // 计算温度范围（模型值 + L1 快照 + METAR）
   let temps = [];
   hourly.forEach(h => Object.values(h.temps||{}).forEach(t => temps.push(t)));
+  if (useL1) Object.values(l1Curve).forEach(t => temps.push(t));
   metar.records?.forEach(r => { if (r.temp_c != null) temps.push(r.temp_c); });
   if (!temps.length) temps = [0, 40];
-  let tMin = Math.floor(Math.min(...temps) / 5) * 5;
-  let tMax = Math.ceil(Math.max(...temps) / 5) * 5;
-  if (tMax - tMin < 10) tMax = tMin + 10;
+  let tMin = Math.floor(Math.min(...temps) / 2) * 2;
+  let tMax = Math.ceil(Math.max(...temps) / 2) * 2;
+  // 至少 6°C 的区间，曲线才不会挤成一条线
+  if (tMax - tMin < 6) { tMin -= 2; tMax += 2; }
 
   const x = h => PAD.l + (h / 23) * PW;
   const y = t => PAD.t + PH - ((t - tMin) / (tMax - tMin)) * PH;
 
-  let html = '';
-
-  // 云量背景 (右轴)
+  // 按小时汇总数据，用于时间轴 tooltip
+  const hourMap = {};
+  const modelKeys = hourly.length ? Object.keys(hourly[0].temps || {}) : [];
   hourly.forEach(h => {
-    const cc = h.cloud_cover;
-    if (cc == null) return;
-    const xl = x(h.hour - 0.45), xr = x(h.hour + 0.45);
-    html += `<rect x="${xl}" y="${PAD.t}" width="${xr-xl}" height="${PH}" fill="#30363d" opacity="${cc/200}" />`;
+    hourMap[h.hour] = { temps: h.temps, cloud: h.cloud_cover };
+  });
+  // METAR 按小时取最近值
+  const metarByHour = {};
+  (metar.records || []).forEach(r => {
+    if (r.temp_c == null) return;
+    const h = Math.round(r.hour_frac ?? r.hour_local ?? 0);
+    metarByHour[h] = r;
   });
 
+  let html = '';
+
+  // 云量面积图 (右轴)
+  const yCloud = cc => PAD.t + PH - (cc / 100) * PH;  // 100%→PAD.t, 0%→PAD.t+PH
+  const hasCloud = hourly.some(h => h.cloud_cover != null);
+  if (hasCloud) {
+    // 构建面积多边形: 底部基线 (0%) → 云量曲线 → 闭合
+    let areaPts = `${x(0)},${yCloud(0)}`;
+    hourly.forEach(h => {
+      const cc = h.cloud_cover ?? 0;
+      areaPts += ` ${x(h.hour)},${yCloud(cc)}`;
+    });
+    areaPts += ` ${x(23)},${yCloud(0)}`;
+    html += `<polygon points="${areaPts}" fill="#e1e4e8" opacity="0.12" />`;
+    
+    // 云量曲线描边
+    let linePts = hourly.filter(h => h.cloud_cover != null)
+      .map(h => `${x(h.hour)},${yCloud(h.cloud_cover)}`).join(' ');
+    if (linePts) html += `<polyline points="${linePts}" fill="none" stroke="#e1e4e8" stroke-width="1" opacity="0.3" />`;
+  }
+
   // 网格
-  for (let t = tMin; t <= tMax; t += 5) {
+  for (let t = tMin; t <= tMax; t += 2) {
     html += `<line x1="${PAD.l}" y1="${y(t)}" x2="${W-PAD.r}" y2="${y(t)}" class="grid"/>`;
     html += `<text x="${PAD.l-5}" y="${y(t)+4}" text-anchor="end">${t}°</text>`;
   }
-  for (let h = 0; h <= 23; h += 2) {
+  for (let h = 0; h <= 23; h += 1) {
+    // 透明 hover 区域（宽8px，高100px）
+    html += `<rect x="${x(h)-4}" y="${PAD.t+PH+2}" width="8" height="90" fill="transparent" data-tooltip-html="${buildHourTooltip(h, hourMap, metarByHour, modelKeys).replace(/"/g, '&quot;')}"/>`;
     html += `<line x1="${x(h)}" y1="${PAD.t}" x2="${x(h)}" y2="${PAD.t+PH}" class="grid"/>`;
-    html += `<text x="${x(h)}" y="${PAD.t+PH+15}" text-anchor="middle">${h}h</text>`;
+    html += `<text x="${x(h)}" y="${PAD.t+PH+15}" text-anchor="middle" font-size="9">${h}</text>`;
   }
 
-  // 预报曲线
-  const modelKeys = hourly.length ? Object.keys(hourly[0].temps || {}) : [];
-  const mainModel = 'icon_seamless';
+  // 预报曲线（等权，ICON 不再特殊高亮）
   modelKeys.forEach(m => {
     const pts = hourly.filter(h => h.temps[m] != null).map(h => `${x(h.hour)},${y(h.temps[m])}`).join(' ');
     if (!pts) return;
-    const isMain = m === mainModel;
-    html += `<polyline points="${pts}" fill="none" stroke="${MODEL_COLORS[m]||'#888'}" stroke-width="${isMain?3:1}" opacity="${isMain?1:0.4}" stroke-dasharray="${isMain?'':'4,3'}"/>`;
+    const color = MODEL_COLORS[m]||'#888';
+    html += `<g class="curve-group" id="curve-${m}">`;
+    html += `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>`;
+    hourly.filter(h => h.temps[m] != null).forEach(h => {
+      html += `<circle cx="${x(h.hour)}" cy="${y(h.temps[m])}" r="1.5" fill="${color}" opacity="0.5" data-tooltip="${MODEL_NAMES[m]||m} ${h.temps[m]}°C"/>`;
+    });
+    html += `</g>`;
   });
 
-  // METAR 实测点
-  (metar.records || []).forEach(r => {
+  // L1 融合曲线（API 快照，白色高亮，过去小时已经冻结）
+  if (useL1) {
+    const l1Color = '#ffffff';
+    const l1Pts = [];
+    hourly.forEach(h => {
+      const t = l1Curve[String(h.hour)];
+      if (t != null) l1Pts.push({h: h.hour, t: t});
+    });
+    if (l1Pts.length) {
+      const ptsStr = l1Pts.map(p => `${x(p.h)},${y(p.t)}`).join(' ');
+      html += `<g class="curve-group" id="curve-l1">`;
+      html += `<polyline points="${ptsStr}" fill="none" stroke="${l1Color}" stroke-width="3" opacity="1"/>`;
+      l1Pts.forEach(p => {
+        html += `<circle cx="${x(p.h)}" cy="${y(p.t)}" r="3" fill="${l1Color}" data-tooltip="M1·L1 ${p.t.toFixed(1)}°C"/>`;
+      });
+      html += `</g>`;
+    }
+  }
+
+  // METAR 实测点 + 连线
+  const metarPts = (metar.records || []).filter(r => r.temp_c != null);
+  if (metarPts.length > 1) {
+    const ptsStr = metarPts.map(r => {
+      const h = r.hour_frac ?? r.hour_local ?? 0;
+      return `${x(h)},${y(r.temp_c)}`;
+    }).join(' ');
+    html += `<polyline points="${ptsStr}" fill="none" stroke="#f85149" stroke-width="1.5" opacity="0.4" stroke-dasharray="2,2"/>`;
+  }
+  metarPts.forEach(r => {
     if (r.temp_c == null) return;
-    const h = parseInt(r.time_utc.split(' ')[1]?.split(':')[0]) || 0;
-    html += `<circle cx="${x(h)}" cy="${y(r.temp_c)}" r="4" fill="#f85149" stroke="#fff" stroke-width="1" data-tooltip="METAR ${r.time_utc}: ${r.temp_c}°C"/>`;
+    const h = r.hour_frac ?? r.hour_local ?? 0;
+    html += `<circle cx="${x(h)}" cy="${y(r.temp_c)}" r="3.5" fill="#f85149" stroke="#fff" stroke-width="1" data-tooltip="METAR ${r.time_local||r.time_utc}: ${r.temp_c}°C"/>`;
   });
 
-  // 云量右轴标签
-  html += `<text x="${W-PAD.r+5}" y="${PAD.t+10}" fill="#8b949e" font-size="9">☁100%</text>`;
-  html += `<text x="${W-PAD.r+5}" y="${PAD.t+PH}" fill="#8b949e" font-size="9">☁0%</text>`;
+  // 云量右轴标签 (0% 25% 50% 75% 100%)
+  for (let pct = 0; pct <= 100; pct += 25) {
+    html += `<text x="${W-PAD.r+5}" y="${yCloud(pct)+4}" fill="#8b949e" font-size="9">${pct}%</text>`;
+    html += `<line x1="${W-PAD.r}" y1="${yCloud(pct)}" x2="${W-PAD.r+3}" y2="${yCloud(pct)}" stroke="#8b949e" stroke-width="0.5"/>`;
+  }
 
   svg.innerHTML = html;
 
-  // 图例
+  // 图例（可点击切换）- L1 高亮在前
   const legend = document.getElementById('chartLegend');
-  legend.innerHTML = modelKeys.map(m => {
-    const isMain = m === mainModel;
-    return `<span><span class="line" style="background:${MODEL_COLORS[m]};${isMain?'height:3px;':''}opacity:${isMain?1:0.6}"></span> ${MODEL_NAMES[m]||m}${isMain?' ←':''}</span>`;
-  }).join('') + `<span><span class="dot" style="background:#f85149"></span> METAR实测</span>`;
+  const modelLegend = modelKeys.map(m => 
+    `<span onclick="toggleCurve('${m}', this)" class="legend-item" data-model="${m}"><span class="line" style="background:${MODEL_COLORS[m]};opacity:0.5"></span> ${MODEL_NAMES[m]||m}</span>`
+  ).join('');
+  const l1Legend = useL1 ? `<span onclick="toggleCurve('l1', this)" class="legend-item" data-model="l1"><span class="line" style="background:#fff;height:3px;opacity:1"></span> <b style="color:#fff">M1·L1</b></span>` : '';
+  legend.innerHTML = l1Legend + modelLegend + 
+    `<span><span class="dot" style="background:#f85149"></span> METAR</span>` +
+    `<span><span class="line" style="background:#58a6ff;opacity:0.45"></span> 云量</span>`;
+
+  // 鼠标悬停 tooltip
+  const tip = document.getElementById('tooltip');
+  svg.querySelectorAll('[data-tooltip], [data-tooltip-html]').forEach(el => {
+    el.addEventListener('mouseenter', e => {
+      const html = el.getAttribute('data-tooltip-html');
+      if (html) { tip.innerHTML = html; }
+      else { tip.textContent = el.getAttribute('data-tooltip'); }
+      tip.style.display = 'block';
+    });
+    el.addEventListener('mousemove', e => {
+      tip.style.left = (e.clientX + 14) + 'px';
+      tip.style.top = (e.clientY - 10) + 'px';
+    });
+    el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+  });
+}
+
+// ── 曲线显示/隐藏切换 ──
+function toggleCurve(modelKey, el) {
+  const group = document.getElementById('curve-' + modelKey);
+  if (!group) return;
+  const hidden = group.style.display === 'none';
+  group.style.display = hidden ? '' : 'none';
+  el.classList.toggle('hidden-model', !hidden);
 }
 
 // ── 模型权重 ──
-function renderWeights(models, eng) {
+function renderWeights(models, eng, l1Curve) {
   const panel = document.getElementById('weightsPanel');
   const entries = Object.entries(models).sort((a,b) => b[1].weight - a[1].weight);
-  const colors = ['#58a6ff','#3fb950','#d29922','#f85149','#bc8cff','#79c0ff','#a5d6ff','#ffa198'];
   
   let html = '<h3>模型预测 & 权重</h3>';
   entries.forEach(([m, v], i) => {
     const wPct = (v.weight * 100).toFixed(0);
+    const color = MODEL_COLORS[m] || '#888';
+    const dev = v.deviation ?? v.bias;
+    const devStr = dev != null ? (dev > 0 ? '+' : '') + dev.toFixed(1) + '°C' : '';
+    const devColor = dev!=null&&Math.abs(dev)<1?'#3fb950':dev!=null&&Math.abs(dev)<2?'#d29922':'#f85149';
+    const rmse = v.live_rmse;
+    const rmseStr = rmse != null ? `rmse ${rmse}°C` : '';
     html += `<div class="weight-row">
       <span class="model">${MODEL_NAMES[m]||m}</span>
       <span class="temp">${v.t_max}°C</span>
-      <span class="bar"><span class="bar-fill" style="width:${wPct}%;background:${colors[i%8]}"></span></span>
+      <span class="bar"><span class="bar-fill" style="width:${wPct}%;background:${color}"></span></span>
       <span class="w-pct">${wPct}%</span>
+      <span class="bias" style="color:${devColor}">${devStr}</span>
+      <span class="rmse" style="color:#8b949e;font-size:10px">${rmseStr}</span>
     </div>`;
   });
-  html += `<div class="deb-result">DEB融合: <strong>${eng.t_ensemble?.toFixed(1)}°C ±${eng.t_std}°C</strong> → 校准后 <strong style="color:#3fb950">${eng.t_calibrated?.toFixed(1)}°C</strong></div>`;
+  // L1 融合行（快照加权平均）
+  const hasL1 = Object.keys(l1Curve || {}).length > 0;
+  if (hasL1) {
+    const l1Temp = eng.t_ensemble;  // 加权平均 = L1 日最高温
+    html += `<div class="weight-row" style="border-top:1px solid #30363d;padding-top:6px;margin-top:2px">
+      <span class="model"><b style="color:#fff">M1·L1</b></span>
+      <span class="temp" style="color:#fff">${l1Temp?.toFixed(1)}°C</span>
+      <span class="bar"><span class="bar-fill" style="width:100%;background:#fff"></span></span>
+      <span class="w-pct" style="color:#58a6ff">融合</span>
+      <span class="bias"></span>
+      <span class="rmse"></span>
+    </div>`;
+  }
+  const methodLabel = eng.blend_method === 'live_rmse_weighted' ? '🔴 LIVE-RMSE' : 
+                      eng.blend_method === 'deb_mae_weighted' ? '🟡 DEB-MAE' : '⚪ 等权';
+  const nPts = eng.live_n_points ? ` · ${eng.live_n_points}个METAR点` : '';
+  html += `<div class="deb-result">${methodLabel}${nPts}: <strong>${eng.t_ensemble?.toFixed(1)}°C ±${eng.t_std}°C</strong> → 校准后 <strong style="color:#3fb950">${eng.t_calibrated?.toFixed(1)}°C</strong></div>`;
   panel.innerHTML = html;
 }
 
@@ -307,15 +468,20 @@ function renderHourlyTable(hourly) {
 // ── METAR 实测表 ──
 function renderMetarTable(metar) {
   const records = metar.records || [];
-  if (!records.length) { document.getElementById('tab-metar').innerHTML = '<p style="color:#8b949e;padding:12px">暂无实测数据</p>'; return; }
+  const today = isToday(currentDate);
+  if (!records.length) {
+    const msg = today ? '⏳ 数据采集中，全天数据将在次日自动生成' : '暂无实测数据';
+    document.getElementById('tab-metar').innerHTML = `<p style="color:#8b949e;padding:12px">${msg}</p>`;
+    return;
+  }
   
-  let html = '<table class="data-table"><thead><tr><th>时间(UTC)</th><th>温度</th><th>露点</th><th>风速(kt)</th><th>气压</th></tr></thead><tbody>';
+  let html = '<table class="data-table"><thead><tr><th>时间(本地)</th><th>温度</th><th>露点</th><th>风速(kt)</th><th>气压</th></tr></thead><tbody>';
   
   const maxTemp = Math.max(...records.map(r => r.temp_c || -99));
   records.forEach(r => {
     const isMax = r.temp_c === maxTemp;
     html += `<tr class="${isMax ? 'metar-highlight' : ''}">
-      <td>${r.time_utc}</td>
+      <td>${r.time_local || r.time_utc}</td>
       <td><strong>${r.temp_c != null ? r.temp_c.toFixed(1)+'°C' : '—'}</strong>${isMax ? ' ←峰' : ''}</td>
       <td>${r.dew_point_c != null ? r.dew_point_c.toFixed(1)+'°C' : '—'}</td>
       <td>${r.wind_knots != null ? r.wind_knots.toFixed(1) : '—'}</td>

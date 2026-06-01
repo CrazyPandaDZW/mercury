@@ -56,7 +56,10 @@ def fetch_city(city_key: str, city_cfg: dict, models: list, days: int) -> dict:
     )
 
     req = urllib.request.Request(url)
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    # 绕过系统代理直连 Open-Meteo（代理节点常被 API 拒绝）
+    no_proxy_handler = urllib.request.ProxyHandler({})
+    opener = urllib.request.build_opener(no_proxy_handler)
+    with opener.open(req, timeout=30) as resp:
         raw = json.loads(resp.read())
 
     return parse_response(city_key, raw, models)
@@ -191,7 +194,7 @@ def main():
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--city", type=str, help="城市 key（如 beijing）")
     group.add_argument("--all", action="store_true", help="所有 40 城")
-    parser.add_argument("--days", type=int, default=16, help="预报天数（默认 16）")
+    parser.add_argument("--days", type=int, default=4, help="预报天数（默认 4）")
     args = parser.parse_args()
 
     config = load_config()

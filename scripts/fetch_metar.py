@@ -43,7 +43,10 @@ def fetch_metar(station: str, target_date: str) -> list[dict]:
     )
 
     req = urllib.request.Request(url)
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    # 绕过系统代理直连 NOAA IEM（代理会 MITM SSL 证书导致验证失败）
+    proxy_handler = urllib.request.ProxyHandler({})
+    opener = urllib.request.build_opener(proxy_handler)
+    with opener.open(req, timeout=30) as resp:
         text = resp.read().decode("utf-8")
 
     return parse_iem_csv(text, station)
@@ -168,6 +171,18 @@ def save_metar(city_key: str, station: str, target_date: str,
 
     with open(filepath, "w") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
+
+    # ── METAR 写入后自动更新预测快照 ──
+    try:
+        from engine import snapshot_prediction
+        snap = snapshot_prediction(city_key, target_date)
+        if snap and snap.get("recorded"):
+            new_bucket = snap.get("bucket")
+            t_pred = snap.get("t_predicted")
+            if not merge or not locals().get("_quiet_log"):
+                print(f"      📊 预测更新: t={t_pred}°C bucket={new_bucket}")
+    except Exception:
+        pass  # 快照失败不阻塞 METAR 拉取
 
 
 def main():
