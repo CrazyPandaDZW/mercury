@@ -76,17 +76,39 @@ def load_mae_weights(city_key: str) -> tuple[dict[str, float], float]:
     if not mae_dict:
         return {}, bias
     
-    # w_i = 1/MAE_i，然后归一化
+    # 权重公式: w_i ∝ 1/MAE_i² (平方倒数，强偏好低误差模型)
+    # ICON 主导策略: 确保 ICON 最低占 50% 权重
+    ICON_MIN_WEIGHT = 0.50
+    POWER = 2.0  # 1/MAE^p, p=2 比 p=1 更激进地偏向低 MAE 模型
+    
     inv_mae = {}
     for model, mae in mae_dict.items():
+        if model.startswith("_"):  # 跳过元数据字段
+            continue
         if mae > 0:
-            inv_mae[model] = 1.0 / mae
+            inv_mae[model] = 1.0 / (mae ** POWER)
     
-    total = sum(inv_mae.values())
-    if total == 0:
+    total_raw = sum(inv_mae.values())
+    if total_raw == 0:
         return {}, bias
     
-    weights = {m: v / total for m, v in inv_mae.items()}
+    # 先算原始权重
+    raw_weights = {m: v / total_raw for m, v in inv_mae.items()}
+    
+    # ICON 最低权重保障
+    icon_w = raw_weights.get("icon_seamless", 0.0)
+    if icon_w < ICON_MIN_WEIGHT:
+        # 把 ICON 提到 50%，其他模型等比压缩
+        scale = (1.0 - ICON_MIN_WEIGHT) / max(0.001, 1.0 - icon_w)
+        weights = {}
+        for m, w in raw_weights.items():
+            if m == "icon_seamless":
+                weights[m] = ICON_MIN_WEIGHT
+            else:
+                weights[m] = w * scale
+    else:
+        weights = raw_weights
+    
     return weights, bias
 
 
