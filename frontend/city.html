@@ -3,15 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>北京 — Mercury</title>
+<title>Mercury 城市预报</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#0f1117; color:#e1e4e8; min-height:100vh; }
-.topbar { background:#161b22; border-bottom:1px solid #30363d; padding:12px 24px; display:flex; align-items:center; gap:16px; }
-.topbar a { color:#58a6ff; text-decoration:none; font-size:13px; }
-.topbar h2 { font-size:18px; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#0f1117; color:#e1e4e8; min-height:100vh; display:flex; }
+
+/* 左侧边栏 */
+.sidebar { width:200px; min-width:200px; background:#161b22; border-right:1px solid #30363d; padding:12px 0; overflow-y:auto; height:100vh; position:sticky; top:0; }
+.sidebar h3 { font-size:12px; color:#8b949e; padding:8px 16px; text-transform:uppercase; letter-spacing:0.5px; }
+.sidebar .city { display:block; padding:6px 16px; font-size:13px; color:#c9d1d9; text-decoration:none; cursor:pointer; border-left:3px solid transparent; transition:all .15s; }
+.sidebar .city:hover { background:#1c2128; color:#e1e4e8; }
+.sidebar .city.active { background:#1c2128; color:#58a6ff; border-left-color:#58a6ff; font-weight:600; }
+.sidebar .city .flag { margin-right:4px; font-size:12px; }
+.sidebar .divider { border-top:1px solid #21262d; margin:8px 0; }
+
+/* 主内容区 */
+.main { flex:1; min-width:0; }
+.topbar { background:#161b22; border-bottom:1px solid #30363d; padding:12px 24px; display:flex; align-items:center; gap:12px; }
+.topbar h2 { font-size:16px; }
 .container { max-width:1100px; width:100%; margin:0 auto; padding:16px; }
-@media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } .sidebar { display:none; } }
 
 /* 概览栏 */
 .overview { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 20px; margin-bottom:12px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
@@ -55,7 +66,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 /* 桶概率柱状图 */
 .bucket-row { display:flex; align-items:center; gap:6px; margin:1px 0; }
-.bucket-row .label { width:32px; text-align:right; font-size:11px; color:#8b949e; }
+.bucket-row .label { width:36px; text-align:right; font-size:11px; color:#8b949e; }
 .bucket-row .bar { flex:1; height:22px; background:#30363d; border-radius:4px; overflow:hidden; }
 .bucket-row .bar-fill { display:block; height:100%; background:#58a6ff; border-radius:4px; min-width:2px; }
 .bucket-row .bar-fill.peak { background:#3fb950; }
@@ -68,41 +79,42 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .tab-content { display:none; background:#161b22; border:1px solid #30363d; border-radius:0 0 8px 8px; padding:12px; overflow-x:auto; }
 .tab-content.active { display:block; }
 
-/* 数据表 */
 .data-table { width:100%; border-collapse:collapse; font-size:12px; }
 .data-table th { text-align:center; padding:4px 6px; color:#8b949e; border-bottom:1px solid #30363d; position:sticky; top:0; background:#161b22; }
 .data-table td { text-align:center; padding:3px 6px; border-bottom:1px solid #21262d; }
 .data-table tr:hover td { background:#1c2128; }
 .data-table .hour-col { color:#58a6ff; font-weight:bold; }
-.data-table .icon-col { color:#58a6ff; }
 .data-table .metar-highlight td { background:#1b2a1b; }
 </style>
 </head>
 <body>
 
+<!-- 左侧城市列表 -->
+<div class="sidebar" id="sidebar">
+  <h3>🌐 城市</h3>
+  <div id="cityList"></div>
+</div>
+
+<!-- 主内容 -->
+<div class="main">
 <div class="topbar">
-  <a href="/">← 返回总览</a>
-  <h2 id="cityTitle">北京 (ZBAA)</h2>
+  <h2 id="cityTitle">加载中...</h2>
 </div>
 
 <div class="container">
-  <!-- 概览栏 -->
   <div class="overview" id="overview"></div>
 
-  <!-- 温度曲线图 -->
   <div class="chart-panel">
     <h3>温度时间曲线 & 云量</h3>
     <svg class="chart-svg" id="tempChart" viewBox="0 0 1000 360"></svg>
     <div class="chart-legend" id="chartLegend"></div>
   </div>
 
-  <!-- 双栏 -->
   <div class="two-col">
     <div class="panel" id="weightsPanel"><h3>模型预测 & 权重</h3></div>
     <div class="panel" id="bucketsPanel"><h3>温度桶概率分布</h3></div>
   </div>
 
-  <!-- 数据选项卡 -->
   <div class="tabs">
     <div class="tab active" onclick="switchTab('hourly')">逐小时预测</div>
     <div class="tab" onclick="switchTab('metar')">METAR 实测</div>
@@ -110,42 +122,82 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="tab-content active" id="tab-hourly"></div>
   <div class="tab-content" id="tab-metar"></div>
 </div>
+</div>
 
 <div class="tooltip" id="tooltip"></div>
 
 <script>
-const CITY = new URLSearchParams(location.search).get('city') || 'beijing';
+let CITY = new URLSearchParams(location.search).get('city') || 'beijing';
+let UNIT = '°C';  // 由 engine 输出动态设置
 const MODEL_COLORS = {
   icon_seamless: '#58a6ff', ecmwf_ifs: '#3fb950', gfs_seamless: '#d29922',
   gem_seamless: '#f85149', jma_seamless: '#bc8cff', ukmo_seamless: '#79c0ff',
   icon_eu: '#a5d6ff', icon_d2: '#ffa198'
 };
 const MODEL_NAMES = { icon_seamless:'ICON', ecmwf_ifs:'ECMWF', gfs_seamless:'GFS', gem_seamless:'GEM', jma_seamless:'JMA', ukmo_seamless:'UKMO', icon_eu:'ICON-EU', icon_d2:'ICON-D2' };
+const REGION_NAMES = { '🇨🇳':'东亚', '🇺🇸':'美国', '🇪🇺':'欧洲', '🌏':'亚洲', '🌍':'其他' };
 
 let currentDate = new Date().toISOString().split('T')[0];
 
+// ── 初始化：加载城市列表 + 数据 ──
 async function init() {
-  // 从 API 获取可用日期
+  // 加载城市列表
   try {
-    const status = await fetch('/api/status').then(r => r.json());
-    document.getElementById('cityTitle').textContent = `北京 (ZBAA) · ${status.today}`;
-  } catch(e) {}
+    const citiesData = await fetch('/api/cities').then(r => r.json());
+    buildCityList(citiesData.cities || []);
+  } catch(e) { console.error('加载城市列表失败', e); }
 
-  loadDate(currentDate);
+  loadData();
 }
 
-async function loadDate(dateStr) {
-  currentDate = dateStr;
+function buildCityList(cities) {
+  const list = document.getElementById('cityList');
+  const grouped = {};
+  cities.forEach(c => {
+    const region = c.region || '🌐';
+    if (!grouped[region]) grouped[region] = [];
+    grouped[region].push(c);
+  });
+
+  let html = '';
+  for (const [region, group] of Object.entries(grouped)) {
+    const label = REGION_NAMES[region] || region;
+    html += `<div class="divider"></div><h3>${region} ${label}</h3>`;
+    group.forEach(c => {
+      const active = c.key === CITY ? ' active' : '';
+      html += `<a class="city${active}" href="?city=${c.key}" data-city="${c.key}" onclick="selectCity(event, '${c.key}')">
+        ${c.name}
+      </a>`;
+    });
+  }
+  list.innerHTML = html;
+}
+
+function selectCity(e, cityKey) {
+  e.preventDefault();
+  CITY = cityKey;
+  // 更新 URL
+  history.pushState(null, '', '?city=' + cityKey);
+  // 更新选中状态
+  document.querySelectorAll('.sidebar .city').forEach(el => el.classList.remove('active'));
+  document.querySelector(`.sidebar .city[data-city="${cityKey}"]`)?.classList.add('active');
+  loadData();
+}
+
+async function loadData() {
   const [fc, metar] = await Promise.all([
-    fetch(`/api/forecast?city=${CITY}&date=${dateStr}`).then(r => r.json()),
-    fetch(`/api/metar?city=${CITY}&date=${dateStr}`).then(r => r.json()),
+    fetch(`/api/forecast?city=${CITY}&date=${currentDate}`).then(r => r.json()),
+    fetch(`/api/metar?city=${CITY}&date=${currentDate}`).then(r => r.json()),
   ]);
 
   const eng = fc.engine || {};
+  UNIT = eng.unit === 'fahrenheit' ? '°F' : '°C';
   const hourly = fc.hourly || [];
   const models = eng.models || {};
   const buckets = eng.buckets_normal || {};
   const l1Curve = fc.l1_curve || {};
+
+  document.getElementById('cityTitle').textContent = `${eng.city || CITY} · ${currentDate}`;
 
   renderOverview(eng, metar);
   renderChart(hourly, metar, eng, l1Curve);
@@ -156,9 +208,7 @@ async function loadDate(dateStr) {
 }
 
 // ── 概览栏 ──
-function isToday(dateStr) {
-  return dateStr === new Date().toISOString().split('T')[0];
-}
+function isToday(dateStr) { return dateStr === new Date().toISOString().split('T')[0]; }
 
 function renderOverview(eng, metar) {
   const err = eng.forecast_error;
@@ -166,53 +216,52 @@ function renderOverview(eng, metar) {
   const badge = absErr <= 1 ? 'good' : absErr <= 2 ? 'ok' : 'bad';
   const today = isToday(currentDate);
 
-  // 实测值显示逻辑
   let metarDisplay, metarHint = '';
   if (metar.t_max != null) {
-    metarDisplay = metar.t_max.toFixed(1) + '°C';
-    // 数据完整度提示
+    metarDisplay = metar.t_max.toFixed(1) + UNIT;
     const n = metar.n_records || 0;
-    const fc = metar.fetch_count || 0;
-    if (today && n < 24 && fc < 3) {
-      metarHint = ` <span style="color:#d29922;font-size:11px" title="记录数不足全天一半，数据仍在采集中">⚠️ ${n}/48条</span>`;
+    if (today && n < 24) {
+      metarHint = ` <span style="color:#d29922;font-size:11px" title="记录数不足全天一半，数据仍在采集中">⚠️ ${n}条</span>`;
     }
   } else {
     metarDisplay = today ? '⏳ 等待实测' : '⚠️ 无数据';
-    if (today) metarHint = ' <span style="color:#8b949e;font-size:11px">全天数据将在次日生成</span>';
   }
 
   document.getElementById('overview').innerHTML = `
-    <span class="stat">日期: <select onchange="loadDate(this.value)" id="dateSelect">
+    <span class="stat">日期: <select onchange="changeDate(this.value)" id="dateSelect">
       <option value="2026-05-31">2026-05-31</option>
       <option value="2026-06-01">2026-06-01</option>
     </select></span>
-    <span class="stat">DEB预报: <strong>${eng.t_calibrated != null ? eng.t_calibrated.toFixed(1)+'°C' : '—'}</strong></span>
+    <span class="stat">预报: <strong>${eng.t_calibrated != null ? eng.t_calibrated.toFixed(1)+UNIT : '—'}</strong></span>
     <span class="stat">实测: <strong>${metarDisplay}</strong>${metarHint}</span>
-    <span class="stat">误差: <span class="err ${badge}">${err != null ? (err>0?'+':'')+err.toFixed(1)+'°C' : '—'}</span></span>
-    <span class="stat">σ = ±${eng.t_std?.toFixed(1) || '—'}°C · ${eng.n_models || '—'}模型 · ${eng.blend_method || ''}</span>
+    <span class="stat">误差: <span class="err ${badge}">${err != null ? (err>0?'+':'')+err.toFixed(1)+UNIT : '—'}</span></span>
+    <span class="stat">σ = ±${eng.t_std?.toFixed(1) || '—'}${UNIT} · ${eng.n_models || '—'}模型 · ${eng.blend_method || ''}</span>
   `;
   document.getElementById('dateSelect').value = currentDate;
 }
 
+function changeDate(dateStr) {
+  currentDate = dateStr;
+  loadData();
+}
+
 // ── SVG 曲线图 ──
-let _l1WeightsForTooltip = null;  // 由 renderChart 设置
-let _l1CurveForTooltip = null;    // 由 renderChart 设置
+let _l1CurveForTooltip = null;
 function buildHourTooltip(h, hourMap, metarByHour, modelKeys) {
   const data = hourMap[h];
   if (!data) return '';
   let lines = [`<b>${String(h).padStart(2,'0')}:00</b>`];
   modelKeys.forEach(m => {
     const t = data.temps[m];
-    if (t != null) lines.push(`${MODEL_NAMES[m]||m}: ${t}°C`);
+    if (t != null) lines.push(`${MODEL_NAMES[m]||m}: ${t}${UNIT}`);
   });
-  // L1 融合值（从 API 快照读取）
   if (_l1CurveForTooltip) {
     const l1t = _l1CurveForTooltip[String(h)];
-    if (l1t != null) lines.push(`<b style="color:#fff">M1·L1: ${l1t}°C</b>`);
+    if (l1t != null) lines.push(`<b style="color:#fff">M1·L1: ${l1t}${UNIT}</b>`);
   }
   if (data.cloud != null && data.cloud > 0) lines.push(`云量: ${data.cloud}%`);
   const metar = metarByHour[h];
-  if (metar) lines.push(`<span style="color:#f85149">METAR: ${metar.temp_c}°C</span>`);
+  if (metar) lines.push(`<span style="color:#f85149">METAR: ${metar.temp_c}${UNIT}</span>`);
   return lines.join('<br>');
 }
 
@@ -222,10 +271,8 @@ function renderChart(hourly, metar, eng, l1Curve) {
   const PW = W - PAD.l - PAD.r, PH = H - PAD.t - PAD.b;
 
   const useL1 = Object.keys(l1Curve || {}).length > 0;
-  _l1WeightsForTooltip = useL1 ? (eng?.models || null) : null;
   _l1CurveForTooltip = l1Curve || null;
 
-  // 计算温度范围（模型值 + L1 快照 + METAR）
   let temps = [];
   hourly.forEach(h => Object.values(h.temps||{}).forEach(t => temps.push(t)));
   if (useL1) Object.values(l1Curve).forEach(t => temps.push(t));
@@ -233,19 +280,14 @@ function renderChart(hourly, metar, eng, l1Curve) {
   if (!temps.length) temps = [0, 40];
   let tMin = Math.floor(Math.min(...temps) / 2) * 2;
   let tMax = Math.ceil(Math.max(...temps) / 2) * 2;
-  // 至少 6°C 的区间，曲线才不会挤成一条线
   if (tMax - tMin < 6) { tMin -= 2; tMax += 2; }
 
   const x = h => PAD.l + (h / 23) * PW;
   const y = t => PAD.t + PH - ((t - tMin) / (tMax - tMin)) * PH;
 
-  // 按小时汇总数据，用于时间轴 tooltip
   const hourMap = {};
   const modelKeys = hourly.length ? Object.keys(hourly[0].temps || {}) : [];
-  hourly.forEach(h => {
-    hourMap[h.hour] = { temps: h.temps, cloud: h.cloud_cover };
-  });
-  // METAR 按小时取最近值
+  hourly.forEach(h => { hourMap[h.hour] = { temps: h.temps, cloud: h.cloud_cover }; });
   const metarByHour = {};
   (metar.records || []).forEach(r => {
     if (r.temp_c == null) return;
@@ -255,168 +297,119 @@ function renderChart(hourly, metar, eng, l1Curve) {
 
   let html = '';
 
-  // 云量面积图 (右轴)
-  const yCloud = cc => PAD.t + PH - (cc / 100) * PH;  // 100%→PAD.t, 0%→PAD.t+PH
+  // 云量
+  const yCloud = cc => PAD.t + PH - (cc / 100) * PH;
   const hasCloud = hourly.some(h => h.cloud_cover != null);
   if (hasCloud) {
-    // 构建面积多边形: 底部基线 (0%) → 云量曲线 → 闭合
     let areaPts = `${x(0)},${yCloud(0)}`;
-    hourly.forEach(h => {
-      const cc = h.cloud_cover ?? 0;
-      areaPts += ` ${x(h.hour)},${yCloud(cc)}`;
-    });
+    hourly.forEach(h => { areaPts += ` ${x(h.hour)},${yCloud(h.cloud_cover ?? 0)}`; });
     areaPts += ` ${x(23)},${yCloud(0)}`;
     html += `<polygon points="${areaPts}" fill="#e1e4e8" opacity="0.12" />`;
-    
-    // 云量曲线描边
-    let linePts = hourly.filter(h => h.cloud_cover != null)
-      .map(h => `${x(h.hour)},${yCloud(h.cloud_cover)}`).join(' ');
+    let linePts = hourly.filter(h => h.cloud_cover != null).map(h => `${x(h.hour)},${yCloud(h.cloud_cover)}`).join(' ');
     if (linePts) html += `<polyline points="${linePts}" fill="none" stroke="#e1e4e8" stroke-width="1" opacity="0.3" />`;
   }
 
   // 网格
-  for (let t = tMin; t <= tMax; t += 2) {
-    html += `<line x1="${PAD.l}" y1="${y(t)}" x2="${W-PAD.r}" y2="${y(t)}" class="grid"/>`;
-    html += `<text x="${PAD.l-5}" y="${y(t)+4}" text-anchor="end">${t}°</text>`;
-  }
-  for (let h = 0; h <= 23; h += 1) {
-    // 透明 hover 区域（宽8px，高100px）
-    html += `<rect x="${x(h)-4}" y="${PAD.t+PH+2}" width="8" height="90" fill="transparent" data-tooltip-html="${buildHourTooltip(h, hourMap, metarByHour, modelKeys).replace(/"/g, '&quot;')}"/>`;
-    html += `<line x1="${x(h)}" y1="${PAD.t}" x2="${x(h)}" y2="${PAD.t+PH}" class="grid"/>`;
-    html += `<text x="${x(h)}" y="${PAD.t+PH+15}" text-anchor="middle" font-size="9">${h}</text>`;
-  }
+  for (let t = tMin; t <= tMax; t += 2)
+    html += `<line x1="${PAD.l}" y1="${y(t)}" x2="${W-PAD.r}" y2="${y(t)}" class="grid"/><text x="${PAD.l-5}" y="${y(t)+4}" text-anchor="end">${t}°</text>`;
+  for (let h = 0; h <= 23; h += 1)
+    html += `<rect x="${x(h)-4}" y="${PAD.t+PH+2}" width="8" height="90" fill="transparent" data-tooltip-html="${buildHourTooltip(h, hourMap, metarByHour, modelKeys).replace(/"/g, '&quot;')}"/><line x1="${x(h)}" y1="${PAD.t}" x2="${x(h)}" y2="${PAD.t+PH}" class="grid"/><text x="${x(h)}" y="${PAD.t+PH+15}" text-anchor="middle" font-size="9">${h}</text>`;
 
-  // 预报曲线（等权，ICON 不再特殊高亮）
+  // 预报曲线
   modelKeys.forEach(m => {
     const pts = hourly.filter(h => h.temps[m] != null).map(h => `${x(h.hour)},${y(h.temps[m])}`).join(' ');
     if (!pts) return;
     const color = MODEL_COLORS[m]||'#888';
-    html += `<g class="curve-group" id="curve-${m}">`;
-    html += `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>`;
-    hourly.filter(h => h.temps[m] != null).forEach(h => {
-      html += `<circle cx="${x(h.hour)}" cy="${y(h.temps[m])}" r="1.5" fill="${color}" opacity="0.5" data-tooltip="${MODEL_NAMES[m]||m} ${h.temps[m]}°C"/>`;
-    });
-    html += `</g>`;
+    html += `<g class="curve-group" id="curve-${m}"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>`;
+    hourly.filter(h => h.temps[m] != null).forEach(h => html += `<circle cx="${x(h.hour)}" cy="${y(h.temps[m])}" r="1.5" fill="${color}" opacity="0.5" data-tooltip="${MODEL_NAMES[m]||m} ${h.temps[m]}${UNIT}"/>`);
+    html += '</g>';
   });
 
-  // L1 融合曲线（API 快照，白色高亮，过去小时已经冻结）
+  // L1 曲线
   if (useL1) {
-    const l1Color = '#ffffff';
     const l1Pts = [];
-    hourly.forEach(h => {
-      const t = l1Curve[String(h.hour)];
-      if (t != null) l1Pts.push({h: h.hour, t: t});
-    });
+    hourly.forEach(h => { const t = l1Curve[String(h.hour)]; if (t != null) l1Pts.push({h: h.hour, t}); });
     if (l1Pts.length) {
-      const ptsStr = l1Pts.map(p => `${x(p.h)},${y(p.t)}`).join(' ');
-      html += `<g class="curve-group" id="curve-l1">`;
-      html += `<polyline points="${ptsStr}" fill="none" stroke="${l1Color}" stroke-width="3" opacity="1"/>`;
-      l1Pts.forEach(p => {
-        html += `<circle cx="${x(p.h)}" cy="${y(p.t)}" r="3" fill="${l1Color}" data-tooltip="M1·L1 ${p.t.toFixed(1)}°C"/>`;
-      });
-      html += `</g>`;
+      html += `<g class="curve-group" id="curve-l1"><polyline points="${l1Pts.map(p => `${x(p.h)},${y(p.t)}`).join(' ')}" fill="none" stroke="#fff" stroke-width="3" opacity="1"/>`;
+      l1Pts.forEach(p => html += `<circle cx="${x(p.h)}" cy="${y(p.t)}" r="3" fill="#fff" data-tooltip="M1·L1 ${p.t.toFixed(1)}${UNIT}"/>`);
+      html += '</g>';
     }
   }
 
-  // METAR 实测点 + 连线
+  // METAR 点
   const metarPts = (metar.records || []).filter(r => r.temp_c != null);
   if (metarPts.length > 1) {
-    const ptsStr = metarPts.map(r => {
-      const h = r.hour_frac ?? r.hour_local ?? 0;
-      return `${x(h)},${y(r.temp_c)}`;
-    }).join(' ');
-    html += `<polyline points="${ptsStr}" fill="none" stroke="#f85149" stroke-width="1.5" opacity="0.4" stroke-dasharray="2,2"/>`;
+    html += `<polyline points="${metarPts.map(r => `${x(r.hour_frac ?? r.hour_local ?? 0)},${y(r.temp_c)}`).join(' ')}" fill="none" stroke="#f85149" stroke-width="1.5" opacity="0.4" stroke-dasharray="2,2"/>`;
   }
   metarPts.forEach(r => {
     if (r.temp_c == null) return;
     const h = r.hour_frac ?? r.hour_local ?? 0;
-    html += `<circle cx="${x(h)}" cy="${y(r.temp_c)}" r="3.5" fill="#f85149" stroke="#fff" stroke-width="1" data-tooltip="METAR ${r.time_local||r.time_utc}: ${r.temp_c}°C"/>`;
+    html += `<circle cx="${x(h)}" cy="${y(r.temp_c)}" r="3.5" fill="#f85149" stroke="#fff" stroke-width="1" data-tooltip="METAR ${r.time_local||r.time_utc}: ${r.temp_c}${UNIT}"/>`;
   });
 
-  // 云量右轴标签 (0% 25% 50% 75% 100%)
-  for (let pct = 0; pct <= 100; pct += 25) {
-    html += `<text x="${W-PAD.r+5}" y="${yCloud(pct)+4}" fill="#8b949e" font-size="9">${pct}%</text>`;
-    html += `<line x1="${W-PAD.r}" y1="${yCloud(pct)}" x2="${W-PAD.r+3}" y2="${yCloud(pct)}" stroke="#8b949e" stroke-width="0.5"/>`;
-  }
+  // 云量右轴
+  for (let pct = 0; pct <= 100; pct += 25)
+    html += `<text x="${W-PAD.r+5}" y="${yCloud(pct)+4}" fill="#8b949e" font-size="9">${pct}%</text><line x1="${W-PAD.r}" y1="${yCloud(pct)}" x2="${W-PAD.r+3}" y2="${yCloud(pct)}" stroke="#8b949e" stroke-width="0.5"/>`;
 
   svg.innerHTML = html;
 
-  // 图例（可点击切换）- L1 高亮在前
+  // 图例
   const legend = document.getElementById('chartLegend');
-  const modelLegend = modelKeys.map(m => 
-    `<span onclick="toggleCurve('${m}', this)" class="legend-item" data-model="${m}"><span class="line" style="background:${MODEL_COLORS[m]};opacity:0.5"></span> ${MODEL_NAMES[m]||m}</span>`
-  ).join('');
-  const l1Legend = useL1 ? `<span onclick="toggleCurve('l1', this)" class="legend-item" data-model="l1"><span class="line" style="background:#fff;height:3px;opacity:1"></span> <b style="color:#fff">M1·L1</b></span>` : '';
-  legend.innerHTML = l1Legend + modelLegend + 
-    `<span><span class="dot" style="background:#f85149"></span> METAR</span>` +
-    `<span><span class="line" style="background:#58a6ff;opacity:0.45"></span> 云量</span>`;
+  legend.innerHTML = (useL1 ? `<span onclick="toggleCurve('l1',this)" data-model="l1"><span class="line" style="background:#fff;height:3px;opacity:1"></span> <b style="color:#fff">M1·L1</b></span>` : '') +
+    modelKeys.map(m => `<span onclick="toggleCurve('${m}',this)" data-model="${m}"><span class="line" style="background:${MODEL_COLORS[m]};opacity:0.5"></span> ${MODEL_NAMES[m]||m}</span>`).join('') +
+    `<span><span class="dot" style="background:#f85149"></span> METAR</span><span><span class="line" style="background:#58a6ff;opacity:0.45"></span> 云量</span>`;
 
-  // 鼠标悬停 tooltip
+  // tooltip
   const tip = document.getElementById('tooltip');
   svg.querySelectorAll('[data-tooltip], [data-tooltip-html]').forEach(el => {
     el.addEventListener('mouseenter', e => {
-      const html = el.getAttribute('data-tooltip-html');
-      if (html) { tip.innerHTML = html; }
-      else { tip.textContent = el.getAttribute('data-tooltip'); }
+      const htm = el.getAttribute('data-tooltip-html');
+      if (htm) tip.innerHTML = htm; else tip.textContent = el.getAttribute('data-tooltip');
       tip.style.display = 'block';
     });
-    el.addEventListener('mousemove', e => {
-      tip.style.left = (e.clientX + 14) + 'px';
-      tip.style.top = (e.clientY - 10) + 'px';
-    });
+    el.addEventListener('mousemove', e => { tip.style.left = (e.clientX+14)+'px'; tip.style.top = (e.clientY-10)+'px'; });
     el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
   });
 }
 
-// ── 曲线显示/隐藏切换 ──
 function toggleCurve(modelKey, el) {
-  const group = document.getElementById('curve-' + modelKey);
-  if (!group) return;
-  const hidden = group.style.display === 'none';
-  group.style.display = hidden ? '' : 'none';
-  el.classList.toggle('hidden-model', !hidden);
+  const g = document.getElementById('curve-'+modelKey);
+  if (!g) return;
+  const hide = g.style.display !== 'none';
+  g.style.display = hide ? 'none' : '';
+  el.classList.toggle('hidden-model', hide);
 }
 
-// ── 模型权重 ──
+// ── 权重 ──
 function renderWeights(models, eng, l1Curve) {
   const panel = document.getElementById('weightsPanel');
   const entries = Object.entries(models).sort((a,b) => b[1].weight - a[1].weight);
-  
   let html = '<h3>模型预测 & 权重</h3>';
-  entries.forEach(([m, v], i) => {
-    const wPct = (v.weight * 100).toFixed(0);
-    const color = MODEL_COLORS[m] || '#888';
-    const dev = v.deviation ?? v.bias;
-    const devStr = dev != null ? (dev > 0 ? '+' : '') + dev.toFixed(1) + '°C' : '';
+  entries.forEach(([m, v]) => {
+    const wPct = (v.weight*100).toFixed(0);
+    const color = MODEL_COLORS[m]||'#888';
+    const dev = v.deviation;
+    const devStr = dev != null ? (dev>0?'+':'')+dev.toFixed(1)+UNIT : '';
     const devColor = dev!=null&&Math.abs(dev)<1?'#3fb950':dev!=null&&Math.abs(dev)<2?'#d29922':'#f85149';
     const rmse = v.live_rmse;
-    const rmseStr = rmse != null ? `rmse ${rmse}°C` : '';
+    const rmseStr = rmse != null ? `rmse ${rmse}${UNIT}` : '';
     html += `<div class="weight-row">
-      <span class="model">${MODEL_NAMES[m]||m}</span>
-      <span class="temp">${v.t_max}°C</span>
+      <span class="model">${MODEL_NAMES[m]||m}</span><span class="temp">${v.t_max}${UNIT}</span>
       <span class="bar"><span class="bar-fill" style="width:${wPct}%;background:${color}"></span></span>
-      <span class="w-pct">${wPct}%</span>
-      <span class="bias" style="color:${devColor}">${devStr}</span>
-      <span class="rmse" style="color:#8b949e;font-size:10px">${rmseStr}</span>
-    </div>`;
+      <span class="w-pct">${wPct}%</span><span class="bias" style="color:${devColor}">${devStr}</span>
+      <span style="color:#8b949e;font-size:10px">${rmseStr}</span></div>`;
   });
-  // L1 融合行（快照加权平均）
-  const hasL1 = Object.keys(l1Curve || {}).length > 0;
+  const hasL1 = Object.keys(l1Curve||{}).length > 0;
   if (hasL1) {
-    const l1Temp = eng.t_ensemble;  // 加权平均 = L1 日最高温
     html += `<div class="weight-row" style="border-top:1px solid #30363d;padding-top:6px;margin-top:2px">
       <span class="model"><b style="color:#fff">M1·L1</b></span>
-      <span class="temp" style="color:#fff">${l1Temp?.toFixed(1)}°C</span>
+      <span class="temp" style="color:#fff">${eng.t_ensemble?.toFixed(1)}${UNIT}</span>
       <span class="bar"><span class="bar-fill" style="width:100%;background:#fff"></span></span>
-      <span class="w-pct" style="color:#58a6ff">融合</span>
-      <span class="bias"></span>
-      <span class="rmse"></span>
-    </div>`;
+      <span class="w-pct" style="color:#58a6ff">融合</span></div>`;
   }
-  const methodLabel = eng.blend_method === 'live_rmse_weighted' ? '🔴 LIVE-RMSE' : 
-                      eng.blend_method === 'deb_mae_weighted' ? '🟡 DEB-MAE' : '⚪ 等权';
+  const methodLabel = eng.blend_method === 'live_rmse_weighted' ? '🔴 LIVE-RMSE' : eng.blend_method === 'deb_mae_weighted' ? '🟡 DEB-MAE' : '⚪ 等权';
   const nPts = eng.live_n_points ? ` · ${eng.live_n_points}个METAR点` : '';
-  html += `<div class="deb-result">${methodLabel}${nPts}: <strong>${eng.t_ensemble?.toFixed(1)}°C ±${eng.t_std}°C</strong> → 校准后 <strong style="color:#3fb950">${eng.t_calibrated?.toFixed(1)}°C</strong></div>`;
+  html += `<div class="deb-result">${methodLabel}${nPts}: <strong>${eng.t_ensemble?.toFixed(1)}${UNIT} ±${eng.t_std}${UNIT}</strong> → 校准后 <strong style="color:#3fb950">${eng.t_calibrated?.toFixed(1)}${UNIT}</strong></div>`;
   panel.innerHTML = html;
 }
 
@@ -425,39 +418,30 @@ function renderBuckets(buckets, eng) {
   const panel = document.getElementById('bucketsPanel');
   const entries = Object.entries(buckets).sort((a,b) => a[0]-b[0]);
   if (!entries.length) { panel.innerHTML = '<h3>温度桶概率分布</h3><p style="color:#8b949e">暂无数据</p>'; return; }
-  
   const maxP = Math.max(...entries.map(e => e[1]));
   const cal = eng.t_calibrated;
-  
   let html = '<h3>温度桶概率分布</h3>';
   entries.forEach(([t, p]) => {
-    const w = (p / maxP * 100).toFixed(0);
-    const isPeak = cal != null && Math.abs(parseInt(t) - Math.round(cal)) <= 0;
-    html += `<div class="bucket-row">
-      <span class="label">${t}°C</span>
-      <span class="bar"><span class="bar-fill ${isPeak?'peak':''}" style="width:${w}%"></span></span>
-      <span class="pct">${(p*100).toFixed(0)}%</span>
-    </div>`;
+    const w = (p/maxP*100).toFixed(0);
+    const isPeak = cal != null && Math.abs(parseInt(t)-Math.round(cal)) <= 0;
+    html += `<div class="bucket-row"><span class="label">${t}${UNIT}</span><span class="bar"><span class="bar-fill ${isPeak?'peak':''}" style="width:${w}%"></span></span><span class="pct">${(p*100).toFixed(0)}%</span></div>`;
   });
-  html += `<div style="margin-top:8px;font-size:12px;color:#8b949e">μ = ${eng.t_calibrated?.toFixed(1)}°C · σ = ±${eng.t_std}°C</div>`;
+  html += `<div style="margin-top:8px;font-size:12px;color:#8b949e">μ = ${eng.t_calibrated?.toFixed(1)}${UNIT} · σ = ±${eng.t_std}${UNIT}</div>`;
   panel.innerHTML = html;
 }
 
-// ── 逐小时预测表 ──
+// ── 逐小时表 ──
 function renderHourlyTable(hourly) {
   if (!hourly.length) { document.getElementById('tab-hourly').innerHTML = '<p style="color:#8b949e;padding:12px">暂无数据</p>'; return; }
-  const models = Object.keys(hourly[0].temps || {});
-  
+  const models = Object.keys(hourly[0].temps||{});
   let html = '<table class="data-table"><thead><tr><th>时</th>';
   models.forEach(m => html += `<th>${MODEL_NAMES[m]||m}</th>`);
   html += '<th>云量</th></tr></thead><tbody>';
-  
   hourly.forEach(h => {
     html += `<tr><td class="hour-col">${String(h.hour).padStart(2,'0')}:00</td>`;
     models.forEach(m => {
       const t = h.temps[m];
-      const cls = m === 'icon_seamless' ? 'icon-col' : '';
-      html += `<td class="${cls}">${t != null ? t.toFixed(1) : '—'}</td>`;
+      html += `<td>${t != null ? t.toFixed(1) : '—'}</td>`;
     });
     html += `<td>${h.cloud_cover != null ? h.cloud_cover+'%' : '—'}</td></tr>`;
   });
@@ -465,28 +449,23 @@ function renderHourlyTable(hourly) {
   document.getElementById('tab-hourly').innerHTML = html;
 }
 
-// ── METAR 实测表 ──
+// ── METAR 表 ──
 function renderMetarTable(metar) {
   const records = metar.records || [];
   const today = isToday(currentDate);
   if (!records.length) {
-    const msg = today ? '⏳ 数据采集中，全天数据将在次日自动生成' : '暂无实测数据';
-    document.getElementById('tab-metar').innerHTML = `<p style="color:#8b949e;padding:12px">${msg}</p>`;
+    document.getElementById('tab-metar').innerHTML = `<p style="color:#8b949e;padding:12px">${today ? '⏳ 数据采集中' : '暂无实测数据'}</p>`;
     return;
   }
-  
   let html = '<table class="data-table"><thead><tr><th>时间(本地)</th><th>温度</th><th>露点</th><th>风速(kt)</th><th>气压</th></tr></thead><tbody>';
-  
-  const maxTemp = Math.max(...records.map(r => r.temp_c || -99));
+  const maxTemp = Math.max(...records.map(r => r.temp_c||-99));
   records.forEach(r => {
     const isMax = r.temp_c === maxTemp;
-    html += `<tr class="${isMax ? 'metar-highlight' : ''}">
-      <td>${r.time_local || r.time_utc}</td>
-      <td><strong>${r.temp_c != null ? r.temp_c.toFixed(1)+'°C' : '—'}</strong>${isMax ? ' ←峰' : ''}</td>
-      <td>${r.dew_point_c != null ? r.dew_point_c.toFixed(1)+'°C' : '—'}</td>
-      <td>${r.wind_knots != null ? r.wind_knots.toFixed(1) : '—'}</td>
-      <td>${r.pressure_alti != null ? r.pressure_alti.toFixed(1) : '—'}</td>
-    </tr>`;
+    html += `<tr class="${isMax?'metar-highlight':''}"><td>${r.time_local||r.time_utc}</td>
+      <td><strong>${r.temp_c!=null?r.temp_c.toFixed(1)+UNIT:'—'}</strong>${isMax?' ←峰':''}</td>
+      <td>${r.dew_point_c!=null?r.dew_point_c.toFixed(1)+UNIT:'—'}</td>
+      <td>${r.wind_knots!=null?r.wind_knots.toFixed(1):'—'}</td>
+      <td>${r.pressure_alti!=null?r.pressure_alti.toFixed(1):'—'}</td></tr>`;
   });
   html += '</tbody></table>';
   document.getElementById('tab-metar').innerHTML = html;
@@ -495,8 +474,8 @@ function renderMetarTable(metar) {
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  document.querySelector(`.tab:nth-child(${name === 'hourly' ? 1 : 2})`).classList.add('active');
-  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector(`.tab:nth-child(${name==='hourly'?1:2})`).classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
 }
 
 init();
