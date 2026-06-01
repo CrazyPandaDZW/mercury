@@ -49,8 +49,12 @@ def fetch_metar(station: str, target_date: str, max_retries: int = 2) -> list[di
 
     req = urllib.request.Request(url)
     # 绕过系统代理直连 NOAA IEM（代理会 MITM SSL 证书导致验证失败）
+    import ssl
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
     proxy_handler = urllib.request.ProxyHandler({})
-    opener = urllib.request.build_opener(proxy_handler)
+    opener = urllib.request.build_opener(proxy_handler, urllib.request.HTTPSHandler(context=ctx))
     
     last_error = None
     for attempt in range(max_retries + 1):
