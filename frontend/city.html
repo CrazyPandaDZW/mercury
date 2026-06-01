@@ -11,9 +11,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 /* 左侧边栏 */
 .sidebar { width:200px; min-width:200px; background:#161b22; border-right:1px solid #30363d; padding:12px 0; overflow-y:auto; height:100vh; position:sticky; top:0; }
 .sidebar h3 { font-size:12px; color:#8b949e; padding:8px 16px; text-transform:uppercase; letter-spacing:0.5px; }
-.sidebar .city { display:block; padding:6px 16px; font-size:13px; color:#c9d1d9; text-decoration:none; cursor:pointer; border-left:3px solid transparent; transition:all .15s; }
+.sidebar .city { display:flex; align-items:center; justify-content:space-between; padding:6px 16px; font-size:13px; color:#c9d1d9; text-decoration:none; cursor:pointer; border-left:3px solid transparent; transition:all .15s; }
 .sidebar .city:hover { background:#1c2128; color:#e1e4e8; }
 .sidebar .city.active { background:#1c2128; color:#58a6ff; border-left-color:#58a6ff; font-weight:600; }
+.sidebar .city .poly-link { color:#3fb950; text-decoration:none; font-size:10px; margin-left:6px; flex-shrink:0; }
 .sidebar .city .flag { margin-right:4px; font-size:12px; }
 .sidebar .divider { border-top:1px solid #21262d; margin:8px 0; }
 
@@ -167,12 +168,12 @@ function buildCityList(cities) {
       const active = c.key === CITY ? ' active' : '';
       const polyLink = (() => {
         const months = ['january','february','march','april','may','june','july','august','september','october','november','december'];
-        const d = new Date(currentDate + 'T12:00:00');  // 避免时区偏移
+        const d = new Date(currentDate + 'T12:00:00');
         const slug = `highest-temperature-in-${c.key}-on-${months[d.getMonth()]}-${d.getDate()}-${d.getFullYear()}`;
-        return ` <a href="https://polymarket.com/event/${slug}" target="_blank" style="color:#3fb950;text-decoration:none;font-size:10px;margin-left:2px" title="Polymarket" onclick="event.stopPropagation()">Poly↗</a>`;
+        return ` <span class="poly-link" onclick="event.stopPropagation();window.open('https://polymarket.com/event/${slug}','_blank')" title="Polymarket">Poly↗</span>`;
       })();
       html += `<a class="city${active}" href="?city=${c.key}" data-city="${c.key}" onclick="selectCity(event, '${c.key}')">
-        ${c.name}${polyLink}
+        <span>${c.name}</span>${polyLink}
       </a>`;
     });
   }
