@@ -165,9 +165,12 @@ function buildCityList(cities) {
     html += `<div class="divider"></div><h3>${region} ${label}</h3>`;
     group.forEach(c => {
       const active = c.key === CITY ? ' active' : '';
-      const polyLink = c.polymarket_event 
-        ? ` <a href="https://polymarket.com/event/${c.polymarket_event}" target="_blank" style="color:#3fb950;text-decoration:none;font-size:10px;margin-left:2px" title="Polymarket">Poly↗</a>`
-        : '';
+      const polyLink = (() => {
+        const months = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+        const d = new Date(currentDate + 'T12:00:00');  // 避免时区偏移
+        const slug = `highest-temperature-in-${c.key}-on-${months[d.getMonth()]}-${d.getDate()}-${d.getFullYear()}`;
+        return ` <a href="https://polymarket.com/event/${slug}" target="_blank" style="color:#3fb950;text-decoration:none;font-size:10px;margin-left:2px" title="Polymarket" onclick="event.stopPropagation()">Poly↗</a>`;
+      })();
       html += `<a class="city${active}" href="?city=${c.key}" data-city="${c.key}" onclick="selectCity(event, '${c.key}')">
         ${c.name}${polyLink}
       </a>`;
