@@ -2,8 +2,8 @@
   "city": "beijing",
   "station": "ZBAA",
   "date": "2026-05-31",
-  "fetched_at": "2026-05-31T15:41:01.908760+00:00",
-  "n_records": 31,
+  "fetched_at": "2026-06-01T02:17:33.096558+00:00",
+  "n_records": 48,
   "records": [
     {
       "station": "ZBAA",
@@ -159,8 +159,93 @@
       "station": "ZBAA",
       "time_utc": "2026-05-31 15:00",
       "temp_c": 29.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 15:30",
+      "temp_c": 26.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 16:00",
+      "temp_c": 23.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 16:30",
+      "temp_c": 21.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 17:00",
+      "temp_c": 19.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 17:30",
+      "temp_c": 20.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 18:00",
+      "temp_c": 18.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 18:30",
+      "temp_c": 17.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 19:00",
+      "temp_c": 17.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 19:30",
+      "temp_c": 17.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 20:00",
+      "temp_c": 16.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 20:30",
+      "temp_c": 17.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 21:00",
+      "temp_c": 17.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 21:30",
+      "temp_c": 18.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 22:00",
+      "temp_c": 19.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 22:30",
+      "temp_c": 21.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 23:00",
+      "temp_c": 25.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-31 23:30",
+      "temp_c": 26.0
     }
   ],
   "t_max": 33.0,
-  "t_min": 25.0
+  "t_min": 16.0
 }

@@ -2,8 +2,8 @@
   "city": "ankara",
   "station": "LTAC",
   "date": "2026-05-31",
-  "fetched_at": "2026-05-31T16:03:20.709357+00:00",
-  "n_records": 32,
+  "fetched_at": "2026-06-01T02:18:36.700989+00:00",
+  "n_records": 48,
   "records": [
     {
       "station": "LTAC",
@@ -164,6 +164,86 @@
       "station": "LTAC",
       "time_utc": "2026-05-31 15:50",
       "temp_c": 20.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 16:20",
+      "temp_c": 19.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 16:50",
+      "temp_c": 18.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 17:20",
+      "temp_c": 17.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 17:50",
+      "temp_c": 16.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 18:20",
+      "temp_c": 16.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 18:50",
+      "temp_c": 15.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 19:20",
+      "temp_c": 14.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 19:50",
+      "temp_c": 13.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 20:20",
+      "temp_c": 13.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 20:50",
+      "temp_c": 11.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 21:20",
+      "temp_c": 11.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 21:50",
+      "temp_c": 11.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 22:20",
+      "temp_c": 10.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 22:50",
+      "temp_c": 10.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 23:20",
+      "temp_c": 10.0
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-05-31 23:50",
+      "temp_c": 10.0
     }
   ],
   "t_max": 21.0,

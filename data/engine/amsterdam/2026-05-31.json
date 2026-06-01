@@ -1,0 +1,110 @@
+{
+  "city": "amsterdam",
+  "target_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:45:33.000965+00:00",
+  "generated_date": "2026-05-31",
+  "n_models": 8,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless",
+    "icon_eu",
+    "icon_d2"
+  ],
+  "blend_method": "deb_mae_weighted",
+  "t_ensemble": 23.2,
+  "t_std": 0.44,
+  "t_range": [
+    20.7,
+    23.6
+  ],
+  "t_calibrated": 23.4,
+  "bias_correction": -0.25,
+  "bias_source": "polywx-bootstrap (bias=-0.25°C)",
+  "buckets_normal": {
+    "22": 0.0204,
+    "23": 0.5695,
+    "24": 0.4039,
+    "25": 0.0062
+  },
+  "buckets_voting": {
+    "23": 0.0,
+    "21": 0.0,
+    "24": 0.0,
+    "22": 0.0
+  },
+  "buckets_weighted_voting": {
+    "23": 0.694,
+    "21": 0.0067,
+    "24": 0.2683,
+    "22": 0.0309
+  },
+  "buckets_range": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 23.4,
+      "deviation": 0.2,
+      "bucket": 23,
+      "weight": 0.16
+    },
+    "gfs_seamless": {
+      "t_max": 23.3,
+      "deviation": 0.1,
+      "bucket": 23,
+      "weight": 0.034
+    },
+    "jma_seamless": {
+      "t_max": 20.7,
+      "deviation": -2.5,
+      "bucket": 21,
+      "weight": 0.007
+    },
+    "icon_seamless": {
+      "t_max": 23.0,
+      "deviation": -0.2,
+      "bucket": 23,
+      "weight": 0.5
+    },
+    "gem_seamless": {
+      "t_max": 23.6,
+      "deviation": 0.4,
+      "bucket": 24,
+      "weight": 0.138
+    },
+    "ukmo_seamless": {
+      "t_max": 23.5,
+      "deviation": 0.3,
+      "bucket": 24,
+      "weight": 0.13
+    },
+    "icon_eu": {
+      "t_max": 21.5,
+      "deviation": -1.7,
+      "bucket": 22,
+      "weight": 0.031
+    },
+    "icon_d2": {
+      "t_max": 23.0,
+      "deviation": -0.2,
+      "bucket": 23,
+      "weight": 0.125
+    }
+  },
+  "metar_t_max": 23.0,
+  "forecast_error": 0.4
+}

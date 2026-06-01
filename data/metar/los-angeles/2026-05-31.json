@@ -1,0 +1,136 @@
+{
+  "city": "los-angeles",
+  "station": "KLAX",
+  "date": "2026-05-31",
+  "fetched_at": "2026-06-01T02:18:20.211070+00:00",
+  "n_records": 25,
+  "records": [
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 00:53",
+      "temp_c": 18.89
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 01:53",
+      "temp_c": 18.89
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 02:53",
+      "temp_c": 17.22
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 03:53",
+      "temp_c": 17.22
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 04:53",
+      "temp_c": 17.22
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 05:53",
+      "temp_c": 16.67
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 06:53",
+      "temp_c": 17.22
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 07:53",
+      "temp_c": 16.67
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 08:53",
+      "temp_c": 16.67
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 09:53",
+      "temp_c": 16.11
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 10:53",
+      "temp_c": 16.11
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 11:53",
+      "temp_c": 15.56
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 12:53",
+      "temp_c": 15.56
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 13:21",
+      "temp_c": 15.56
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 13:53",
+      "temp_c": 16.67
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 14:53",
+      "temp_c": 17.22
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 15:53",
+      "temp_c": 18.89
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 16:53",
+      "temp_c": 20.56
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 17:53",
+      "temp_c": 20.56
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 18:53",
+      "temp_c": 21.11
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 19:53",
+      "temp_c": 21.11
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 20:53",
+      "temp_c": 21.67
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 21:53",
+      "temp_c": 21.11
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 22:53",
+      "temp_c": 21.11
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-05-31 23:53",
+      "temp_c": 20.56
+    }
+  ],
+  "t_max": 21.7,
+  "t_min": 15.6
+}

@@ -1,0 +1,131 @@
+{
+  "city": "san-francisco",
+  "station": "KSFO",
+  "date": "2026-05-31",
+  "fetched_at": "2026-06-01T02:18:28.342338+00:00",
+  "n_records": 24,
+  "records": [
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 00:56",
+      "temp_c": 16.11
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 01:56",
+      "temp_c": 15.0
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 02:56",
+      "temp_c": 13.89
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 03:56",
+      "temp_c": 12.78
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 04:56",
+      "temp_c": 12.22
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 05:56",
+      "temp_c": 12.22
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 06:56",
+      "temp_c": 11.67
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 07:56",
+      "temp_c": 11.11
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 08:56",
+      "temp_c": 11.11
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 09:56",
+      "temp_c": 11.11
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 10:56",
+      "temp_c": 11.11
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 11:56",
+      "temp_c": 10.56
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 12:56",
+      "temp_c": 10.56
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 13:56",
+      "temp_c": 12.22
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 14:56",
+      "temp_c": 13.89
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 15:56",
+      "temp_c": 15.0
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 16:56",
+      "temp_c": 16.11
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 17:56",
+      "temp_c": 17.78
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 18:56",
+      "temp_c": 18.89
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 19:56",
+      "temp_c": 21.67
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 20:56",
+      "temp_c": 20.0
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 21:56",
+      "temp_c": 20.0
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 22:56",
+      "temp_c": 20.0
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-05-31 23:56",
+      "temp_c": 17.78
+    }
+  ],
+  "t_max": 21.7,
+  "t_min": 10.6
+}

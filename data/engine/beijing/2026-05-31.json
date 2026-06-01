@@ -13,26 +13,25 @@
     "ukmo_seamless"
   ],
   "blend_method": "deb_mae_weighted",
-  "t_ensemble": 34.3,
-  "t_std": 1.76,
+  "t_ensemble": 33.5,
+  "t_std": 1.48,
   "t_range": [
     32.4,
     37.7
   ],
-  "t_calibrated": 34.1,
-  "bias_correction": 0.21,
-  "bias_source": "polywx-bootstrap (bias=+0.21°C)",
+  "t_calibrated": 33.2,
+  "bias_correction": 0.32,
+  "bias_source": "polywx-bootstrap (bias=+0.32°C)",
   "buckets_normal": {
-    "30": 0.0159,
-    "31": 0.0494,
-    "32": 0.1118,
-    "33": 0.1849,
-    "34": 0.2233,
-    "35": 0.1969,
-    "36": 0.1268,
-    "37": 0.0597,
-    "38": 0.0205,
-    "39": 0.0051
+    "30": 0.0278,
+    "31": 0.0913,
+    "32": 0.1928,
+    "33": 0.2622,
+    "34": 0.2298,
+    "35": 0.1298,
+    "36": 0.0472,
+    "37": 0.011,
+    "38": 0.0017
   },
   "buckets_voting": {
     "34": 0.0,
@@ -42,11 +41,11 @@
     "35": 0.0
   },
   "buckets_weighted_voting": {
-    "34": 0.3431,
-    "37": 0.1329,
-    "38": 0.091,
-    "32": 0.32,
-    "35": 0.113
+    "34": 0.3179,
+    "37": 0.0704,
+    "38": 0.035,
+    "32": 0.5143,
+    "35": 0.0624
   },
   "buckets_range": [
     30,
@@ -64,41 +63,41 @@
   "models": {
     "ecmwf_ifs": {
       "t_max": 34.3,
-      "deviation": 0.0,
+      "deviation": 0.8,
       "bucket": 34,
-      "weight": 0.124
+      "weight": 0.078
     },
     "gfs_seamless": {
       "t_max": 36.8,
-      "deviation": 2.5,
+      "deviation": 3.3,
       "bucket": 37,
-      "weight": 0.133
+      "weight": 0.07
     },
     "jma_seamless": {
       "t_max": 37.7,
-      "deviation": 3.4,
+      "deviation": 4.2,
       "bucket": 38,
-      "weight": 0.091
+      "weight": 0.035
     },
     "icon_seamless": {
       "t_max": 32.4,
-      "deviation": -1.9,
+      "deviation": -1.1,
       "bucket": 32,
-      "weight": 0.32
+      "weight": 0.514
     },
     "gem_seamless": {
       "t_max": 33.9,
-      "deviation": -0.4,
+      "deviation": 0.4,
       "bucket": 34,
-      "weight": 0.219
+      "weight": 0.24
     },
     "ukmo_seamless": {
       "t_max": 34.7,
-      "deviation": 0.4,
+      "deviation": 1.2,
       "bucket": 35,
-      "weight": 0.113
+      "weight": 0.062
     }
   },
   "metar_t_max": 33.0,
-  "forecast_error": 1.1
+  "forecast_error": 0.2
 }
