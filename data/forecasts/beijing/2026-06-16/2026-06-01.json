@@ -1,13 +1,11 @@
 {
-  "target_date": "2026-06-12",
+  "target_date": "2026-06-16",
   "generated_date": "2026-06-01",
   "generated_at": "2026-06-01T02:54:03.444356+00:00",
   "t_max": {
-    "ecmwf_ifs": 29.4,
-    "gfs_seamless": 33.7,
-    "jma_seamless": 32.7
+    "gfs_seamless": 27.0
   },
-  "t_ensemble": 31.9,
+  "t_ensemble": 27.0,
   "n_models": 6,
   "models_available": [
     "ecmwf_ifs",
@@ -21,9 +19,9 @@
     {
       "hour": 0,
       "temps": {
-        "ecmwf_ifs": 23.1,
-        "gfs_seamless": 24.0,
-        "jma_seamless": 32.7,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 21.1,
+        "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
         "ukmo_seamless": null
@@ -32,9 +30,9 @@
     {
       "hour": 1,
       "temps": {
-        "ecmwf_ifs": 22.3,
-        "gfs_seamless": 23.2,
-        "jma_seamless": 32.7,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 20.7,
+        "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
         "ukmo_seamless": null
@@ -43,8 +41,8 @@
     {
       "hour": 2,
       "temps": {
-        "ecmwf_ifs": 21.8,
-        "gfs_seamless": 22.3,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 20.4,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -54,8 +52,8 @@
     {
       "hour": 3,
       "temps": {
-        "ecmwf_ifs": 21.5,
-        "gfs_seamless": 21.3,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 20.1,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -65,8 +63,8 @@
     {
       "hour": 4,
       "temps": {
-        "ecmwf_ifs": 21.4,
-        "gfs_seamless": 20.4,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 19.8,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -76,8 +74,8 @@
     {
       "hour": 5,
       "temps": {
-        "ecmwf_ifs": 21.4,
-        "gfs_seamless": 20.1,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 19.8,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -87,8 +85,8 @@
     {
       "hour": 6,
       "temps": {
-        "ecmwf_ifs": 21.5,
-        "gfs_seamless": 20.8,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 20.3,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -98,8 +96,8 @@
     {
       "hour": 7,
       "temps": {
-        "ecmwf_ifs": 21.9,
-        "gfs_seamless": 22.2,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 21.1,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -109,8 +107,8 @@
     {
       "hour": 8,
       "temps": {
-        "ecmwf_ifs": 22.4,
-        "gfs_seamless": 23.9,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 22.0,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -120,8 +118,8 @@
     {
       "hour": 9,
       "temps": {
-        "ecmwf_ifs": 23.3,
-        "gfs_seamless": 26.2,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 23.0,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -131,8 +129,8 @@
     {
       "hour": 10,
       "temps": {
-        "ecmwf_ifs": 24.6,
-        "gfs_seamless": 28.7,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 24.2,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -142,8 +140,8 @@
     {
       "hour": 11,
       "temps": {
-        "ecmwf_ifs": 26.1,
-        "gfs_seamless": 30.8,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 25.1,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -153,8 +151,8 @@
     {
       "hour": 12,
       "temps": {
-        "ecmwf_ifs": 27.5,
-        "gfs_seamless": 32.0,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 25.9,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -164,8 +162,8 @@
     {
       "hour": 13,
       "temps": {
-        "ecmwf_ifs": 28.6,
-        "gfs_seamless": 32.8,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 26.5,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -175,8 +173,8 @@
     {
       "hour": 14,
       "temps": {
-        "ecmwf_ifs": 29.3,
-        "gfs_seamless": 33.2,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 26.9,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -186,8 +184,8 @@
     {
       "hour": 15,
       "temps": {
-        "ecmwf_ifs": 29.4,
-        "gfs_seamless": 33.6,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 27.0,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -197,8 +195,8 @@
     {
       "hour": 16,
       "temps": {
-        "ecmwf_ifs": 29.1,
-        "gfs_seamless": 33.7,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 26.9,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -208,8 +206,8 @@
     {
       "hour": 17,
       "temps": {
-        "ecmwf_ifs": 28.6,
-        "gfs_seamless": 33.4,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 26.6,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -219,8 +217,8 @@
     {
       "hour": 18,
       "temps": {
-        "ecmwf_ifs": 28.0,
-        "gfs_seamless": 32.6,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 26.3,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -230,8 +228,8 @@
     {
       "hour": 19,
       "temps": {
-        "ecmwf_ifs": 27.1,
-        "gfs_seamless": 31.5,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 25.9,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -241,8 +239,8 @@
     {
       "hour": 20,
       "temps": {
-        "ecmwf_ifs": 26.3,
-        "gfs_seamless": 30.3,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 25.2,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -252,8 +250,8 @@
     {
       "hour": 21,
       "temps": {
-        "ecmwf_ifs": 25.3,
-        "gfs_seamless": 29.2,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 24.2,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -263,8 +261,8 @@
     {
       "hour": 22,
       "temps": {
-        "ecmwf_ifs": 24.0,
-        "gfs_seamless": 28.0,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 23.0,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,
@@ -274,8 +272,8 @@
     {
       "hour": 23,
       "temps": {
-        "ecmwf_ifs": 22.7,
-        "gfs_seamless": 27.0,
+        "ecmwf_ifs": null,
+        "gfs_seamless": 22.1,
         "jma_seamless": null,
         "icon_seamless": null,
         "gem_seamless": null,

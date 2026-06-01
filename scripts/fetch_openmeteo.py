@@ -49,7 +49,7 @@ def fetch_city(city_key: str, city_cfg: dict, models: list, days: int) -> dict:
     url = (
         f"https://api.open-meteo.com/v1/forecast"
         f"?latitude={lat}&longitude={lon}"
-        f"&hourly=temperature_2m"
+        f"&hourly=temperature_2m,cloud_cover"
         f"&models={model_str}"
         f"&forecast_days={days}"
         f"&timezone={tz}"
@@ -84,12 +84,21 @@ def parse_response(city_key: str, raw: dict, models: list) -> dict:
         hour = int(t_str[11:13])
 
         if date_str not in days:
-            days[date_str] = {"hours": [], "models": {m: [] for m in all_models}}
+            days[date_str] = {"hours": [], "models": {m: [] for m in all_models}, "cloud_cover": []}
 
         days[date_str]["hours"].append(hour)
         for m in all_models:
             val = hourly[model_keys[m]][i]
             days[date_str]["models"][m].append(val)
+        
+        # 云量（取 ICON 模型，fallback 到 ECMWF）
+        cc = None
+        for cc_model in ["icon_seamless", "ecmwf_ifs"]:
+            cc_key = f"cloud_cover_{cc_model}"
+            if cc_key in hourly:
+                cc = hourly[cc_key][i]
+                break
+        days[date_str]["cloud_cover"].append(cc)
 
     # 按日期组织预报
     generated_at = datetime.now(timezone.utc).isoformat()
@@ -110,6 +119,11 @@ def parse_response(city_key: str, raw: dict, models: list) -> dict:
             hour_entry = {"hour": hour, "temps": {}}
             for m in all_models:
                 hour_entry["temps"][m] = day_data["models"][m][h_idx]
+            # 云量
+            if h_idx < len(day_data.get("cloud_cover", [])):
+                cc = day_data["cloud_cover"][h_idx]
+                if cc is not None:
+                    hour_entry["cloud_cover"] = round(cc)
             hourly_detail.append(hour_entry)
 
         t_ensemble = None
