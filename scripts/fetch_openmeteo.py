@@ -46,12 +46,17 @@ def fetch_city(city_key: str, city_cfg: dict, models: list, days: int) -> dict:
     tz = city_cfg["tz"]
     model_str = ",".join(models)
 
+    # forecast_days 对集合预报模型不是从今天算起 — 用 start_date/end_date 替代
+    from datetime import timedelta
+    today = date.today()
+    end = today + timedelta(days=days - 1)
+
     url = (
         f"https://api.open-meteo.com/v1/forecast"
         f"?latitude={lat}&longitude={lon}"
         f"&hourly=temperature_2m,cloud_cover"
         f"&models={model_str}"
-        f"&forecast_days={days}"
+        f"&start_date={today.isoformat()}&end_date={end.isoformat()}"
         f"&timezone={tz}"
     )
 

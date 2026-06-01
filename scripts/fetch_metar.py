@@ -195,17 +195,25 @@ def save_metar(city_key: str, station: str, target_date: str,
     with open(filepath, "w") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    # ── METAR 写入后自动更新预测快照 ──
+    # ── METAR 写入后自动更新预测快照 + 引擎 ──
     try:
-        from engine import snapshot_prediction
+        from engine import snapshot_prediction, compute_engine, save_engine_output
         snap = snapshot_prediction(city_key, target_date)
         if snap and snap.get("recorded"):
             new_bucket = snap.get("bucket")
             t_pred = snap.get("t_predicted")
-            if not merge or not locals().get("_quiet_log"):
-                print(f"      📊 预测更新: t={t_pred}°C bucket={new_bucket}")
-    except Exception:
-        pass  # 快照失败不阻塞 METAR 拉取
+            print(f"      📊 预测更新: t={t_pred}°C bucket={new_bucket}")
+        
+        # 重新运行引擎，更新离散桶概率等预测值
+        eng_output = compute_engine(city_key, target_date, use_deb=True)
+        if eng_output:
+            save_engine_output(city_key, target_date, eng_output)
+            t_cal = eng_output.get("t_calibrated")
+            unit = eng_output.get("unit")
+            unit_str = "°F" if unit == "fahrenheit" else "°C"
+            print(f"      🔄 引擎更新: t_cal={t_cal}{unit_str}")
+    except Exception as e:
+        print(f"      ⚠️ 引擎/快照异常: {e}")
 
 
 def main():
