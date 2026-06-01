@@ -432,7 +432,7 @@ def compute_engine(city_key: str, target_date: str, use_deb: bool = False) -> di
                 "bucket": round(t),
                 "weight": round(w, 3),
             }
-            if m in live_rmse:
+            if live_rmse and m in live_rmse:
                 entry["live_rmse"] = live_rmse[m]
             model_detail[m] = entry
 
