@@ -3,99 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercury — 气温预报 & 交易系统</title>
+<title>Mercury — 天气预报系统</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f1a; color: #e0e0e0; min-height: 100vh; }
-  .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-  h1 { font-size: 24px; margin-bottom: 8px; background: linear-gradient(135deg, #6ec6ff, #00e5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .subtitle { color: #888; font-size: 14px; margin-bottom: 24px; }
-  .card { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
-  .card-title { font-size: 14px; color: #888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-  .city-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .city-item { background: #12121f; border-radius: 8px; padding: 12px; }
-  .city-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-  .city-temp { font-size: 28px; font-weight: 700; color: #6ec6ff; }
-  .city-range { font-size: 12px; color: #666; }
-  .status-bar { display: flex; gap: 16px; margin-bottom: 20px; }
-  .status-item { flex: 1; text-align: center; background: #1a1a2e; border-radius: 10px; padding: 12px 8px; }
-  .status-value { font-size: 22px; font-weight: 700; color: #6ec6ff; }
-  .status-label { font-size: 11px; color: #666; margin-top: 4px; }
-  .phase-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-  .phase-done { background: #1b5e20; color: #69f0ae; }
-  .phase-active { background: #1565c0; color: #82b1ff; }
-  .phase-pending { background: #1a1a2e; color: #555; border: 1px solid #2a2a4a; }
-  .refresh { text-align: center; margin-top: 20px; }
-  .refresh button { background: #1565c0; color: white; border: none; padding: 8px 24px; border-radius: 8px; font-size: 14px; cursor: pointer; }
-  .ip-hint { text-align: center; font-size: 11px; color: #444; margin-top: 24px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#0f1117; color:#e1e4e8; }
+.header { background:#161b22; border-bottom:1px solid #30363d; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; }
+.header h1 { font-size:20px; color:#58a6ff; }
+.header .stats { display:flex; gap:24px; font-size:14px; }
+.header .stat span { color:#8b949e; }
+.header .stat strong { color:#e1e4e8; }
+
+.container { max-width:1400px; margin:0 auto; padding:20px; }
+
+/* 概览卡片 */
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px; }
+.card { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:16px; }
+.card .label { font-size:12px; color:#8b949e; margin-bottom:4px; }
+.card .value { font-size:24px; font-weight:bold; }
+.card .value.green { color:#3fb950; }
+.card .value.red { color:#f85149; }
+.card .value.yellow { color:#d29922; }
+
+/* 表格 */
+table { width:100%; border-collapse:collapse; background:#161b22; border:1px solid #30363d; border-radius:8px; overflow:hidden; }
+th { text-align:left; padding:10px 16px; font-size:12px; color:#8b949e; border-bottom:1px solid #30363d; background:#0d1117; cursor:pointer; }
+th:hover { color:#e1e4e8; }
+td { padding:8px 16px; font-size:14px; border-bottom:1px solid #21262d; }
+tr:hover { background:#1c2128; }
+tr:last-child td { border-bottom:none; }
+
+.flag { margin-right:6px; }
+.error-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:12px; font-weight:bold; }
+.error-badge.good { background:#1b3a1b; color:#3fb950; }
+.error-badge.ok { background:#2a3010; color:#d29922; }
+.error-badge.bad { background:#3a1b1b; color:#f85149; }
+
+.bar-wrap { display:inline-block; width:80px; height:6px; background:#21262d; border-radius:3px; vertical-align:middle; margin-left:8px; }
+.bar-fill { height:100%; border-radius:3px; transition:width .3s; }
+.bar-fill.hot { background:linear-gradient(90deg,#d29922,#f85149); }
+.bar-fill.cold { background:linear-gradient(90deg,#3fb950,#58a6ff); }
+
+/* 城市详情面板 */
+.detail-panel { display:none; background:#161b22; border:1px solid #30363d; border-radius:8px; padding:20px; margin:12px 0; }
+.detail-panel.active { display:block; }
+.detail-panel h3 { font-size:16px; margin-bottom:12px; color:#58a6ff; }
+.detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.model-row { display:flex; justify-content:space-between; padding:4px 0; font-size:13px; border-bottom:1px solid #21262d; }
+.model-row .weight { color:#8b949e; font-size:11px; }
+
+.chart-area { background:#0d1117; border-radius:6px; padding:16px; height:200px; position:relative; }
+.chart-line { fill:none; stroke-width:2; }
+.chart-axis { color:#8b949e; font-size:10px; }
+
+.loading { text-align:center; padding:40px; color:#8b949e; }
+.clickable { cursor:pointer; }
+.clickable:hover { color:#58a6ff; }
 </style>
 </head>
 <body>
+
+<div class="header">
+  <h1>☿ Mercury 天气预报系统</h1>
+  <div class="stats" id="headerStats"></div>
+</div>
+
 <div class="container">
-  <h1>Mercury</h1>
-  <p class="subtitle">自建多模型集合气温预报 + Polymarket 自动交易</p>
-
-  <div class="status-bar">
-    <div class="status-item">
-      <div class="status-value" id="cities">40</div>
-      <div class="status-label">覆盖城市</div>
-    </div>
-    <div class="status-item">
-      <div class="status-value">4</div>
-      <div class="status-label">预报模型</div>
-    </div>
-    <div class="status-item">
-      <div class="status-value" id="uptime">--</div>
-      <div class="status-label">运行状态</div>
-    </div>
+  <div class="cards" id="summaryCards"></div>
+  <div id="cityDetail" class="detail-panel"></div>
+  <table>
+    <thead>
+      <tr>
+        <th onclick="sortTable('city')">城市 ▾</th>
+        <th onclick="sortTable('t_deb')">DEB预报</th>
+        <th onclick="sortTable('t_metar')">实测</th>
+        <th onclick="sortTable('error')">误差</th>
+        <th>概率最高桶</th>
+        <th>不确定性</th>
+      </tr>
+    </thead>
+    <tbody id="cityTable"></tbody>
+  </table>
+  <div style="text-align:center;padding:16px;color:#484f58;font-size:11px;">
+    数据来源: Open-Meteo (ECMWF/GFS/ICON/GEM/JMA/UKMO) · 实测: IEM ASOS (NOAA)
   </div>
-
-  <div class="card">
-    <div class="card-title">📋 实施阶段</div>
-    <div style="display:flex;flex-direction:column;gap:6px;">
-      <div><span class="phase-tag phase-done">✅ Phase 1</span> 数据管道 — Open-Meteo + METAR</div>
-      <div><span class="phase-tag phase-active">🔄 Phase 2</span> 预报引擎 — 集合聚合 + 偏差校准</div>
-      <div><span class="phase-tag phase-pending">⬜ Phase 3</span> 实时修正 — METAR 驱动</div>
-      <div><span class="phase-tag phase-pending">⬜ Phase 4</span> 交易引擎 — 策略 + CLOB</div>
-      <div><span class="phase-tag phase-pending">⬜ Phase 5</span> 上线运行 — cron + 通知</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🌡️ 今日预报预览</div>
-    <div class="city-grid">
-      <div class="city-item">
-        <div class="city-name">北京 🇨🇳</div>
-        <div class="city-temp">36.1°C</div>
-        <div class="city-range">GFS 36.9 · JMA 38.0 · ICON 34.6 · GEM 34.8</div>
-      </div>
-      <div class="city-item">
-        <div class="city-name">伦敦 🇬🇧</div>
-        <div class="city-temp">22.5°C</div>
-        <div class="city-range">4 模型集合</div>
-      </div>
-      <div class="city-item">
-        <div class="city-name">纽约 🇺🇸</div>
-        <div class="city-temp">--</div>
-        <div class="city-range">待拉取</div>
-      </div>
-      <div class="city-item">
-        <div class="city-name">东京 🇯🇵</div>
-        <div class="city-temp">--</div>
-        <div class="city-range">待拉取</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="refresh">
-    <button onclick="location.reload()">刷新</button>
-  </div>
-  <div class="ip-hint" id="ip-hint">--</div>
 </div>
 
 <script>
-  document.getElementById('uptime').textContent = '🟢 在线';
-  document.getElementById('ip-hint').textContent = 'iPad 访问: http://192.168.3.22:3000';
+const API = '';
+
+async function load() {
+  const summary = await fetch(API + '/api/summary').then(r => r.json());
+  const citiesData = await fetch(API + '/api/cities').then(r => r.json());
+  
+  renderHeader(summary);
+  renderCards(summary);
+  renderTable(summary, citiesData.cities);
+}
+
+function renderHeader(s) {
+  document.getElementById('headerStats').innerHTML = `
+    <div class="stat"><span>城市</span> <strong>${s.n}</strong></div>
+    <div class="stat"><span>有实测</span> <strong>${s.n_with_metar}</strong></div>
+    <div class="stat"><span>MAE</span> <strong>${s.mae || '—'}°C</strong></div>
+    <div class="stat"><span>日期</span> <strong>${s.date}</strong></div>
+  `;
+}
+
+function renderCards(s) {
+  const good = s.within_1c || 0;
+  const ok = (s.within_2c || 0) - good;
+  const bad = (s.n_with_metar || 0) - good - ok;
+  document.getElementById('summaryCards').innerHTML = `
+    <div class="card">
+      <div class="label">MAE (平均绝对误差)</div>
+      <div class="value ${s.mae < 1 ? 'green' : s.mae < 2 ? 'yellow' : 'red'}">${s.mae ? s.mae.toFixed(2) + '°C' : '—'}</div>
+    </div>
+    <div class="card">
+      <div class="label">系统性偏差</div>
+      <div class="value ${Math.abs(s.bias||0) < 0.5 ? 'green' : 'yellow'}">${s.bias ? (s.bias > 0 ? '+' : '') + s.bias.toFixed(2) + '°C' : '—'}</div>
+    </div>
+    <div class="card">
+      <div class="label">±1°C 命中率</div>
+      <div class="value green">${s.n_with_metar ? (good/s.n_with_metar*100).toFixed(0) + '%' : '—'} <span style="font-size:14px;color:#8b949e">(${good}城)</span></div>
+    </div>
+    <div class="card">
+      <div class="label">±2°C 命中率</div>
+      <div class="value ${(good+ok)/(s.n_with_metar||1) > 0.7 ? 'green' : 'yellow'}">${s.n_with_metar ? ((good+ok)/s.n_with_metar*100).toFixed(0) + '%' : '—'} <span style="font-size:14px;color:#8b949e">(${good+ok}城)</span></div>
+    </div>
+  `;
+}
+
+let currentSort = { key: 'error', asc: true };
+
+function sortTable(key) {
+  if (currentSort.key === key) currentSort.asc = !currentSort.asc;
+  else { currentSort.key = key; currentSort.asc = key === 'city' ? true : key !== 'error'; }
+  load();
+}
+
+function renderTable(summary, allCities) {
+  const nameMap = {};
+  allCities.forEach(c => nameMap[c.key] = c);
+  
+  let cities = [...summary.cities];
+  cities.sort((a, b) => {
+    let va = a[currentSort.key], vb = b[currentSort.key];
+    if (currentSort.key === 'city') { va = nameMap[a.city]?.name || a.city; vb = nameMap[b.city]?.name || b.city; }
+    if (va == null) va = currentSort.asc ? 999 : -999;
+    if (vb == null) vb = currentSort.asc ? 999 : -999;
+    if (currentSort.key === 'error') { va = Math.abs(va||0); vb = Math.abs(vb||0); }
+    return currentSort.asc ? (va > vb ? 1 : -1) : (va < vb ? 1 : -1);
+  });
+
+  const tbody = document.getElementById('cityTable');
+  tbody.innerHTML = cities.map(c => {
+    const meta = nameMap[c.city] || {};
+    const name = meta.name || c.city;
+    const flag = meta.region || '';
+    const err = c.error;
+    const absErr = Math.abs(err || 0);
+    const badge = absErr <= 1 ? 'good' : absErr <= 2 ? 'ok' : 'bad';
+    const errStr = err != null ? (err > 0 ? '+' : '') + err.toFixed(1) + '°C' : '—';
+    
+    const bucket = c.top_bucket;
+    const bucketStr = bucket ? `${bucket[1]*100|0}% → ${bucket[0]}°C` : '—';
+    
+    const stdStr = c.t_std ? '±' + c.t_std.toFixed(1) + '°C' : '—';
+    const barW = Math.min(100, (c.t_std || 0) * 30);
+    const barColor = err != null && err > 0 ? 'hot' : 'cold';
+    
+    return `<tr class="clickable" onclick="showDetail('${c.city}')">
+      <td>${flag} ${name} <span style="color:#484f58;font-size:11px">${c.city}</span></td>
+      <td><strong>${c.t_deb != null ? c.t_deb.toFixed(1) + '°C' : '—'}</strong></td>
+      <td>${c.t_metar != null ? c.t_metar.toFixed(1) + '°C' : '⏳'}</td>
+      <td><span class="error-badge ${badge}">${errStr}</span></td>
+      <td>${bucketStr}</td>
+      <td>${stdStr} <span class="bar-wrap"><span class="bar-fill ${barColor}" style="width:${barW}%"></span></span></td>
+    </tr>`;
+  }).join('');
+}
+
+async function showDetail(city) {
+  const panel = document.getElementById('cityDetail');
+  panel.classList.add('active');
+  panel.innerHTML = '<div class="loading">加载中...</div>';
+  panel.scrollIntoView({ behavior: 'smooth' });
+
+  const [fc, metar] = await Promise.all([
+    fetch(API + '/api/forecast?city=' + city).then(r => r.json()),
+    fetch(API + '/api/metar?city=' + city).then(r => r.json()),
+  ]);
+
+  const eng = fc.engine || {};
+  const models = eng.models || {};
+  const buckets = eng.buckets_normal || {};
+  const hourly = fc.hourly || [];
+  
+  let bucketHTML = '';
+  const sortedBuckets = Object.entries(buckets).sort((a,b) => b[1] - a[1]);
+  for (const [t, p] of sortedBuckets.slice(0, 5)) {
+    const w = p * 150;
+    bucketHTML += `<div style="display:flex;align-items:center;gap:8px;margin:2px 0">
+      <span style="width:40px;text-align:right;font-size:13px">${t}°C</span>
+      <span class="bar-wrap" style="width:150px"><span class="bar-fill" style="width:${w|0}px;background:#58a6ff"></span></span>
+      <span style="font-size:12px;color:#8b949e">${(p*100).toFixed(0)}%</span>
+    </div>`;
+  }
+
+  let modelHTML = '';
+  const sortedModels = Object.entries(models).sort((a,b) => b[1].weight - a[1].weight);
+  for (const [m, v] of sortedModels) {
+    modelHTML += `<div class="model-row">
+      <span>${m.replace('_seamless','').replace('_ifs','')}</span>
+      <span>${v.t_max}°C <span style="color:#8b949e;margin-left:8px">偏离 ${v.deviation > 0 ? '+' : ''}${v.deviation}°C</span></span>
+      <span class="weight">权重 ${(v.weight*100).toFixed(0)}%</span>
+    </div>`;
+  }
+
+  let metarHTML = '';
+  if (metar.n_records > 0) {
+    metarHTML = `<div style="margin-top:8px;font-size:13px;color:#8b949e">
+      实测: ${metar.t_max}°C (max) / ${metar.t_min}°C (min) · ${metar.n_records}条记录 · 采集${metar.fetch_count}次
+    </div>`;
+  }
+
+  const err = eng.forecast_error;
+  const errColor = Math.abs(err||0) <= 1 ? '#3fb950' : Math.abs(err||0) <= 2 ? '#d29922' : '#f85149';
+
+  panel.innerHTML = `
+    <h3>${city} — ${eng.target_date || ''}</h3>
+    <div class="detail-grid">
+      <div>
+        <div style="font-size:14px;color:#8b949e;margin-bottom:8px">DEB 预报</div>
+        <div style="font-size:36px;font-weight:bold;color:#58a6ff">${eng.t_calibrated != null ? eng.t_calibrated.toFixed(1) + '°C' : '—'}</div>
+        <div style="font-size:13px;color:#8b949e">σ = ±${eng.t_std || '—'}°C · ${eng.n_models || '—'} 模型 · ${eng.blend_method || ''}</div>
+        ${metarHTML}
+        <div style="margin-top:12px;font-size:14px">
+          误差: <strong style="color:${errColor}">${err != null ? (err>0?'+':'') + err.toFixed(1) + '°C' : '—'}</strong>
+          ${eng.bias_source ? '<br><span style="color:#8b949e;font-size:11px">' + eng.bias_source + '</span>' : ''}
+        </div>
+      </div>
+      <div>
+        <div style="font-size:14px;color:#8b949e;margin-bottom:8px">离散桶概率</div>
+        ${bucketHTML}
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <div style="font-size:14px;color:#8b949e;margin-bottom:8px">模型明细 (${eng.n_models || 0}个)</div>
+      ${modelHTML}
+    </div>
+  `;
+}
+
+load();
+// 自动每5分钟刷新
+setInterval(load, 300000);
 </script>
+
 </body>
 </html>
