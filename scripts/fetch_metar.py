@@ -16,7 +16,7 @@ import json
 import sys
 import time
 import urllib.request
-from datetime import datetime, date, timezone
+from datetime import datetime, date, timezone, timedelta
 from pathlib import Path
 
 import yaml
@@ -246,7 +246,21 @@ def main():
         display = city_cfg.get("display_name", city_key)
 
         try:
+            # 同时拉取当天 + 前一天 UTC（解决亚洲城市时区偏移：
+            # 本地凌晨的数据在 IEM 中属于前一个 UTC 日）
             records = fetch_metar(station, target_date)
+            dt = datetime.strptime(target_date, "%Y-%m-%d")
+            prev_utc = (dt - timedelta(days=1)).strftime("%Y-%m-%d")
+            records_prev = fetch_metar(station, prev_utc)
+            
+            # 合并 & time_utc 去重
+            seen = set()
+            merged = []
+            for r in sorted(records + records_prev, key=lambda r: r["time_utc"]):
+                if r["time_utc"] not in seen:
+                    seen.add(r["time_utc"])
+                    merged.append(r)
+            records = merged
             n_before = 0
             if args.merge:
                 existing = load_existing_metar(city_key, target_date)
@@ -266,7 +280,9 @@ def main():
                 if not args.quiet:
                     print(f"[{i+1}/{len(targets)}] {display:6s} +{n_new}条 (共{final['n_records']})")
             elif not args.quiet:
-                print(f"[{i+1}/{len(targets)}] {display:6s} ✅ {len(records)}条  t_max={max(r['temp_c'] for r in records if r['temp_c'])}°C")
+                valid_temps = [r['temp_c'] for r in records if r['temp_c'] is not None]
+                tmax_str = f"t_max={max(valid_temps)}°C" if valid_temps else "no temp data"
+                print(f"[{i+1}/{len(targets)}] {display:6s} ✅ {len(records)}条  {tmax_str}")
             success += 1
 
         except Exception as e:

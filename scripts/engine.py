@@ -405,20 +405,20 @@ def compute_engine(city_key: str, target_date: str, use_deb: bool = False) -> di
     # ── 偏差校准 ──
     t_calibrated = round(t_mean - bias_correction, 1)
 
-    # ── 离散桶概率 ──
-    buckets = build_bucket_range(t_values + [t_calibrated])
+    # ── 离散桶概率（加权投票法，不做正态分布假设）──
     probs_normal = {}
-    for b in buckets:
-        p = bucket_prob_normal(t_calibrated, t_std if t_std > 0.01 else 1.0, b)
-        if p > 0.001:
-            probs_normal[b] = round(p, 4)
+    if active_weights and len(active_weights) >= 2:
+        probs_normal = bucket_prob_weighted_voting(t_max_models, active_weights)
+    if not probs_normal:
+        probs_normal = bucket_prob_voting(t_max_models)
+    buckets = sorted(probs_normal.keys())
 
     probs_voting = bucket_prob_voting(t_max_models)
 
-    # ── 加权投票 ──
+    # ── 加权投票（保留为参考）──
     probs_weighted_voting = None
-    if active_weights:
-        probs_weighted_voting = bucket_prob_weighted_voting(t_max_models, active_weights)
+    if active_weights and len(active_weights) >= 2:
+        probs_weighted_voting = dict(probs_normal)
 
     # ── 模型明细 ──
     model_detail = {}
@@ -563,29 +563,22 @@ def _convert_engine_to_fahrenheit(output: dict) -> dict:
         models_f[m] = d
     out["models"] = models_f
     
-    # ── 2°F 区间桶（Polymarket US 格式: 70-71°F, 72-73°F...）──
-    t_cal_f = out["t_calibrated"]
-    t_std_f = out["t_std"]
-    
-    # 投票法：四舍五入到最近偶数下界
+    # ── 2°F 区间桶（加权投票法，不做正态分布假设）──
     model_tmax_f = {m: d["t_max"] for m, d in models_f.items()}
     out["buckets_voting"] = _bucket_prob_voting_2f(model_tmax_f)
-    
+
     # 加权投票
     active_weights = {m: detail.get("weight", 0) for m, detail in output.get("models", {}).items()}
     out["buckets_weighted_voting"] = _bucket_prob_weighted_voting_2f(model_tmax_f, active_weights)
-    
-    # 正态分布：计算温度落入 [even, even+2) 的概率
-    f_values = list(model_tmax_f.values())
-    buckets_f = _build_bucket_range_2f(f_values + [t_cal_f])
-    probs_normal_f = {}
-    for b in buckets_f:
-        p = _bucket_prob_normal_2f(t_cal_f, t_std_f if t_std_f > 0.02 else 3.6, b)
-        if p > 0.001:
-            probs_normal_f[b] = round(p, 4)
+
+    # 主概率输出：加权投票 > 等权投票
+    probs_normal_f = _bucket_prob_weighted_voting_2f(model_tmax_f, active_weights)
+    if not probs_normal_f:
+        probs_normal_f = _bucket_prob_voting_2f(model_tmax_f)
     out["buckets_normal"] = probs_normal_f
+    buckets_f = sorted(probs_normal_f.keys())
     out["buckets_range"] = buckets_f
-    
+
     # 桶标签映射
     out["bucket_labels"] = {b: f"{b}-{b+1}°F" for b in buckets_f}
     
@@ -807,7 +800,13 @@ def snapshot_prediction(city_key: str, target_date: str) -> dict | None:
         try:
             with open(engine_path) as f:
                 eng_out = json.load(f)
-            frozen_l1 = eng_out.get("l1_curve", {})
+            frozen_l1_raw = eng_out.get("l1_curve", {})
+            # °F城市: engine JSON中的l1_curve是°F，转回°C统一单位
+            if city_cfg.get("unit") == "fahrenheit":
+                frozen_l1 = {h: round((float(v) - 32.0) * 5.0 / 9.0, 1)
+                            for h, v in frozen_l1_raw.items()}
+            else:
+                frozen_l1 = frozen_l1_raw
         except Exception:
             pass
     
@@ -849,6 +848,11 @@ def snapshot_prediction(city_key: str, target_date: str) -> dict | None:
         return None
     
     t_predicted = round(max(l1_vals), 1)
+    
+    # °F 城市：快照记录转为 °F（前端图表与 eng.t_calibrated 同单位）
+    if city_cfg.get("unit") == "fahrenheit":
+        t_predicted = round(t_predicted * 9.0 / 5.0 + 32.0, 1)
+    
     current_bucket = round(t_predicted)
     now_iso = now_local.isoformat()
     

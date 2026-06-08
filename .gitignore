@@ -15,5 +15,11 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Data & logs (not for repo)
+data/
 logs/
 *_snapshots.jsonl
+*.rar
+*.tar.gz
+notebooks/

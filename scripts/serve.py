@@ -63,6 +63,11 @@ class MercuryHandler(SimpleHTTPRequestHandler):
                 params.get("city", [None])[0],
                 params.get("date", [None])[0],
             ))
+        elif path == "/api/snapshots":
+            self._json_response(self._get_snapshots(
+                params.get("city", [None])[0],
+                params.get("date", [None])[0],
+            ))
         elif path == "/" or path == "":
             # 首页重定向到 frontend/index.html
             self.send_response(302)
@@ -77,6 +82,7 @@ class MercuryHandler(SimpleHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         self.send_header("Content-Length", str(len(body.encode())))
         self.end_headers()
         self.wfile.write(body.encode())
@@ -103,6 +109,7 @@ class MercuryHandler(SimpleHTTPRequestHandler):
                     "name": v.get("display_name", k),
                     "icao": v.get("icao"),
                     "region": self._guess_region(k),
+                    "tz": v.get("tz", "UTC"),
                     "polymarket_event": v.get("polymarket_event", ""),
                 }
                 for k, v in config["cities"].items()
@@ -137,12 +144,19 @@ class MercuryHandler(SimpleHTTPRequestHandler):
             with open(f) as fp:
                 eng = json.load(fp)
             
+            is_f = eng.get("unit") == "fahrenheit"
+            unit = "fahrenheit" if is_f else "celsius"
+
             metar_f = DATA_DIR / "metar" / city / f"{target_date}.json"
             metar_tmax = None
             if metar_f.exists():
                 with open(metar_f) as fp:
                     m = json.load(fp)
-                metar_tmax = m.get("t_max")
+                raw_tmax = m.get("t_max")
+                if raw_tmax is not None and is_f:
+                    metar_tmax = round(raw_tmax * 9.0 / 5.0 + 32.0, 1)
+                else:
+                    metar_tmax = raw_tmax
 
             cities.append({
                 "city": city,
@@ -152,18 +166,26 @@ class MercuryHandler(SimpleHTTPRequestHandler):
                 "error": eng.get("forecast_error"),
                 "n_models": eng.get("n_models"),
                 "blend_method": eng.get("blend_method"),
+                "unit": unit,
                 "top_bucket": max(eng.get("buckets_normal", {}).items(), key=lambda x: x[1]) if eng.get("buckets_normal") else None,
             })
 
-        errors = [c["error"] for c in cities if c["error"] is not None]
+        # 统计用误差统一为 °C（°F 城市先转换）
+        errors_c = []
+        for c in cities:
+            if c["error"] is not None:
+                err = c["error"]
+                if c["unit"] == "fahrenheit":
+                    err = round(err * 5.0 / 9.0, 1)
+                errors_c.append(err)
         return {
             "date": target_date,
             "n": len(cities),
-            "n_with_metar": len(errors),
-            "mae": round(sum(abs(e) for e in errors) / len(errors), 2) if errors else None,
-            "bias": round(sum(errors) / len(errors), 2) if errors else None,
-            "within_1c": sum(1 for e in errors if abs(e) <= 1) if errors else 0,
-            "within_2c": sum(1 for e in errors if abs(e) <= 2) if errors else 0,
+            "n_with_metar": len(errors_c),
+            "mae": round(sum(abs(e) for e in errors_c) / len(errors_c), 2) if errors_c else None,
+            "bias": round(sum(errors_c) / len(errors_c), 2) if errors_c else None,
+            "within_1c": sum(1 for e in errors_c if abs(e) <= 1) if errors_c else 0,
+            "within_2c": sum(1 for e in errors_c if abs(e) <= 2) if errors_c else 0,
             "cities": sorted(cities, key=lambda c: abs(c["error"]) if c["error"] is not None else 999),
         }
 
@@ -315,6 +337,17 @@ class MercuryHandler(SimpleHTTPRequestHandler):
         if not vals:
             return
         t_predicted = round(max(vals), 1)
+        
+        # °F 城市：快照记录转为 °F（与 engine.py snapshot_prediction 保持一致）
+        try:
+            import yaml as _yaml
+            with open(PROJECT_ROOT / "config" / "cities.yaml") as _f:
+                _cfg = _yaml.safe_load(_f)
+            if _cfg.get("cities", {}).get(city_key, {}).get("unit") == "fahrenheit":
+                t_predicted = round(t_predicted * 9.0 / 5.0 + 32.0, 1)
+        except Exception:
+            pass
+        
         current_bucket = round(t_predicted)
         
         snap_dir = DATA_DIR / "engine" / city_key
@@ -453,9 +486,41 @@ class MercuryHandler(SimpleHTTPRequestHandler):
             "records": records,
         }
 
+    def _get_snapshots(self, city_key, target_date=None):
+        """返回预测时间轴快照"""
+        target_date = target_date or date.today().isoformat()
+        if not city_key:
+            return {"error": "missing city parameter"}
+
+        snap_path = DATA_DIR / "engine" / city_key / f"{target_date}_snapshots.jsonl"
+        if not snap_path.exists():
+            return {"city": city_key, "date": target_date, "snapshots": [], "n": 0}
+
+        snapshots = []
+        with open(snap_path) as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    snapshots.append(json.loads(line))
+                except json.JSONDecodeError:
+                    continue
+
+        return {
+            "city": city_key,
+            "date": target_date,
+            "snapshots": snapshots,
+            "n": len(snapshots),
+        }
+
     def log_message(self, format, *args):
         # 精简日志
-        if "/api/" in (args[0] if args else ""):
+        try:
+            msg = str(args[0]) if args else ""
+        except:
+            msg = ""
+        if "/api/" in msg:
             print(f"  {args[0]}")
 
 

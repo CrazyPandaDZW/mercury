@@ -10,9 +10,9 @@ cities:
     tz: Asia/Shanghai
     display_name: 北京
   shanghai:
-    lat: 31.198
-    lon: 121.336
-    icao: ZSSS
+    lat: 31.144
+    lon: 121.808
+    icao: ZSPD
     tz: Asia/Shanghai
     display_name: 上海
   tokyo:
@@ -22,9 +22,9 @@ cities:
     tz: Asia/Tokyo
     display_name: 东京
   seoul:
-    lat: 37.558
-    lon: 126.791
-    icao: RKSS
+    lat: 37.469
+    lon: 126.451
+    icao: RKSI
     tz: Asia/Seoul
     display_name: 首尔
   taipei:
@@ -207,9 +207,9 @@ cities:
 
   # ── 热带 ──
   jakarta:
-    lat: -6.1256
-    lon: 106.6558
-    icao: WIII
+    lat: -6.267
+    lon: 106.891
+    icao: WIHH
     tz: Asia/Jakarta
     display_name: 雅加达
   karachi:

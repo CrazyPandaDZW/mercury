@@ -102,8 +102,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <h2 id="cityTitle">加载中...</h2>
 </div>
 
-<div class="container">
+  <div class="container">
   <div class="overview" id="overview"></div>
+
+  <div class="chart-panel">
+    <h3>预测时间轴 · 预测值随实测积累的演变</h3>
+    <svg class="chart-svg" id="snapshotChart" viewBox="0 0 1000 200"></svg>
+    <div style="font-size:11px;color:#8b949e;margin-top:4px">每个点 = 一次 METAR 更新后重算的预测最高温</div>
+  </div>
 
   <div class="chart-panel">
     <h3>温度时间曲线 & 云量</h3>
@@ -130,6 +136,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <script>
 let CITY = new URLSearchParams(location.search).get('city') || 'beijing';
 let UNIT = '°C';  // 由 engine 输出动态设置
+let CITY_TZ = 'Asia/Shanghai';  // 当前城市时区
+let cityTzMap = {};  // 所有城市时区映射
+let clockTimer = null;
 const MODEL_COLORS = {
   icon_seamless: '#58a6ff', ecmwf_ifs: '#3fb950', gfs_seamless: '#d29922',
   gem_seamless: '#f85149', jma_seamless: '#bc8cff', ukmo_seamless: '#79c0ff',
@@ -146,6 +155,8 @@ async function init() {
   try {
     const citiesData = await fetch('/api/cities').then(r => r.json());
     buildCityList(citiesData.cities || []);
+    // 初始化当前城市时区
+    CITY_TZ = cityTzMap[CITY] || 'Asia/Shanghai';
   } catch(e) { console.error('加载城市列表失败', e); }
 
   loadData();
@@ -155,6 +166,7 @@ function buildCityList(cities) {
   const list = document.getElementById('cityList');
   const grouped = {};
   cities.forEach(c => {
+    cityTzMap[c.key] = c.tz || 'UTC';
     const region = c.region || '🌐';
     if (!grouped[region]) grouped[region] = [];
     grouped[region].push(c);
@@ -183,6 +195,7 @@ function buildCityList(cities) {
 function selectCity(e, cityKey) {
   e.preventDefault();
   CITY = cityKey;
+  CITY_TZ = cityTzMap[cityKey] || 'UTC';
   // 更新 URL
   history.pushState(null, '', '?city=' + cityKey);
   // 更新选中状态
@@ -192,9 +205,10 @@ function selectCity(e, cityKey) {
 }
 
 async function loadData() {
-  const [fc, metar] = await Promise.all([
+  const [fc, metar, snaps] = await Promise.all([
     fetch(`/api/forecast?city=${CITY}&date=${currentDate}`).then(r => r.json()),
     fetch(`/api/metar?city=${CITY}&date=${currentDate}`).then(r => r.json()),
+    fetch(`/api/snapshots?city=${CITY}&date=${currentDate}`).then(r => r.json()),
   ]);
 
   const eng = fc.engine || {};
@@ -207,15 +221,51 @@ async function loadData() {
   document.getElementById('cityTitle').textContent = `${eng.city || CITY} · ${currentDate}`;
 
   renderOverview(eng, metar);
+  renderSnapshotChart(snaps, eng, metar);
   renderChart(hourly, metar, eng, l1Curve);
   renderWeights(models, eng, l1Curve);
   renderBuckets(buckets, eng);
   renderHourlyTable(hourly);
   renderMetarTable(metar);
+
+  // 启动时钟
+  startClock();
+}
+
+// ── 实时时钟 ──
+function startClock() {
+  if (clockTimer) clearInterval(clockTimer);
+  updateClock();
+  clockTimer = setInterval(updateClock, 1000);
+}
+function updateClock() {
+  const el = document.getElementById('localClock');
+  if (!el) return;
+  try {
+    const now = new Date();
+    const s = now.toLocaleTimeString('zh-CN', { timeZone: CITY_TZ, hour12: false });
+    el.innerHTML = `🕐 <span style="color:#d29922">${CITY_TZ.split('/').pop()}</span> ${s}`;
+  } catch(e) { el.textContent = '🕐 --:--:--'; }
 }
 
 // ── 概览栏 ──
 function isToday(dateStr) { return dateStr === new Date().toISOString().split('T')[0]; }
+
+function buildDateOptions() {
+  // 从默认日期前后各扩展 N 天，确保已有数据的日期可用
+  const today = new Date().toISOString().split('T')[0];
+  const dates = [];
+  // 从 5/31 到 未来 6/5
+  const start = new Date('2026-05-31');
+  const end = new Date('2026-06-05');
+  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+    const ds = d.toISOString().split('T')[0];
+    const label = ds === today ? `${ds} (今天)` : ds;
+    const sel = ds === currentDate ? ' selected' : '';
+    dates.push(`<option value="${ds}"${sel}>${label}</option>`);
+  }
+  return dates.join('');
+}
 
 function renderOverview(eng, metar) {
   const err = eng.forecast_error;
@@ -236,20 +286,89 @@ function renderOverview(eng, metar) {
 
   document.getElementById('overview').innerHTML = `
     <span class="stat">日期: <select onchange="changeDate(this.value)" id="dateSelect">
-      <option value="2026-05-31">2026-05-31</option>
-      <option value="2026-06-01">2026-06-01</option>
+      ${buildDateOptions()}
     </select></span>
+    <span class="stat" id="localClock" style="color:#d29922;font-weight:bold">🕐 加载中...</span>
     <span class="stat">预报: <strong>${eng.t_calibrated != null ? eng.t_calibrated.toFixed(1)+UNIT : '—'}</strong></span>
     <span class="stat">实测: <strong>${metarDisplay}</strong>${metarHint}</span>
     <span class="stat">误差: <span class="err ${badge}">${err != null ? (err>0?'+':'')+err.toFixed(1)+UNIT : '—'}</span></span>
     <span class="stat">σ = ±${eng.t_std?.toFixed(1) || '—'}${UNIT} · ${eng.n_models || '—'}模型 · ${eng.blend_method || ''}</span>
   `;
-  document.getElementById('dateSelect').value = currentDate;
 }
 
 function changeDate(dateStr) {
   currentDate = dateStr;
   loadData();
+}
+
+// ── 预测时间轴 ──
+function renderSnapshotChart(snaps, eng, metar) {
+  const svg = document.getElementById('snapshotChart');
+  const snapshots = snaps.snapshots || [];
+  if (snapshots.length < 1) {
+    svg.innerHTML = `<text x="500" y="100" text-anchor="middle" fill="#8b949e" font-size="12">尚无预测快照，METAR 更新后自动生成</text>`;
+    return;
+  }
+
+  const W = 1000, H = 200, PAD = { l:50, r:50, t:20, b:30 };
+  const PW = W - PAD.l - PAD.r, PH = H - PAD.t - PAD.b;
+
+  const pts = snapshots.map(s => {
+    const m = s.time.match(/T(\d{2}):(\d{2})/);
+    const hFrac = m ? parseFloat(m[1]) + parseFloat(m[2])/60 : 0;
+    return { h: hFrac, t: s.t_predicted, bucket: s.bucket, time: s.time, n: s.metar_count };
+  }).sort((a,b) => a.h - b.h);
+
+  if (!pts.length) { svg.innerHTML = ''; return; }
+
+  let vals = pts.map(p => p.t);
+  const cal = eng.t_calibrated;
+  if (cal != null) vals.push(cal);
+  const metarMax = metar.t_max;
+  if (metarMax != null) vals.push(metarMax);
+  let yMin = Math.floor(Math.min(...vals) - 1);
+  let yMax = Math.ceil(Math.max(...vals) + 1);
+  if (yMax - yMin < 4) { yMin -= 1; yMax += 1; }
+
+  const x = h => PAD.l + ((h - pts[0].h) / Math.max(0.01, pts[pts.length-1].h - pts[0].h)) * PW;
+  const y = t => PAD.t + PH - ((t - yMin) / (yMax - yMin)) * PH;
+
+  let html = '';
+
+  for (let t = yMin; t <= yMax; t += 1)
+    html += `<line x1="${PAD.l}" y1="${y(t)}" x2="${W-PAD.r}" y2="${y(t)}" class="grid"/><text x="${PAD.l-5}" y="${y(t)+4}" text-anchor="end" font-size="10">${t}°</text>`;
+
+  pts.forEach((p, i) => {
+    if (i % Math.max(1, Math.floor(pts.length/8)) === 0) {
+      const hh = String(Math.floor(p.h)).padStart(2,'0');
+      const mm = String(Math.round((p.h%1)*60)).padStart(2,'0');
+      html += `<line x1="${x(p.h)}" y1="${PAD.t}" x2="${x(p.h)}" y2="${PAD.t+PH}" class="grid"/><text x="${x(p.h)}" y="${PAD.t+PH+15}" text-anchor="middle" font-size="9">${hh}:${mm}</text>`;
+    }
+  });
+
+  if (cal != null) {
+    html += `<line x1="${PAD.l}" y1="${y(cal)}" x2="${W-PAD.r}" y2="${y(cal)}" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="6,3"/><text x="${W-PAD.r+2}" y="${y(cal)+4}" fill="#58a6ff" font-size="10">校准 ${cal.toFixed(1)}${UNIT}</text>`;
+  }
+
+  if (metarMax != null) {
+    html += `<line x1="${PAD.l}" y1="${y(metarMax)}" x2="${W-PAD.r}" y2="${y(metarMax)}" stroke="#f85149" stroke-width="1.5" stroke-dasharray="6,3"/><text x="${W-PAD.r+2}" y="${y(metarMax)+4}" fill="#f85149" font-size="10">实测 ${metarMax.toFixed(1)}${UNIT}</text>`;
+  }
+
+  if (pts.length > 1) {
+    html += `<polyline points="${pts.map(p => `${x(p.h)},${y(p.t)}`).join(' ')}" fill="none" stroke="#d29922" stroke-width="2" opacity="0.7"/>`;
+  }
+  pts.forEach(p => {
+    html += `<circle cx="${x(p.h)}" cy="${y(p.t)}" r="4" fill="#d29922" stroke="#fff" stroke-width="1" data-tooltip="⌚ ${p.time.slice(11,16)} · 预测 ${p.t}${UNIT} · ${p.n}个METAR点 · 桶=${p.bucket}"/>`;
+  });
+
+  svg.innerHTML = html;
+
+  const tip = document.getElementById('tooltip');
+  svg.querySelectorAll('[data-tooltip]').forEach(el => {
+    el.addEventListener('mouseenter', e => { tip.textContent = el.getAttribute('data-tooltip'); tip.style.display='block'; });
+    el.addEventListener('mousemove', e => { tip.style.left=(e.clientX+14)+'px'; tip.style.top=(e.clientY-10)+'px'; });
+    el.addEventListener('mouseleave', () => { tip.style.display='none'; });
+  });
 }
 
 // ── SVG 曲线图 ──

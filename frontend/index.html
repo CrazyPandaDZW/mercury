@@ -58,6 +58,7 @@ tr:last-child td { border-bottom:none; }
 .loading { text-align:center; padding:40px; color:#8b949e; }
 .clickable { cursor:pointer; }
 .clickable:hover { color:#58a6ff; }
+.date-select { background:#21262d; color:#e1e4e8; border:1px solid #30363d; border-radius:4px; padding:4px 8px; font-size:13px; }
 </style>
 </head>
 <body>
@@ -90,9 +91,28 @@ tr:last-child td { border-bottom:none; }
 
 <script>
 const API = '';
+let currentDate = new Date().toISOString().split('T')[0];
+
+function buildDateOptions() {
+  const today = new Date().toISOString().split('T')[0];
+  const dates = [];
+  const start = new Date('2026-05-31');
+  const end = new Date('2026-06-05');
+  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+    const ds = d.toISOString().split('T')[0];
+    const label = ds === today ? ds + ' (今天)' : ds;
+    const sel = ds === currentDate ? ' selected' : '';
+    dates.push('<option value="' + ds + '"' + sel + '>' + label + '</option>');
+  }
+  return dates.join('');
+}
+
+function degUnit(unit) {
+  return '\u00B0' + (unit === 'fahrenheit' ? 'F' : 'C');
+}
 
 async function load() {
-  const summary = await fetch(API + '/api/summary').then(r => r.json());
+  const summary = await fetch(API + '/api/summary?date=' + currentDate).then(r => r.json());
   const citiesData = await fetch(API + '/api/cities').then(r => r.json());
   
   renderHeader(summary);
@@ -101,36 +121,39 @@ async function load() {
 }
 
 function renderHeader(s) {
-  document.getElementById('headerStats').innerHTML = `
-    <div class="stat"><span>城市</span> <strong>${s.n}</strong></div>
-    <div class="stat"><span>有实测</span> <strong>${s.n_with_metar}</strong></div>
-    <div class="stat"><span>MAE</span> <strong>${s.mae || '—'}°C</strong></div>
-    <div class="stat"><span>日期</span> <strong>${s.date}</strong></div>
-  `;
+  document.getElementById('headerStats').innerHTML =
+    '<div class="stat"><span>城市</span> <strong>' + s.n + '</strong></div>' +
+    '<div class="stat"><span>有实测</span> <strong>' + s.n_with_metar + '</strong></div>' +
+    '<div class="stat"><span>MAE</span> <strong>' + (s.mae || '—') + '°C</strong></div>' +
+    '<div class="stat"><span>日期</span> <select onchange="changeDate(this.value)" class="date-select">' + buildDateOptions() + '</select></div>';
+}
+
+function changeDate(dateStr) {
+  currentDate = dateStr;
+  load();
 }
 
 function renderCards(s) {
   const good = s.within_1c || 0;
   const ok = (s.within_2c || 0) - good;
   const bad = (s.n_with_metar || 0) - good - ok;
-  document.getElementById('summaryCards').innerHTML = `
-    <div class="card">
-      <div class="label">MAE (平均绝对误差)</div>
-      <div class="value ${s.mae < 1 ? 'green' : s.mae < 2 ? 'yellow' : 'red'}">${s.mae ? s.mae.toFixed(2) + '°C' : '—'}</div>
-    </div>
-    <div class="card">
-      <div class="label">系统性偏差</div>
-      <div class="value ${Math.abs(s.bias||0) < 0.5 ? 'green' : 'yellow'}">${s.bias ? (s.bias > 0 ? '+' : '') + s.bias.toFixed(2) + '°C' : '—'}</div>
-    </div>
-    <div class="card">
-      <div class="label">±1°C 命中率</div>
-      <div class="value green">${s.n_with_metar ? (good/s.n_with_metar*100).toFixed(0) + '%' : '—'} <span style="font-size:14px;color:#8b949e">(${good}城)</span></div>
-    </div>
-    <div class="card">
-      <div class="label">±2°C 命中率</div>
-      <div class="value ${(good+ok)/(s.n_with_metar||1) > 0.7 ? 'green' : 'yellow'}">${s.n_with_metar ? ((good+ok)/s.n_with_metar*100).toFixed(0) + '%' : '—'} <span style="font-size:14px;color:#8b949e">(${good+ok}城)</span></div>
-    </div>
-  `;
+  document.getElementById('summaryCards').innerHTML =
+    '<div class="card">' +
+      '<div class="label">MAE (平均绝对误差)</div>' +
+      '<div class="value ' + (s.mae < 1 ? 'green' : s.mae < 2 ? 'yellow' : 'red') + '">' + (s.mae ? s.mae.toFixed(2) + '°C' : '—') + '</div>' +
+    '</div>' +
+    '<div class="card">' +
+      '<div class="label">系统性偏差</div>' +
+      '<div class="value ' + (Math.abs(s.bias||0) < 0.5 ? 'green' : 'yellow') + '">' + (s.bias ? (s.bias > 0 ? '+' : '') + s.bias.toFixed(2) + '°C' : '—') + '</div>' +
+    '</div>' +
+    '<div class="card">' +
+      '<div class="label">±1°C 命中率</div>' +
+      '<div class="value green">' + (s.n_with_metar ? (good/s.n_with_metar*100).toFixed(0) + '%' : '—') + ' <span style="font-size:14px;color:#8b949e">(' + good + '城)</span></div>' +
+    '</div>' +
+    '<div class="card">' +
+      '<div class="label">±2°C 命中率</div>' +
+      '<div class="value ' + ((good+ok)/(s.n_with_metar||1) > 0.7 ? 'green' : 'yellow') + '">' + (s.n_with_metar ? ((good+ok)/s.n_with_metar*100).toFixed(0) + '%' : '—') + ' <span style="font-size:14px;color:#8b949e">(' + (good+ok) + '城)</span></div>' +
+    '</div>';
 }
 
 let currentSort = { key: 'error', asc: true };
@@ -163,23 +186,25 @@ function renderTable(summary, allCities) {
     const err = c.error;
     const absErr = Math.abs(err || 0);
     const badge = absErr <= 1 ? 'good' : absErr <= 2 ? 'ok' : 'bad';
-    const errStr = err != null ? (err > 0 ? '+' : '') + err.toFixed(1) + '°C' : '—';
+    const unit = c.unit || 'celsius';
+    const unitSym = degUnit(unit);
+    const errStr = err != null ? (err > 0 ? '+' : '') + err.toFixed(1) + unitSym : '—';
     
     const bucket = c.top_bucket;
-    const bucketStr = bucket ? `${bucket[1]*100|0}% → ${bucket[0]}°C` : '—';
+    const bucketStr = bucket ? (bucket[1]*100|0) + '% → ' + bucket[0] + unitSym : '—';
     
-    const stdStr = c.t_std ? '±' + c.t_std.toFixed(1) + '°C' : '—';
+    const stdStr = c.t_std ? '±' + c.t_std.toFixed(1) + unitSym : '—';
     const barW = Math.min(100, (c.t_std || 0) * 30);
     const barColor = err != null && err > 0 ? 'hot' : 'cold';
     
-    return `<tr class="clickable" onclick="showDetail('${c.city}')">
-      <td>${flag} ${name} <span style="color:#484f58;font-size:11px">${c.city}</span></td>
-      <td><strong>${c.t_deb != null ? c.t_deb.toFixed(1) + '°C' : '—'}</strong></td>
-      <td>${c.t_metar != null ? c.t_metar.toFixed(1) + '°C' : '⏳'}</td>
-      <td><span class="error-badge ${badge}">${errStr}</span></td>
-      <td>${bucketStr}</td>
-      <td>${stdStr} <span class="bar-wrap"><span class="bar-fill ${barColor}" style="width:${barW}%"></span></span></td>
-    </tr>`;
+    return '<tr class="clickable" onclick="showDetail(\'' + c.city + '\')">' +
+      '<td>' + flag + ' ' + name + ' <span style="color:#484f58;font-size:11px">' + c.city + '</span></td>' +
+      '<td><strong>' + (c.t_deb != null ? c.t_deb.toFixed(1) + unitSym : '—') + '</strong></td>' +
+      '<td>' + (c.t_metar != null ? c.t_metar.toFixed(1) + unitSym : '⏳') + '</td>' +
+      '<td><span class="error-badge ' + badge + '">' + errStr + '</span></td>' +
+      '<td>' + bucketStr + '</td>' +
+      '<td>' + stdStr + ' <span class="bar-wrap"><span class="bar-fill ' + barColor + '" style="width:' + barW + '%"></span></span></td>' +
+    '</tr>';
   }).join('');
 }
 
@@ -190,69 +215,70 @@ async function showDetail(city) {
   panel.scrollIntoView({ behavior: 'smooth' });
 
   const [fc, metar] = await Promise.all([
-    fetch(API + '/api/forecast?city=' + city).then(r => r.json()),
-    fetch(API + '/api/metar?city=' + city).then(r => r.json()),
+    fetch(API + '/api/forecast?city=' + city + '&date=' + currentDate).then(r => r.json()),
+    fetch(API + '/api/metar?city=' + city + '&date=' + currentDate).then(r => r.json()),
   ]);
 
   const eng = fc.engine || {};
   const models = eng.models || {};
   const buckets = eng.buckets_normal || {};
   const hourly = fc.hourly || [];
+  const unit = eng.unit || 'celsius';
+  const unitSym = '\u00B0' + (unit === 'fahrenheit' ? 'F' : 'C');
   
   let bucketHTML = '';
   const sortedBuckets = Object.entries(buckets).sort((a,b) => b[1] - a[1]);
   for (const [t, p] of sortedBuckets.slice(0, 5)) {
     const w = p * 150;
-    bucketHTML += `<div style="display:flex;align-items:center;gap:8px;margin:2px 0">
-      <span style="width:40px;text-align:right;font-size:13px">${t}°C</span>
-      <span class="bar-wrap" style="width:150px"><span class="bar-fill" style="width:${w|0}px;background:#58a6ff"></span></span>
-      <span style="font-size:12px;color:#8b949e">${(p*100).toFixed(0)}%</span>
-    </div>`;
+    bucketHTML += '<div style="display:flex;align-items:center;gap:8px;margin:2px 0">' +
+      '<span style="width:40px;text-align:right;font-size:13px">' + t + unitSym + '</span>' +
+      '<span class="bar-wrap" style="width:150px"><span class="bar-fill" style="width:' + (w|0) + 'px;background:#58a6ff"></span></span>' +
+      '<span style="font-size:12px;color:#8b949e">' + (p*100).toFixed(0) + '%</span>' +
+    '</div>';
   }
 
   let modelHTML = '';
   const sortedModels = Object.entries(models).sort((a,b) => b[1].weight - a[1].weight);
   for (const [m, v] of sortedModels) {
-    modelHTML += `<div class="model-row">
-      <span>${m.replace('_seamless','').replace('_ifs','')}</span>
-      <span>${v.t_max}°C <span style="color:#8b949e;margin-left:8px">偏离 ${v.deviation > 0 ? '+' : ''}${v.deviation}°C</span></span>
-      <span class="weight">权重 ${(v.weight*100).toFixed(0)}%</span>
-    </div>`;
+    modelHTML += '<div class="model-row">' +
+      '<span>' + m.replace('_seamless','').replace('_ifs','') + '</span>' +
+      '<span>' + v.t_max + unitSym + ' <span style="color:#8b949e;margin-left:8px">偏离 ' + (v.deviation > 0 ? '+' : '') + v.deviation + unitSym + '</span></span>' +
+      '<span class="weight">权重 ' + (v.weight*100).toFixed(0) + '%</span>' +
+    '</div>';
   }
 
   let metarHTML = '';
   if (metar.n_records > 0) {
-    metarHTML = `<div style="margin-top:8px;font-size:13px;color:#8b949e">
-      实测: ${metar.t_max}°C (max) / ${metar.t_min}°C (min) · ${metar.n_records}条记录 · 采集${metar.fetch_count}次
-    </div>`;
+    metarHTML = '<div style="margin-top:8px;font-size:13px;color:#8b949e">' +
+      '实测: ' + metar.t_max + unitSym + ' (max) / ' + metar.t_min + unitSym + ' (min) · ' + metar.n_records + '条记录 · 采集' + metar.fetch_count + '次' +
+    '</div>';
   }
 
   const err = eng.forecast_error;
   const errColor = Math.abs(err||0) <= 1 ? '#3fb950' : Math.abs(err||0) <= 2 ? '#d29922' : '#f85149';
 
-  panel.innerHTML = `
-    <h3>${city} — ${eng.target_date || ''}</h3>
-    <div class="detail-grid">
-      <div>
-        <div style="font-size:14px;color:#8b949e;margin-bottom:8px">DEB 预报</div>
-        <div style="font-size:36px;font-weight:bold;color:#58a6ff">${eng.t_calibrated != null ? eng.t_calibrated.toFixed(1) + '°C' : '—'}</div>
-        <div style="font-size:13px;color:#8b949e">σ = ±${eng.t_std || '—'}°C · ${eng.n_models || '—'} 模型 · ${eng.blend_method || ''}</div>
-        ${metarHTML}
-        <div style="margin-top:12px;font-size:14px">
-          误差: <strong style="color:${errColor}">${err != null ? (err>0?'+':'') + err.toFixed(1) + '°C' : '—'}</strong>
-          ${eng.bias_source ? '<br><span style="color:#8b949e;font-size:11px">' + eng.bias_source + '</span>' : ''}
-        </div>
-      </div>
-      <div>
-        <div style="font-size:14px;color:#8b949e;margin-bottom:8px">离散桶概率</div>
-        ${bucketHTML}
-      </div>
-    </div>
-    <div style="margin-top:16px">
-      <div style="font-size:14px;color:#8b949e;margin-bottom:8px">模型明细 (${eng.n_models || 0}个)</div>
-      ${modelHTML}
-    </div>
-  `;
+  panel.innerHTML =
+    '<h3>' + city + ' — ' + (eng.target_date || '') + '</h3>' +
+    '<div class="detail-grid">' +
+      '<div>' +
+        '<div style="font-size:14px;color:#8b949e;margin-bottom:8px">DEB 预报</div>' +
+        '<div style="font-size:36px;font-weight:bold;color:#58a6ff">' + (eng.t_calibrated != null ? eng.t_calibrated.toFixed(1) + unitSym : '—') + '</div>' +
+        '<div style="font-size:13px;color:#8b949e">σ = ±' + (eng.t_std || '—') + unitSym + ' · ' + (eng.n_models || '—') + ' 模型 · ' + (eng.blend_method || '') + '</div>' +
+        metarHTML +
+        '<div style="margin-top:12px;font-size:14px">' +
+          '误差: <strong style="color:' + errColor + '">' + (err != null ? (err>0?'+':'') + err.toFixed(1) + unitSym : '—') + '</strong>' +
+          (eng.bias_source ? '<br><span style="color:#8b949e;font-size:11px">' + eng.bias_source + '</span>' : '') +
+        '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div style="font-size:14px;color:#8b949e;margin-bottom:8px">离散桶概率</div>' +
+        bucketHTML +
+      '</div>' +
+    '</div>' +
+    '<div style="margin-top:16px">' +
+      '<div style="font-size:14px;color:#8b949e;margin-bottom:8px">模型明细 (' + (eng.n_models || 0) + '个)</div>' +
+      modelHTML +
+    '</div>';
 }
 
 load();
