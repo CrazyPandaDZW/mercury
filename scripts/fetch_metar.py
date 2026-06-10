@@ -153,6 +153,10 @@ def save_metar(city_key: str, station: str, target_date: str,
             
             if not new_records:
                 return  # 无新数据，不写文件
+
+            # 给每条新记录打上本次抓取时间（已有记录保留原始 fetched_at）
+            for r in new_records:
+                r["fetched_at"] = fetched_at
             
             existing["records"].extend(new_records)
             existing["records"].sort(key=lambda r: r["time_utc"])
@@ -162,8 +166,14 @@ def save_metar(city_key: str, station: str, target_date: str,
             records = existing["records"]
             fetch_count = existing["fetch_count"]
         else:
+            # 首次抓取，所有记录打上 fetched_at
+            for r in records:
+                r["fetched_at"] = fetched_at
             records.sort(key=lambda r: r["time_utc"])
     else:
+        # 非 merge 模式，所有记录打上 fetched_at
+        for r in records:
+            r["fetched_at"] = fetched_at
         records.sort(key=lambda r: r["time_utc"])
 
     # 计算统计
