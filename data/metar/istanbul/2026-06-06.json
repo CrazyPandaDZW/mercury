@@ -1,0 +1,265 @@
+{
+  "city": "istanbul",
+  "station": "LTFM",
+  "date": "2026-06-06",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "LTFM",
+  "fetched_at": "2026-06-06T15:34:15.995624+00:00",
+  "fetch_count": 32,
+  "n_records": 31,
+  "records": [
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 00:20",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 00:50",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 01:20",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 01:50",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 02:20",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 02:50",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 03:20",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 03:50",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 04:20",
+      "temp_c": 18.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 04:50",
+      "temp_c": 19.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 05:20",
+      "temp_c": 19.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 05:50",
+      "temp_c": 19.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 06:20",
+      "temp_c": 19.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 06:50",
+      "temp_c": 19.0,
+      "dew_point_c": 15.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 07:20",
+      "temp_c": 21.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 07:50",
+      "temp_c": 20.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 08:20",
+      "temp_c": 21.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 08:50",
+      "temp_c": 21.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 09:20",
+      "temp_c": 22.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 09:50",
+      "temp_c": 22.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 10:20",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 10:50",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 11:20",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 11:50",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 12:20",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 12:50",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 13:20",
+      "temp_c": 22.0,
+      "dew_point_c": 16.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 13:50",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 14:20",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 14:50",
+      "temp_c": 21.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LTFM",
+      "time_utc": "2026-06-06 15:20",
+      "temp_c": 22.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 30.0
+    }
+  ],
+  "t_max": 22.0,
+  "t_min": 18.0,
+  "t_avg": 20.2,
+  "dew_point_avg": 16.3,
+  "wind_max_knots": 11.0
+}

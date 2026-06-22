@@ -1,0 +1,124 @@
+{
+  "city": "manila",
+  "target_date": "2026-06-02",
+  "generated_at": "2026-06-01T18:50:58.187607+00:00",
+  "generated_date": "2026-06-02",
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "blend_method": "live_rmse_weighted",
+  "t_ensemble": 30.7,
+  "t_std": 1.05,
+  "t_range": [
+    29.6,
+    32.3
+  ],
+  "t_calibrated": 30.8,
+  "bias_correction": -0.05,
+  "bias_source": "own-track (n=2d, bias=-0.05°C)",
+  "buckets_normal": {
+    "30": 0.5359,
+    "32": 0.4641
+  },
+  "buckets_voting": {
+    "30": 0.0,
+    "32": 0.0
+  },
+  "buckets_weighted_voting": {
+    "30": 0.5359,
+    "32": 0.4641
+  },
+  "buckets_range": [
+    30,
+    32
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 30.2,
+      "deviation": -0.5,
+      "bucket": 30,
+      "weight": 0.06,
+      "live_rmse": 1.85
+    },
+    "gfs_seamless": {
+      "t_max": 29.6,
+      "deviation": -1.1,
+      "bucket": 30,
+      "weight": 0.151,
+      "live_rmse": 1.17
+    },
+    "jma_seamless": {
+      "t_max": 29.9,
+      "deviation": -0.8,
+      "bucket": 30,
+      "weight": 0.215,
+      "live_rmse": 0.98
+    },
+    "icon_seamless": {
+      "t_max": 31.5,
+      "deviation": 0.8,
+      "bucket": 32,
+      "weight": 0.28,
+      "live_rmse": 0.86
+    },
+    "gem_seamless": {
+      "t_max": 29.7,
+      "deviation": -1.0,
+      "bucket": 30,
+      "weight": 0.109,
+      "live_rmse": 1.38
+    },
+    "ukmo_seamless": {
+      "t_max": 32.3,
+      "deviation": 1.6,
+      "bucket": 32,
+      "weight": 0.184,
+      "live_rmse": 1.06
+    }
+  },
+  "metar_t_max": 32.0,
+  "forecast_error": -1.2,
+  "live_weights": true,
+  "live_n_points": 27,
+  "live_rmse_summary": {
+    "ecmwf_ifs": 1.85,
+    "gfs_seamless": 1.17,
+    "jma_seamless": 0.98,
+    "icon_seamless": 0.86,
+    "gem_seamless": 1.38,
+    "ukmo_seamless": 1.06
+  },
+  "l1_curve": {
+    "0": 27.4,
+    "1": 27.4,
+    "2": 27.2,
+    "3": 27.2,
+    "4": 27.2,
+    "5": 27.2,
+    "6": 27.3,
+    "7": 27.5,
+    "8": 28.2,
+    "9": 28.9,
+    "10": 29.3,
+    "11": 29.8,
+    "12": 30.3,
+    "13": 30.2,
+    "14": 30.0,
+    "15": 30.1,
+    "16": 29.7,
+    "17": 29.5,
+    "18": 29.2,
+    "19": 28.9,
+    "20": 28.6,
+    "21": 28.3,
+    "22": 28.2,
+    "23": 28.0
+  },
+  "snapshot_hour": 2
+}

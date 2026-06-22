@@ -1,0 +1,98 @@
+{
+  "city": "dallas",
+  "target_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:45:02.742407+00:00",
+  "generated_date": "2026-05-31",
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "blend_method": "deb_mae_weighted",
+  "t_ensemble": 35.0,
+  "t_std": 0.55,
+  "t_range": [
+    32.5,
+    36.7
+  ],
+  "t_calibrated": 34.7,
+  "bias_correction": 0.29,
+  "bias_source": "polywx-bootstrap (bias=+0.29°C)",
+  "buckets_normal": {
+    "33": 0.0145,
+    "34": 0.3435,
+    "35": 0.569,
+    "36": 0.0724
+  },
+  "buckets_voting": {
+    "37": 0.0,
+    "35": 0.0,
+    "32": 0.0,
+    "34": 0.0,
+    "36": 0.0
+  },
+  "buckets_weighted_voting": {
+    "37": 0.0268,
+    "35": 0.8713,
+    "32": 0.0197,
+    "34": 0.0586,
+    "36": 0.0236
+  },
+  "buckets_range": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 36.7,
+      "deviation": 1.7,
+      "bucket": 37,
+      "weight": 0.027
+    },
+    "gfs_seamless": {
+      "t_max": 35.2,
+      "deviation": 0.2,
+      "bucket": 35,
+      "weight": 0.371
+    },
+    "jma_seamless": {
+      "t_max": 32.5,
+      "deviation": -2.5,
+      "bucket": 32,
+      "weight": 0.02
+    },
+    "icon_seamless": {
+      "t_max": 35.0,
+      "deviation": 0.0,
+      "bucket": 35,
+      "weight": 0.5
+    },
+    "gem_seamless": {
+      "t_max": 34.0,
+      "deviation": -1.0,
+      "bucket": 34,
+      "weight": 0.059
+    },
+    "ukmo_seamless": {
+      "t_max": 36.0,
+      "deviation": 1.0,
+      "bucket": 36,
+      "weight": 0.024
+    }
+  },
+  "metar_t_max": 34.4,
+  "forecast_error": 0.3
+}

@@ -1,0 +1,145 @@
+{
+  "city": "manila",
+  "station": "RPLL",
+  "date": "2026-06-06",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "RPLL",
+  "fetched_at": "2026-06-06T15:18:03.726301+00:00",
+  "fetch_count": 17,
+  "n_records": 16,
+  "records": [
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 00:00",
+      "temp_c": 28.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 01:00",
+      "temp_c": 28.0,
+      "dew_point_c": 27.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 02:00",
+      "temp_c": 28.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 03:00",
+      "temp_c": 28.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 04:00",
+      "temp_c": 29.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 05:00",
+      "temp_c": 29.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 06:00",
+      "temp_c": 29.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 07:00",
+      "temp_c": 29.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 08:00",
+      "temp_c": 30.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 09:00",
+      "temp_c": 29.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.8
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 10:00",
+      "temp_c": 29.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 11:00",
+      "temp_c": 29.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 12:00",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 13:00",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 14:00",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-06-06 15:00",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9
+    }
+  ],
+  "t_max": 30.0,
+  "t_min": 28.0,
+  "t_avg": 28.6,
+  "dew_point_avg": 25.4,
+  "wind_max_knots": 10.0
+}

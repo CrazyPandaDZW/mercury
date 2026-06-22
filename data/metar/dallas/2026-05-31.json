@@ -1,0 +1,131 @@
+{
+  "city": "dallas",
+  "station": "KDFW",
+  "date": "2026-05-31",
+  "fetched_at": "2026-06-01T02:14:46.068337+00:00",
+  "n_records": 24,
+  "records": [
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 00:53",
+      "temp_c": 30.56
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 01:53",
+      "temp_c": 29.44
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 02:53",
+      "temp_c": 28.33
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 03:53",
+      "temp_c": 27.78
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 04:53",
+      "temp_c": 27.22
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 05:53",
+      "temp_c": 26.67
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 06:53",
+      "temp_c": 25.56
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 07:53",
+      "temp_c": 25.56
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 08:53",
+      "temp_c": 25.56
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 09:53",
+      "temp_c": 25.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 10:53",
+      "temp_c": 24.44
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 11:53",
+      "temp_c": 23.89
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 12:53",
+      "temp_c": 25.56
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 13:53",
+      "temp_c": 27.78
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 14:53",
+      "temp_c": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 15:53",
+      "temp_c": 31.11
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 16:53",
+      "temp_c": 32.22
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 17:53",
+      "temp_c": 33.33
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 18:53",
+      "temp_c": 34.44
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 19:53",
+      "temp_c": 34.44
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 20:53",
+      "temp_c": 33.89
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 21:53",
+      "temp_c": 33.89
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 22:53",
+      "temp_c": 33.33
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-05-31 23:53",
+      "temp_c": 32.78
+    }
+  ],
+  "t_max": 34.4,
+  "t_min": 23.9
+}

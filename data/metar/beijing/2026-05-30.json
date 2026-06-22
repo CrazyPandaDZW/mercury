@@ -1,0 +1,251 @@
+{
+  "city": "beijing",
+  "station": "ZBAA",
+  "date": "2026-05-30",
+  "fetched_at": "2026-05-31T14:26:05.710472+00:00",
+  "n_records": 48,
+  "records": [
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 00:00",
+      "temp_c": 25.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 00:30",
+      "temp_c": 26.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 01:00",
+      "temp_c": 27.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 01:30",
+      "temp_c": 28.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 02:00",
+      "temp_c": 29.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 02:30",
+      "temp_c": 31.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 03:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 03:30",
+      "temp_c": 33.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 04:00",
+      "temp_c": 34.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 04:30",
+      "temp_c": 35.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 05:00",
+      "temp_c": 35.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 05:30",
+      "temp_c": 36.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 06:00",
+      "temp_c": 36.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 06:30",
+      "temp_c": 36.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 07:00",
+      "temp_c": 36.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 07:30",
+      "temp_c": 36.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 08:00",
+      "temp_c": 36.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 08:30",
+      "temp_c": 36.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 09:00",
+      "temp_c": 35.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 09:30",
+      "temp_c": 35.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 10:00",
+      "temp_c": 35.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 10:30",
+      "temp_c": 34.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 11:00",
+      "temp_c": 33.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 11:30",
+      "temp_c": 32.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 12:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 12:30",
+      "temp_c": 33.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 13:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 13:30",
+      "temp_c": 32.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 14:00",
+      "temp_c": 31.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 14:30",
+      "temp_c": 31.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 15:00",
+      "temp_c": 30.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 15:30",
+      "temp_c": 29.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 16:00",
+      "temp_c": 29.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 16:30",
+      "temp_c": 24.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 17:00",
+      "temp_c": 22.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 17:30",
+      "temp_c": 27.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 18:00",
+      "temp_c": 27.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 18:30",
+      "temp_c": 20.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 19:00",
+      "temp_c": 19.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 19:30",
+      "temp_c": 18.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 20:00",
+      "temp_c": 18.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 20:30",
+      "temp_c": 18.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 21:00",
+      "temp_c": 18.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 21:30",
+      "temp_c": 19.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 22:00",
+      "temp_c": 20.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 22:30",
+      "temp_c": 22.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 23:00",
+      "temp_c": 24.0
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-05-30 23:30",
+      "temp_c": 24.0
+    }
+  ],
+  "t_max": 36.0,
+  "t_min": 18.0
+}

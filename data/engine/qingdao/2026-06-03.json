@@ -1,0 +1,128 @@
+{
+  "city": "qingdao",
+  "target_date": "2026-06-03",
+  "generated_at": "2026-06-01T18:50:40.785392+00:00",
+  "generated_date": "2026-06-02",
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "blend_method": "live_rmse_weighted",
+  "t_ensemble": 26.1,
+  "t_std": 0.81,
+  "t_range": [
+    25.2,
+    28.9
+  ],
+  "t_calibrated": 26.3,
+  "bias_correction": -0.2,
+  "bias_source": "own-track (n=3d, bias=-0.20°C)",
+  "buckets_normal": {
+    "29": 0.0597,
+    "26": 0.7585,
+    "25": 0.1818
+  },
+  "buckets_voting": {
+    "29": 0.0,
+    "26": 0.0,
+    "25": 0.0
+  },
+  "buckets_weighted_voting": {
+    "29": 0.0597,
+    "26": 0.7585,
+    "25": 0.1818
+  },
+  "buckets_range": [
+    25,
+    26,
+    29
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 28.9,
+      "deviation": 2.8,
+      "bucket": 29,
+      "weight": 0.06,
+      "live_rmse": 3.02
+    },
+    "gfs_seamless": {
+      "t_max": 25.9,
+      "deviation": -0.2,
+      "bucket": 26,
+      "weight": 0.193,
+      "live_rmse": 1.68
+    },
+    "jma_seamless": {
+      "t_max": 25.2,
+      "deviation": -0.9,
+      "bucket": 25,
+      "weight": 0.182,
+      "live_rmse": 1.73
+    },
+    "icon_seamless": {
+      "t_max": 26.1,
+      "deviation": 0.0,
+      "bucket": 26,
+      "weight": 0.242,
+      "live_rmse": 1.5
+    },
+    "gem_seamless": {
+      "t_max": 26.5,
+      "deviation": 0.4,
+      "bucket": 26,
+      "weight": 0.172,
+      "live_rmse": 1.78
+    },
+    "ukmo_seamless": {
+      "t_max": 26.0,
+      "deviation": -0.1,
+      "bucket": 26,
+      "weight": 0.152,
+      "live_rmse": 1.89
+    }
+  },
+  "metar_t_max": 27.0,
+  "forecast_error": -0.7,
+  "live_weights": true,
+  "live_n_points": 24,
+  "live_rmse_summary": {
+    "ecmwf_ifs": 3.02,
+    "gfs_seamless": 1.68,
+    "jma_seamless": 1.73,
+    "icon_seamless": 1.5,
+    "gem_seamless": 1.78,
+    "ukmo_seamless": 1.89
+  },
+  "l1_curve": {
+    "0": 20.4,
+    "1": 20.4,
+    "2": 20.3,
+    "3": 20.2,
+    "4": 20.1,
+    "5": 20.0,
+    "6": 20.4,
+    "7": 21.0,
+    "8": 21.6,
+    "9": 22.5,
+    "10": 23.7,
+    "11": 24.4,
+    "12": 25.2,
+    "13": 25.7,
+    "14": 25.6,
+    "15": 25.5,
+    "16": 24.9,
+    "17": 24.2,
+    "18": 23.3,
+    "19": 22.3,
+    "20": 21.5,
+    "21": 21.2,
+    "22": 21.0,
+    "23": 20.9
+  },
+  "snapshot_hour": 2
+}

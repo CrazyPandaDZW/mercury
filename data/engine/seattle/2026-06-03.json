@@ -1,0 +1,134 @@
+{
+  "city": "seattle",
+  "target_date": "2026-06-03",
+  "generated_at": "2026-06-01T18:52:21.044791+00:00",
+  "generated_date": "2026-06-02",
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "blend_method": "live_rmse_weighted",
+  "t_ensemble": 70.5,
+  "t_std": 2.21,
+  "t_range": [
+    65.8,
+    72.1
+  ],
+  "t_calibrated": 65.3,
+  "bias_correction": 5.22,
+  "bias_source": "own-track (n=3d, bias=+2.90°C)",
+  "buckets_normal": {
+    "70": 0.1842,
+    "72": 0.6446,
+    "66": 0.1712
+  },
+  "buckets_voting": {
+    "70": 0.1667,
+    "72": 0.5,
+    "66": 0.3333
+  },
+  "buckets_weighted_voting": {
+    "70": 0.1842,
+    "72": 0.6446,
+    "66": 0.1712
+  },
+  "buckets_range": [
+    66,
+    70,
+    72
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 70.9,
+      "deviation": 0.4,
+      "bucket": 70,
+      "weight": 0.184,
+      "live_rmse": 3.5
+    },
+    "gfs_seamless": {
+      "t_max": 71.4,
+      "deviation": 0.9,
+      "bucket": 72,
+      "weight": 0.14,
+      "live_rmse": 4.02
+    },
+    "jma_seamless": {
+      "t_max": 65.8,
+      "deviation": -4.7,
+      "bucket": 66,
+      "weight": 0.078,
+      "live_rmse": 5.37
+    },
+    "icon_seamless": {
+      "t_max": 65.8,
+      "deviation": -4.7,
+      "bucket": 66,
+      "weight": 0.093,
+      "live_rmse": 4.92
+    },
+    "gem_seamless": {
+      "t_max": 71.2,
+      "deviation": 0.7,
+      "bucket": 72,
+      "weight": 0.162,
+      "live_rmse": 3.73
+    },
+    "ukmo_seamless": {
+      "t_max": 72.1,
+      "deviation": 1.6,
+      "bucket": 72,
+      "weight": 0.342,
+      "live_rmse": 2.57
+    }
+  },
+  "metar_t_max": 84.9,
+  "forecast_error": -19.6,
+  "live_weights": true,
+  "live_n_points": 15,
+  "live_rmse_summary": {
+    "ecmwf_ifs": 3.5,
+    "gfs_seamless": 4.02,
+    "jma_seamless": 5.37,
+    "icon_seamless": 4.92,
+    "gem_seamless": 3.73,
+    "ukmo_seamless": 2.57
+  },
+  "l1_curve": {
+    "0": 68.0,
+    "1": 65.5,
+    "2": 63.3,
+    "3": 61.7,
+    "4": 60.3,
+    "5": 59.5,
+    "6": 59.4,
+    "7": 59.9,
+    "8": 60.4,
+    "9": 62.1,
+    "10": 63.0,
+    "11": 64.4,
+    "12": 66.9,
+    "13": 68.0,
+    "14": 68.7,
+    "15": 69.1,
+    "16": 69.4,
+    "17": 68.4,
+    "18": 67.5,
+    "19": 66.2,
+    "20": 64.2,
+    "21": 61.9,
+    "22": 59.9,
+    "23": 58.6
+  },
+  "snapshot_hour": 11,
+  "unit": "fahrenheit",
+  "bucket_labels": {
+    "66": "66-67°F",
+    "70": "70-71°F",
+    "72": "72-73°F"
+  }
+}

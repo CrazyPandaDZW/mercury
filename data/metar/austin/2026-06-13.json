@@ -1,0 +1,431 @@
+{
+  "city": "austin",
+  "station": "KAUS",
+  "date": "2026-06-13",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KAUS",
+  "fetched_at": "2026-06-13T15:11:28.936791+00:00",
+  "fetch_count": 13,
+  "n_records": 46,
+  "records": [
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 00:53",
+      "temp_c": 31.7,
+      "dew_point_c": 23.9,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 01:53",
+      "temp_c": 30.0,
+      "dew_point_c": 23.9,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 02:53",
+      "temp_c": 28.9,
+      "dew_point_c": 23.9,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 03:53",
+      "temp_c": 27.8,
+      "dew_point_c": 23.9,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 04:53",
+      "temp_c": 26.7,
+      "dew_point_c": 23.9,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 05:43",
+      "temp_c": 26.7,
+      "dew_point_c": 24.4,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 05:53",
+      "temp_c": 26.7,
+      "dew_point_c": 23.9,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 06:53",
+      "temp_c": 26.1,
+      "dew_point_c": 24.4,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 07:53",
+      "temp_c": 26.7,
+      "dew_point_c": 24.4,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 08:53",
+      "temp_c": 26.1,
+      "dew_point_c": 24.4,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 09:53",
+      "temp_c": 26.1,
+      "dew_point_c": 24.4,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 10:13",
+      "temp_c": 26.1,
+      "dew_point_c": 24.4,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 10:53",
+      "temp_c": 25.6,
+      "dew_point_c": 24.4,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 11:36",
+      "temp_c": 25.6,
+      "dew_point_c": 24.4,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 11:51",
+      "temp_c": 26.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 11:53",
+      "temp_c": 25.6,
+      "dew_point_c": 24.4,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 12:33",
+      "temp_c": 26.1,
+      "dew_point_c": 25.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 12:53",
+      "temp_c": 26.7,
+      "dew_point_c": 25.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 13:53",
+      "temp_c": 27.8,
+      "dew_point_c": 24.4,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 14:53",
+      "temp_c": 27.8,
+      "dew_point_c": 25.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 15:53",
+      "temp_c": 30.0,
+      "dew_point_c": 24.4,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 16:53",
+      "temp_c": 31.1,
+      "dew_point_c": 23.9,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 17:53",
+      "temp_c": 31.7,
+      "dew_point_c": 25.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 18:53",
+      "temp_c": 33.3,
+      "dew_point_c": 23.9,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 19:53",
+      "temp_c": 33.9,
+      "dew_point_c": 23.3,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 20:53",
+      "temp_c": 34.4,
+      "dew_point_c": 23.3,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 21:53",
+      "temp_c": 33.9,
+      "dew_point_c": 22.2,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 22:53",
+      "temp_c": 33.9,
+      "dew_point_c": 22.8,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-12 23:53",
+      "temp_c": 33.3,
+      "dew_point_c": 23.3,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 00:53",
+      "temp_c": 32.2,
+      "dew_point_c": 22.2,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 01:53",
+      "temp_c": 29.4,
+      "dew_point_c": 23.3,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 02:53",
+      "temp_c": 28.3,
+      "dew_point_c": 23.3,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 03:53",
+      "temp_c": 27.8,
+      "dew_point_c": 22.8,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:45.399728+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 04:53",
+      "temp_c": 26.7,
+      "dew_point_c": 23.3,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T05:15:23.365787+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 05:45",
+      "temp_c": 26.1,
+      "dew_point_c": 23.3,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T06:05:29.431035+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 05:53",
+      "temp_c": 26.1,
+      "dew_point_c": 23.3,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T06:05:29.431035+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 06:53",
+      "temp_c": 25.6,
+      "dew_point_c": 23.9,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T07:12:01.574385+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 07:53",
+      "temp_c": 25.6,
+      "dew_point_c": 23.9,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T08:01:56.820109+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 08:53",
+      "temp_c": 25.0,
+      "dew_point_c": 23.3,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T09:08:08.007997+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 09:53",
+      "temp_c": 23.9,
+      "dew_point_c": 22.8,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T10:14:27.089869+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 10:53",
+      "temp_c": 23.9,
+      "dew_point_c": 22.8,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T11:03:38.647511+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 11:53",
+      "temp_c": 23.3,
+      "dew_point_c": 22.8,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T12:09:12.492580+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 12:53",
+      "temp_c": 25.6,
+      "dew_point_c": 23.9,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T13:15:11.264914+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 13:53",
+      "temp_c": 27.2,
+      "dew_point_c": 23.9,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T14:04:31.794839+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 14:18",
+      "temp_c": 27.2,
+      "dew_point_c": 23.3,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T14:38:11.522983+00:00"
+    },
+    {
+      "station": "AUS",
+      "time_utc": "2026-06-13 14:53",
+      "temp_c": 28.9,
+      "dew_point_c": 22.8,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-13T15:11:28.936791+00:00"
+    }
+  ],
+  "t_max": 34.4,
+  "t_min": 23.3,
+  "t_avg": 28.0,
+  "dew_point_avg": 23.8,
+  "wind_max_knots": 13.0
+}

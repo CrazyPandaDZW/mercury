@@ -1,0 +1,101 @@
+{
+  "city": "jakarta",
+  "target_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:46:19.424781+00:00",
+  "generated_date": "2026-05-31",
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "blend_method": "deb_mae_weighted",
+  "t_ensemble": 31.3,
+  "t_std": 1.01,
+  "t_range": [
+    29.0,
+    33.1
+  ],
+  "t_calibrated": 31.3,
+  "bias_correction": 0.04,
+  "bias_source": "polywx-bootstrap (bias=+0.04°C)",
+  "buckets_normal": {
+    "28": 0.0027,
+    "29": 0.0346,
+    "30": 0.1768,
+    "31": 0.3643,
+    "32": 0.3041,
+    "33": 0.1027,
+    "34": 0.0139
+  },
+  "buckets_voting": {
+    "29": 0.0,
+    "32": 0.0,
+    "31": 0.0,
+    "33": 0.0,
+    "30": 0.0
+  },
+  "buckets_weighted_voting": {
+    "29": 0.1101,
+    "32": 0.669,
+    "31": 0.0418,
+    "33": 0.0846,
+    "30": 0.0945
+  },
+  "buckets_range": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 29.0,
+      "deviation": -2.3,
+      "bucket": 29,
+      "weight": 0.11
+    },
+    "gfs_seamless": {
+      "t_max": 31.8,
+      "deviation": 0.5,
+      "bucket": 32,
+      "weight": 0.169
+    },
+    "jma_seamless": {
+      "t_max": 30.6,
+      "deviation": -0.7,
+      "bucket": 31,
+      "weight": 0.042
+    },
+    "icon_seamless": {
+      "t_max": 31.6,
+      "deviation": 0.3,
+      "bucket": 32,
+      "weight": 0.5
+    },
+    "gem_seamless": {
+      "t_max": 33.1,
+      "deviation": 1.8,
+      "bucket": 33,
+      "weight": 0.085
+    },
+    "ukmo_seamless": {
+      "t_max": 30.5,
+      "deviation": -0.8,
+      "bucket": 30,
+      "weight": 0.095
+    }
+  },
+  "metar_t_max": 30.0,
+  "forecast_error": 1.3
+}

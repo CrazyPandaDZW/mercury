@@ -1,0 +1,296 @@
+{
+  "city": "ankara",
+  "station": "LTAC",
+  "date": "2026-06-20",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "LTAC",
+  "fetched_at": "2026-06-20T15:41:35.221482+00:00",
+  "fetch_count": 32,
+  "n_records": 31,
+  "records": [
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 00:20",
+      "temp_c": 15.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T00:39:14.715953+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 00:50",
+      "temp_c": 15.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T01:12:04.122804+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 01:20",
+      "temp_c": 15.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T01:44:46.793474+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 01:50",
+      "temp_c": 15.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T02:17:30.260720+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 02:20",
+      "temp_c": 14.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T02:33:52.021478+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 02:50",
+      "temp_c": 14.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T03:06:49.510776+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 03:20",
+      "temp_c": 15.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T03:39:32.529377+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 03:50",
+      "temp_c": 15.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T04:12:22.362777+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 04:20",
+      "temp_c": 15.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T04:45:05.640849+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 04:50",
+      "temp_c": 16.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T05:01:27.456496+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 05:20",
+      "temp_c": 18.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T05:34:11.088310+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 05:50",
+      "temp_c": 18.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T06:07:02.918006+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 06:20",
+      "temp_c": 19.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T06:39:50.168839+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 06:50",
+      "temp_c": 19.0,
+      "dew_point_c": 5.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T07:12:41.913810+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 07:20",
+      "temp_c": 20.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T07:45:31.101589+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 07:50",
+      "temp_c": 21.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T08:01:52.534506+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 08:20",
+      "temp_c": 21.0,
+      "dew_point_c": 6.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T08:34:40.758011+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 08:50",
+      "temp_c": 21.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T09:07:31.955823+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 09:20",
+      "temp_c": 22.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T09:40:22.303054+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 09:50",
+      "temp_c": 23.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T10:13:09.042050+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 10:20",
+      "temp_c": 22.0,
+      "dew_point_c": 9.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T10:45:55.096421+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 10:50",
+      "temp_c": 22.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T11:02:17.099039+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 11:20",
+      "temp_c": 22.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T11:35:00.346965+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 11:50",
+      "temp_c": 23.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T12:07:58.134943+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 12:20",
+      "temp_c": 24.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T12:40:41.320407+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 12:50",
+      "temp_c": 23.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T13:13:24.709563+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 13:20",
+      "temp_c": 23.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T13:46:15.365295+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 13:50",
+      "temp_c": 23.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T14:02:42.382144+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 14:20",
+      "temp_c": 23.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T14:35:40.841105+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 14:50",
+      "temp_c": 23.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T15:08:32.375128+00:00"
+    },
+    {
+      "station": "LTAC",
+      "time_utc": "2026-06-20 15:20",
+      "temp_c": 23.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T15:41:35.221482+00:00"
+    }
+  ],
+  "t_max": 24.0,
+  "t_min": 14.0,
+  "t_avg": 19.4,
+  "dew_point_avg": 8.7,
+  "wind_max_knots": 11.0
+}

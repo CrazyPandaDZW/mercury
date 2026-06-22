@@ -1,0 +1,409 @@
+{
+  "city": "los-angeles",
+  "station": "KLAX",
+  "date": "2026-06-04",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KLAX",
+  "fetched_at": "2026-06-04T15:02:20.507036+00:00",
+  "fetch_count": 16,
+  "n_records": 49,
+  "records": [
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 00:53",
+      "temp_c": 18.3,
+      "dew_point_c": 13.9,
+      "wind_knots": 16.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 01:53",
+      "temp_c": 17.8,
+      "dew_point_c": 13.9,
+      "wind_knots": 16.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 02:53",
+      "temp_c": 16.7,
+      "dew_point_c": 14.4,
+      "wind_knots": 12.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 03:22",
+      "temp_c": 16.7,
+      "dew_point_c": 13.9,
+      "wind_knots": 12.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 03:53",
+      "temp_c": 16.7,
+      "dew_point_c": 13.9,
+      "wind_knots": 11.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 04:12",
+      "temp_c": 16.1,
+      "dew_point_c": 13.3,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 04:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.9,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 05:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.9,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 06:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.3,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 07:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.3,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 07:59",
+      "temp_c": 16.1,
+      "dew_point_c": 13.3,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 08:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.3,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 09:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.3,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 10:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.3,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 11:53",
+      "temp_c": 16.1,
+      "dew_point_c": 12.8,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 12:53",
+      "temp_c": 16.1,
+      "dew_point_c": 12.8,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 13:53",
+      "temp_c": 16.7,
+      "dew_point_c": 12.8,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 14:14",
+      "temp_c": 16.7,
+      "dew_point_c": 12.8,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 14:53",
+      "temp_c": 17.2,
+      "dew_point_c": 12.8,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 15:53",
+      "temp_c": 17.2,
+      "dew_point_c": 12.8,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 16:53",
+      "temp_c": 18.3,
+      "dew_point_c": 12.8,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 17:53",
+      "temp_c": 19.4,
+      "dew_point_c": 13.3,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 18:53",
+      "temp_c": 19.4,
+      "dew_point_c": 12.8,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 19:53",
+      "temp_c": 19.4,
+      "dew_point_c": 12.8,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 20:53",
+      "temp_c": 20.0,
+      "dew_point_c": 13.3,
+      "wind_knots": 11.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 21:53",
+      "temp_c": 19.4,
+      "dew_point_c": 13.3,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 22:53",
+      "temp_c": 19.4,
+      "dew_point_c": 12.8,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-03 23:53",
+      "temp_c": 19.4,
+      "dew_point_c": 13.3,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 00:53",
+      "temp_c": 18.3,
+      "dew_point_c": 13.9,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 01:53",
+      "temp_c": 17.8,
+      "dew_point_c": 13.9,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 02:43",
+      "temp_c": 16.7,
+      "dew_point_c": 14.4,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 02:53",
+      "temp_c": 16.7,
+      "dew_point_c": 13.9,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 03:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.9,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 04:10",
+      "temp_c": 15.6,
+      "dew_point_c": 13.9,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 04:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.9,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 05:05",
+      "temp_c": 15.6,
+      "dew_point_c": 13.9,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 05:20",
+      "temp_c": 16.1,
+      "dew_point_c": 13.9,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 05:53",
+      "temp_c": 16.1,
+      "dew_point_c": 13.9,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 06:50",
+      "temp_c": 16.0,
+      "dew_point_c": 14.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 06:53",
+      "temp_c": 16.1,
+      "dew_point_c": 14.4,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 07:26",
+      "temp_c": 16.7,
+      "dew_point_c": 14.4,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 07:53",
+      "temp_c": 16.7,
+      "dew_point_c": 14.4,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 08:53",
+      "temp_c": 17.2,
+      "dew_point_c": 14.4,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 09:53",
+      "temp_c": 17.2,
+      "dew_point_c": 14.4,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 10:53",
+      "temp_c": 17.2,
+      "dew_point_c": 14.4,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 11:53",
+      "temp_c": 17.2,
+      "dew_point_c": 14.4,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 12:53",
+      "temp_c": 16.7,
+      "dew_point_c": 14.4,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 13:53",
+      "temp_c": 17.2,
+      "dew_point_c": 14.4,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-04 14:53",
+      "temp_c": 17.8,
+      "dew_point_c": 14.4,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9
+    }
+  ],
+  "t_max": 20.0,
+  "t_min": 15.6,
+  "t_avg": 17.1,
+  "dew_point_avg": 13.7,
+  "wind_max_knots": 16.0
+}

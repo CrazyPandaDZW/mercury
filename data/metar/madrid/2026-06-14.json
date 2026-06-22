@@ -1,0 +1,305 @@
+{
+  "city": "madrid",
+  "station": "LEMD",
+  "date": "2026-06-14",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "LEMD",
+  "fetched_at": "2026-06-14T15:48:35.909159+00:00",
+  "fetch_count": 33,
+  "n_records": 32,
+  "records": [
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 00:00",
+      "temp_c": 24.0,
+      "dew_point_c": 5.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T00:23:58.717912+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 00:30",
+      "temp_c": 24.0,
+      "dew_point_c": 4.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T00:57:17.314160+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 01:00",
+      "temp_c": 23.0,
+      "dew_point_c": 5.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T01:13:42.570646+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 01:30",
+      "temp_c": 22.0,
+      "dew_point_c": 5.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T01:46:45.089577+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 02:00",
+      "temp_c": 22.0,
+      "dew_point_c": 5.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T02:19:41.639832+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 02:30",
+      "temp_c": 22.0,
+      "dew_point_c": 6.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T02:52:35.240269+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 03:00",
+      "temp_c": 21.0,
+      "dew_point_c": 6.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T03:25:31.707112+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 03:30",
+      "temp_c": 21.0,
+      "dew_point_c": 6.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T03:42:01.214324+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 04:00",
+      "temp_c": 20.0,
+      "dew_point_c": 6.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T04:14:56.597621+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 04:30",
+      "temp_c": 19.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T04:47:59.908941+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 05:00",
+      "temp_c": 19.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T05:20:50.400297+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 05:30",
+      "temp_c": 18.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T05:54:39.563727+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 06:00",
+      "temp_c": 19.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T06:27:33.593455+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 06:30",
+      "temp_c": 21.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T06:44:06.999741+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 07:00",
+      "temp_c": 22.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T07:17:19.556961+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 07:30",
+      "temp_c": 23.0,
+      "dew_point_c": 6.0,
+      "wind_knots": 1.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T07:50:10.473309+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 08:00",
+      "temp_c": 25.0,
+      "dew_point_c": 6.0,
+      "wind_knots": 1.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T08:23:13.183136+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 08:30",
+      "temp_c": 25.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T08:56:18.464327+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 09:00",
+      "temp_c": 25.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T09:12:40.104090+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 09:30",
+      "temp_c": 27.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T09:45:26.107331+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 10:00",
+      "temp_c": 28.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-14T10:18:22.273539+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 10:30",
+      "temp_c": 29.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-14T10:51:06.861770+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 11:00",
+      "temp_c": 30.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-14T11:23:54.038433+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 11:30",
+      "temp_c": 31.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-14T11:56:57.197367+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 12:00",
+      "temp_c": 32.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-14T12:13:13.284240+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 12:30",
+      "temp_c": 32.0,
+      "dew_point_c": 8.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-14T12:46:07.758819+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 13:00",
+      "temp_c": 34.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-14T13:19:23.337200+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 13:30",
+      "temp_c": 34.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-14T13:52:15.751241+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 14:00",
+      "temp_c": 34.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-14T14:25:12.161458+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 14:30",
+      "temp_c": 34.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-14T14:41:52.944810+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 15:00",
+      "temp_c": 34.0,
+      "dew_point_c": 6.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-14T15:15:14.437931+00:00"
+    },
+    {
+      "station": "LEMD",
+      "time_utc": "2026-06-14 15:30",
+      "temp_c": 33.0,
+      "dew_point_c": 7.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-14T15:48:35.909159+00:00"
+    }
+  ],
+  "t_max": 34.0,
+  "t_min": 18.0,
+  "t_avg": 25.8,
+  "dew_point_avg": 6.5,
+  "wind_max_knots": 8.0
+}

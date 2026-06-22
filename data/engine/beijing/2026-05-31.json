@@ -1,0 +1,119 @@
+{
+  "city": "beijing",
+  "target_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:43:55.166436+00:00",
+  "generated_date": "2026-05-31",
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "blend_method": "live_rmse_weighted",
+  "t_ensemble": 33.6,
+  "t_std": 1.51,
+  "t_range": [
+    32.4,
+    37.7
+  ],
+  "t_calibrated": 33.2,
+  "bias_correction": 0.43,
+  "bias_source": "live-rmse (n=48, bias=+0.43°C)",
+  "buckets_normal": {
+    "30": 0.0297,
+    "31": 0.0932,
+    "32": 0.1914,
+    "33": 0.2573,
+    "34": 0.2266,
+    "35": 0.1308,
+    "36": 0.0494,
+    "37": 0.0122,
+    "38": 0.002
+  },
+  "buckets_voting": {
+    "34": 0.0,
+    "37": 0.0,
+    "38": 0.0,
+    "32": 0.0,
+    "35": 0.0
+  },
+  "buckets_weighted_voting": {
+    "34": 0.2588,
+    "37": 0.0693,
+    "38": 0.0365,
+    "32": 0.5089,
+    "35": 0.1265
+  },
+  "buckets_range": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 34.3,
+      "deviation": 0.7,
+      "bucket": 34,
+      "weight": 0.11,
+      "live_rmse": 3.85
+    },
+    "gfs_seamless": {
+      "t_max": 36.8,
+      "deviation": 3.2,
+      "bucket": 37,
+      "weight": 0.069,
+      "live_rmse": 4.85
+    },
+    "jma_seamless": {
+      "t_max": 37.7,
+      "deviation": 4.1,
+      "bucket": 38,
+      "weight": 0.036,
+      "live_rmse": 6.68
+    },
+    "icon_seamless": {
+      "t_max": 32.4,
+      "deviation": -1.2,
+      "bucket": 32,
+      "weight": 0.509,
+      "live_rmse": 1.79
+    },
+    "gem_seamless": {
+      "t_max": 33.9,
+      "deviation": 0.3,
+      "bucket": 34,
+      "weight": 0.149,
+      "live_rmse": 3.31
+    },
+    "ukmo_seamless": {
+      "t_max": 34.7,
+      "deviation": 1.1,
+      "bucket": 35,
+      "weight": 0.127,
+      "live_rmse": 3.59
+    }
+  },
+  "metar_t_max": 33.0,
+  "forecast_error": 0.2,
+  "live_weights": true,
+  "live_n_points": 48,
+  "live_rmse_summary": {
+    "ecmwf_ifs": 3.85,
+    "gfs_seamless": 4.85,
+    "jma_seamless": 6.68,
+    "icon_seamless": 1.79,
+    "gem_seamless": 3.31,
+    "ukmo_seamless": 3.59
+  }
+}

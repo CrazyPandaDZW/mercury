@@ -1,0 +1,161 @@
+{
+  "city": "san-francisco",
+  "station": "KSFO",
+  "date": "2026-06-15",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KSFO",
+  "fetched_at": "2026-06-15T15:11:57.927851+00:00",
+  "fetch_count": 17,
+  "n_records": 16,
+  "records": [
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 00:56",
+      "temp_c": 20.6,
+      "dew_point_c": 12.8,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-15T01:07:12.733283+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 01:56",
+      "temp_c": 20.0,
+      "dew_point_c": 12.8,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-15T02:13:14.796452+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 02:56",
+      "temp_c": 18.9,
+      "dew_point_c": 12.8,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-15T03:02:59.491241+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 03:56",
+      "temp_c": 16.7,
+      "dew_point_c": 12.8,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T04:08:38.024852+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 04:56",
+      "temp_c": 16.1,
+      "dew_point_c": 12.2,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T05:15:02.121483+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 05:56",
+      "temp_c": 15.6,
+      "dew_point_c": 12.8,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T06:04:56.175789+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 06:56",
+      "temp_c": 15.0,
+      "dew_point_c": 12.8,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T07:11:15.867545+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 07:56",
+      "temp_c": 15.0,
+      "dew_point_c": 12.2,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T08:17:50.588484+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 08:56",
+      "temp_c": 15.0,
+      "dew_point_c": 12.8,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T09:07:57.907389+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 09:29",
+      "temp_c": 14.4,
+      "dew_point_c": 12.8,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T09:57:13.151687+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 09:56",
+      "temp_c": 15.0,
+      "dew_point_c": 12.8,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T10:13:37.311810+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 10:56",
+      "temp_c": 14.4,
+      "dew_point_c": 12.2,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T11:03:02.292160+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 11:56",
+      "temp_c": 14.4,
+      "dew_point_c": 12.2,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T12:08:56.799625+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 12:56",
+      "temp_c": 14.4,
+      "dew_point_c": 12.2,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T13:15:11.567403+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 13:56",
+      "temp_c": 15.0,
+      "dew_point_c": 12.2,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T14:05:07.522477+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-15 14:56",
+      "temp_c": 15.6,
+      "dew_point_c": 12.2,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-15T15:11:57.927851+00:00"
+    }
+  ],
+  "t_max": 20.6,
+  "t_min": 14.4,
+  "t_avg": 16.0,
+  "dew_point_avg": 12.5,
+  "wind_max_knots": 13.0
+}

@@ -1,0 +1,296 @@
+{
+  "city": "amsterdam",
+  "station": "EHAM",
+  "date": "2026-06-20",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "EHAM",
+  "fetched_at": "2026-06-20T15:41:25.205882+00:00",
+  "fetch_count": 32,
+  "n_records": 31,
+  "records": [
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 00:25",
+      "temp_c": 21.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T00:39:12.610366+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 00:55",
+      "temp_c": 20.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-20T01:12:02.050605+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 01:25",
+      "temp_c": 20.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T01:44:44.484768+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 01:55",
+      "temp_c": 21.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T02:17:28.127950+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 02:25",
+      "temp_c": 20.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-20T02:33:50.076851+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 02:55",
+      "temp_c": 20.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T03:06:47.569960+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 03:25",
+      "temp_c": 20.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-20T03:39:30.277126+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 03:55",
+      "temp_c": 20.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-20T04:12:20.238012+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 04:25",
+      "temp_c": 20.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T04:45:03.565834+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 04:55",
+      "temp_c": 21.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T05:17:47.372696+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 05:25",
+      "temp_c": 22.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T05:34:08.822584+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 05:55",
+      "temp_c": 22.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T06:07:00.738001+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 06:25",
+      "temp_c": 22.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T06:39:47.900342+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 06:55",
+      "temp_c": 22.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T07:12:39.841728+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 07:25",
+      "temp_c": 22.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T07:45:29.035594+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 07:55",
+      "temp_c": 24.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T08:18:16.952857+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 08:25",
+      "temp_c": 24.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T08:34:38.705911+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 08:55",
+      "temp_c": 23.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T09:07:29.819130+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 09:25",
+      "temp_c": 24.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-20T09:40:20.302121+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 09:55",
+      "temp_c": 25.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T10:13:06.852689+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 10:25",
+      "temp_c": 25.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T10:45:52.918241+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 10:55",
+      "temp_c": 25.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T11:02:15.100367+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 11:25",
+      "temp_c": 25.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T11:34:58.369719+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 11:55",
+      "temp_c": 25.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T12:07:55.808221+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 12:25",
+      "temp_c": 25.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T12:40:39.169406+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 12:55",
+      "temp_c": 25.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T13:13:35.339701+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 13:25",
+      "temp_c": 25.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T13:46:13.394654+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 13:55",
+      "temp_c": 25.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T14:02:40.384439+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 14:25",
+      "temp_c": 24.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T14:35:38.650580+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 14:55",
+      "temp_c": 25.0,
+      "dew_point_c": 18.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T15:08:42.357914+00:00"
+    },
+    {
+      "station": "EHAM",
+      "time_utc": "2026-06-20 15:25",
+      "temp_c": 24.0,
+      "dew_point_c": 17.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-20T15:41:25.205882+00:00"
+    }
+  ],
+  "t_max": 25.0,
+  "t_min": 20.0,
+  "t_avg": 22.8,
+  "dew_point_avg": 18.2,
+  "wind_max_knots": 12.0
+}

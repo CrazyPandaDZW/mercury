@@ -1,0 +1,321 @@
+{
+  "city": "dallas",
+  "station": "KDFW",
+  "date": "2026-06-02",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KDFW",
+  "fetched_at": "2026-06-02T15:05:54.385628+00:00",
+  "fetch_count": 12,
+  "n_records": 38,
+  "records": [
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 00:53",
+      "temp_c": 31.1,
+      "dew_point_c": 19.4,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.8
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 01:53",
+      "temp_c": 30.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 02:53",
+      "temp_c": 28.9,
+      "dew_point_c": 21.1,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 03:53",
+      "temp_c": 27.8,
+      "dew_point_c": 21.1,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 04:53",
+      "temp_c": 27.2,
+      "dew_point_c": 21.1,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 05:53",
+      "temp_c": 27.2,
+      "dew_point_c": 21.1,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 07:53",
+      "temp_c": 25.0,
+      "dew_point_c": 21.1,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 08:53",
+      "temp_c": 23.9,
+      "dew_point_c": 21.1,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 09:53",
+      "temp_c": 25.0,
+      "dew_point_c": 21.1,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 10:53",
+      "temp_c": 24.4,
+      "dew_point_c": 21.1,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 11:53",
+      "temp_c": 23.9,
+      "dew_point_c": 21.1,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 12:53",
+      "temp_c": 26.1,
+      "dew_point_c": 21.1,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 13:53",
+      "temp_c": 28.3,
+      "dew_point_c": 21.1,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 14:53",
+      "temp_c": 30.0,
+      "dew_point_c": 20.6,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 15:53",
+      "temp_c": 31.1,
+      "dew_point_c": 20.6,
+      "wind_knots": 12.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 16:53",
+      "temp_c": 31.7,
+      "dew_point_c": 21.1,
+      "wind_knots": 11.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 17:53",
+      "temp_c": 32.8,
+      "dew_point_c": 20.6,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 18:53",
+      "temp_c": 33.3,
+      "dew_point_c": 21.1,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 19:53",
+      "temp_c": 33.3,
+      "dew_point_c": 20.6,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 20:53",
+      "temp_c": 34.4,
+      "dew_point_c": 18.9,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 21:53",
+      "temp_c": 34.4,
+      "dew_point_c": 20.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 22:53",
+      "temp_c": 34.4,
+      "dew_point_c": 21.1,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-01 23:53",
+      "temp_c": 33.3,
+      "dew_point_c": 20.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 00:53",
+      "temp_c": 32.2,
+      "dew_point_c": 20.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 01:53",
+      "temp_c": 30.6,
+      "dew_point_c": 21.1,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 02:53",
+      "temp_c": 30.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 03:53",
+      "temp_c": 28.3,
+      "dew_point_c": 20.6,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 04:53",
+      "temp_c": 27.8,
+      "dew_point_c": 20.6,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 05:53",
+      "temp_c": 27.8,
+      "dew_point_c": 20.6,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 06:53",
+      "temp_c": 27.2,
+      "dew_point_c": 20.6,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 07:53",
+      "temp_c": 26.7,
+      "dew_point_c": 21.1,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 08:53",
+      "temp_c": 25.0,
+      "dew_point_c": 20.6,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 09:53",
+      "temp_c": 26.1,
+      "dew_point_c": 20.6,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 10:53",
+      "temp_c": 24.4,
+      "dew_point_c": 20.6,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 11:53",
+      "temp_c": 25.0,
+      "dew_point_c": 20.6,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 12:53",
+      "temp_c": 27.2,
+      "dew_point_c": 21.1,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 13:53",
+      "temp_c": 30.0,
+      "dew_point_c": 21.1,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0
+    },
+    {
+      "station": "DFW",
+      "time_utc": "2026-06-02 14:53",
+      "temp_c": 31.1,
+      "dew_point_c": 21.7,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.1
+    }
+  ],
+  "t_max": 34.4,
+  "t_min": 23.9,
+  "t_avg": 28.9,
+  "dew_point_avg": 20.7,
+  "wind_max_knots": 12.0
+}

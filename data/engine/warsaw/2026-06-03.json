@@ -1,0 +1,145 @@
+{
+  "city": "warsaw",
+  "target_date": "2026-06-03",
+  "generated_at": "2026-06-01T18:52:35.318507+00:00",
+  "generated_date": "2026-06-02",
+  "n_models": 7,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless",
+    "icon_eu"
+  ],
+  "blend_method": "live_rmse_weighted",
+  "t_ensemble": 23.4,
+  "t_std": 0.91,
+  "t_range": [
+    19.5,
+    25.4
+  ],
+  "t_calibrated": 23.2,
+  "bias_correction": 0.23,
+  "bias_source": "own-track (n=3d, bias=+0.23°C)",
+  "buckets_normal": {
+    "21": 0.0634,
+    "23": 0.3406,
+    "20": 0.0219,
+    "24": 0.555,
+    "25": 0.0191
+  },
+  "buckets_voting": {
+    "21": 0.0,
+    "23": 0.0,
+    "20": 0.0,
+    "24": 0.0,
+    "25": 0.0
+  },
+  "buckets_weighted_voting": {
+    "21": 0.0634,
+    "23": 0.3406,
+    "20": 0.0219,
+    "24": 0.555,
+    "25": 0.0191
+  },
+  "buckets_range": [
+    20,
+    21,
+    23,
+    24,
+    25
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 21.0,
+      "deviation": -2.4,
+      "bucket": 21,
+      "weight": 0.063,
+      "live_rmse": 1.53
+    },
+    "gfs_seamless": {
+      "t_max": 23.4,
+      "deviation": 0.0,
+      "bucket": 23,
+      "weight": 0.341,
+      "live_rmse": 0.66
+    },
+    "jma_seamless": {
+      "t_max": 19.5,
+      "deviation": -3.9,
+      "bucket": 20,
+      "weight": 0.022,
+      "live_rmse": 2.6
+    },
+    "icon_seamless": {
+      "t_max": 23.7,
+      "deviation": 0.3,
+      "bucket": 24,
+      "weight": 0.164,
+      "live_rmse": 0.95
+    },
+    "gem_seamless": {
+      "t_max": 25.4,
+      "deviation": 2.0,
+      "bucket": 25,
+      "weight": 0.019,
+      "live_rmse": 2.79
+    },
+    "ukmo_seamless": {
+      "t_max": 23.7,
+      "deviation": 0.3,
+      "bucket": 24,
+      "weight": 0.226,
+      "live_rmse": 0.81
+    },
+    "icon_eu": {
+      "t_max": 23.7,
+      "deviation": 0.3,
+      "bucket": 24,
+      "weight": 0.164,
+      "live_rmse": 0.95
+    }
+  },
+  "metar_t_max": 23.0,
+  "forecast_error": 0.2,
+  "live_weights": true,
+  "live_n_points": 32,
+  "live_rmse_summary": {
+    "ecmwf_ifs": 1.53,
+    "gfs_seamless": 0.66,
+    "jma_seamless": 2.6,
+    "icon_seamless": 0.95,
+    "gem_seamless": 2.79,
+    "ukmo_seamless": 0.81,
+    "icon_eu": 0.95
+  },
+  "l1_curve": {
+    "0": 15.8,
+    "1": 15.1,
+    "2": 14.5,
+    "3": 13.9,
+    "4": 13.3,
+    "5": 13.0,
+    "6": 13.2,
+    "7": 14.1,
+    "8": 15.6,
+    "9": 17.1,
+    "10": 18.4,
+    "11": 19.7,
+    "12": 20.7,
+    "13": 21.8,
+    "14": 22.6,
+    "15": 23.2,
+    "16": 23.3,
+    "17": 23.1,
+    "18": 22.7,
+    "19": 21.9,
+    "20": 20.7,
+    "21": 19.6,
+    "22": 18.2,
+    "23": 17.4
+  },
+  "snapshot_hour": 20
+}

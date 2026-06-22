@@ -1,0 +1,136 @@
+{
+  "city": "manila",
+  "station": "RPLL",
+  "date": "2026-05-31",
+  "fetched_at": "2026-06-01T02:19:13.303801+00:00",
+  "n_records": 25,
+  "records": [
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 00:00",
+      "temp_c": 30.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 01:00",
+      "temp_c": 31.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 02:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 03:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 04:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 05:00",
+      "temp_c": 33.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 06:00",
+      "temp_c": 33.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 07:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 08:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 09:00",
+      "temp_c": 32.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 10:00",
+      "temp_c": 31.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 11:00",
+      "temp_c": 30.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 12:00",
+      "temp_c": 30.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 13:00",
+      "temp_c": 30.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 14:00",
+      "temp_c": 30.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 15:00",
+      "temp_c": 30.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 16:00",
+      "temp_c": 30.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 16:43",
+      "temp_c": 29.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 17:00",
+      "temp_c": 29.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 18:00",
+      "temp_c": 29.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 19:00",
+      "temp_c": 29.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 20:00",
+      "temp_c": 28.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 21:00",
+      "temp_c": 28.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 22:00",
+      "temp_c": 29.0
+    },
+    {
+      "station": "RPLL",
+      "time_utc": "2026-05-31 23:00",
+      "temp_c": 29.0
+    }
+  ],
+  "t_max": 33.0,
+  "t_min": 28.0
+}

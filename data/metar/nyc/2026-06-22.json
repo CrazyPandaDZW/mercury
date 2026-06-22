@@ -1,0 +1,80 @@
+{
+  "city": "nyc",
+  "station": "KJFK",
+  "date": "2026-06-22",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KJFK",
+  "fetched_at": "2026-06-22T07:17:26.246753+00:00",
+  "fetch_count": 8,
+  "n_records": 7,
+  "records": [
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-22 00:51",
+      "temp_c": 20.6,
+      "dew_point_c": 16.7,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T01:16:39.289227+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-22 01:51",
+      "temp_c": 21.1,
+      "dew_point_c": 17.8,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T02:05:56.020319+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-22 02:51",
+      "temp_c": 20.6,
+      "dew_point_c": 17.8,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T03:11:30.753324+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-22 03:51",
+      "temp_c": 20.6,
+      "dew_point_c": 17.8,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T04:17:19.232701+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-22 04:51",
+      "temp_c": 19.4,
+      "dew_point_c": 17.8,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T05:06:25.777934+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-22 05:51",
+      "temp_c": 18.9,
+      "dew_point_c": 17.2,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T06:11:56.979200+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-22 06:51",
+      "temp_c": 18.3,
+      "dew_point_c": 17.2,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T07:17:26.246753+00:00"
+    }
+  ],
+  "t_max": 21.1,
+  "t_min": 18.3,
+  "t_avg": 19.9,
+  "dew_point_avg": 17.5,
+  "wind_max_knots": 5.0
+}

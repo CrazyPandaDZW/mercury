@@ -17,7 +17,6 @@ venv/
 Thumbs.db
 
 # Data & logs (not for repo)
-data/
 logs/
 *_snapshots.jsonl
 *.rar

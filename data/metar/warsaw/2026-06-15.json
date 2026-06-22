@@ -1,0 +1,305 @@
+{
+  "city": "warsaw",
+  "station": "EPWA",
+  "date": "2026-06-15",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "EPWA",
+  "fetched_at": "2026-06-15T15:46:16.155023+00:00",
+  "fetch_count": 33,
+  "n_records": 32,
+  "records": [
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 00:00",
+      "temp_c": 11.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T00:18:32.180437+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 00:30",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T00:51:05.352227+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 01:00",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T01:24:12.811921+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 01:30",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-15T01:57:16.152002+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 02:00",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-15T02:13:40.257117+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 02:30",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-15T02:46:56.102553+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 03:00",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-15T03:19:51.643855+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 03:30",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-15T03:52:38.499833+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 04:00",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T04:25:29.308779+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 04:30",
+      "temp_c": 12.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T04:42:03.111242+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 05:00",
+      "temp_c": 13.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T05:15:35.132758+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 05:30",
+      "temp_c": 13.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T05:48:53.655256+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 06:00",
+      "temp_c": 13.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T06:22:04.954719+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 06:30",
+      "temp_c": 13.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T06:55:20.292734+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 07:00",
+      "temp_c": 13.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T07:11:51.950696+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 07:30",
+      "temp_c": 13.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T07:44:57.385834+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 08:00",
+      "temp_c": 14.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T08:18:31.355492+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 08:30",
+      "temp_c": 15.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 17.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T08:51:49.087708+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 09:00",
+      "temp_c": 15.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 17.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T09:24:53.419727+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 09:30",
+      "temp_c": 14.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T09:57:38.588808+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 10:00",
+      "temp_c": 14.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T10:14:02.574095+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 10:30",
+      "temp_c": 15.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 16.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T10:46:52.345042+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 11:00",
+      "temp_c": 16.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T11:19:54.211717+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 11:30",
+      "temp_c": 16.0,
+      "dew_point_c": 9.0,
+      "wind_knots": 17.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T11:52:56.211120+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 12:00",
+      "temp_c": 16.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T12:26:20.476128+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 12:30",
+      "temp_c": 15.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T12:42:36.562446+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 13:00",
+      "temp_c": 17.0,
+      "dew_point_c": 9.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T13:15:45.242305+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 13:30",
+      "temp_c": 17.0,
+      "dew_point_c": 9.0,
+      "wind_knots": 16.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T13:49:01.902194+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 14:00",
+      "temp_c": 16.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T14:22:13.244969+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 14:30",
+      "temp_c": 16.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T14:55:57.121716+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 15:00",
+      "temp_c": 14.0,
+      "dew_point_c": 12.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-15T15:12:36.599125+00:00"
+    },
+    {
+      "station": "EPWA",
+      "time_utc": "2026-06-15 15:30",
+      "temp_c": 16.0,
+      "dew_point_c": 11.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-15T15:46:16.155023+00:00"
+    }
+  ],
+  "t_max": 17.0,
+  "t_min": 11.0,
+  "t_avg": 13.8,
+  "dew_point_avg": 10.4,
+  "wind_max_knots": 17.0
+}

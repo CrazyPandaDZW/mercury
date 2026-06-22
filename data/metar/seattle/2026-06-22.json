@@ -1,0 +1,80 @@
+{
+  "city": "seattle",
+  "station": "KSEA",
+  "date": "2026-06-22",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KSEA",
+  "fetched_at": "2026-06-22T07:17:30.280389+00:00",
+  "fetch_count": 8,
+  "n_records": 7,
+  "records": [
+    {
+      "station": "SEA",
+      "time_utc": "2026-06-22 00:53",
+      "temp_c": 24.4,
+      "dew_point_c": 8.9,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T01:16:43.446415+00:00"
+    },
+    {
+      "station": "SEA",
+      "time_utc": "2026-06-22 01:53",
+      "temp_c": 23.3,
+      "dew_point_c": 8.9,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T02:06:00.314284+00:00"
+    },
+    {
+      "station": "SEA",
+      "time_utc": "2026-06-22 02:53",
+      "temp_c": 22.8,
+      "dew_point_c": 9.4,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T03:11:35.074158+00:00"
+    },
+    {
+      "station": "SEA",
+      "time_utc": "2026-06-22 03:53",
+      "temp_c": 20.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T04:17:23.388992+00:00"
+    },
+    {
+      "station": "SEA",
+      "time_utc": "2026-06-22 04:53",
+      "temp_c": 20.0,
+      "dew_point_c": 10.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T05:06:30.241963+00:00"
+    },
+    {
+      "station": "SEA",
+      "time_utc": "2026-06-22 05:53",
+      "temp_c": 18.3,
+      "dew_point_c": 10.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T06:12:01.491246+00:00"
+    },
+    {
+      "station": "SEA",
+      "time_utc": "2026-06-22 06:53",
+      "temp_c": 18.9,
+      "dew_point_c": 9.4,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-22T07:17:30.280389+00:00"
+    }
+  ],
+  "t_max": 24.4,
+  "t_min": 18.3,
+  "t_avg": 21.1,
+  "dew_point_avg": 9.5,
+  "wind_max_knots": 8.0
+}

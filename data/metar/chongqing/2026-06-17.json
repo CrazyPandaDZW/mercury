@@ -1,0 +1,377 @@
+{
+  "city": "chongqing",
+  "station": "ZUCK",
+  "date": "2026-06-17",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "ZUCK",
+  "fetched_at": "2026-06-17T15:23:02.840618+00:00",
+  "fetch_count": 13,
+  "n_records": 40,
+  "records": [
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 00:00",
+      "temp_c": 25.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 01:00",
+      "temp_c": 26.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 02:00",
+      "temp_c": 27.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 03:00",
+      "temp_c": 29.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 04:00",
+      "temp_c": 29.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 05:00",
+      "temp_c": 29.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 06:00",
+      "temp_c": 29.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 07:00",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 08:00",
+      "temp_c": 27.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 09:00",
+      "temp_c": 26.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 10:00",
+      "temp_c": 26.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 11:00",
+      "temp_c": 25.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 12:00",
+      "temp_c": 25.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 13:00",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 14:00",
+      "temp_c": 24.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 15:00",
+      "temp_c": 24.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 16:00",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 17:00",
+      "temp_c": 24.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 18:00",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 19:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 20:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 21:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 22:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-16 23:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 00:00",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 01:00",
+      "temp_c": 24.0,
+      "dew_point_c": 19.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 02:00",
+      "temp_c": 24.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 03:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:11:17.317973+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 04:00",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T04:19:20.026048+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 05:00",
+      "temp_c": 21.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T05:26:30.445622+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 06:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T06:16:36.311067+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 07:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T07:22:59.526444+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 08:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T08:12:38.442840+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 09:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T09:18:57.911173+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 10:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T10:24:35.783042+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 11:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T11:13:51.354172+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 12:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T12:19:45.811468+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 13:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-17T13:25:31.671799+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 14:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T14:15:42.918101+00:00"
+    },
+    {
+      "station": "ZUCK",
+      "time_utc": "2026-06-17 15:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T15:23:02.840618+00:00"
+    }
+  ],
+  "t_max": 29.0,
+  "t_min": 21.0,
+  "t_avg": 23.9,
+  "dew_point_avg": 21.8,
+  "wind_max_knots": 9.7
+}

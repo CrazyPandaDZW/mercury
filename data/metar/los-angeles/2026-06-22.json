@@ -1,0 +1,80 @@
+{
+  "city": "los-angeles",
+  "station": "KLAX",
+  "date": "2026-06-22",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KLAX",
+  "fetched_at": "2026-06-22T07:17:21.830980+00:00",
+  "fetch_count": 8,
+  "n_records": 7,
+  "records": [
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-22 00:53",
+      "temp_c": 20.0,
+      "dew_point_c": 13.9,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T01:16:35.004041+00:00"
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-22 01:53",
+      "temp_c": 18.9,
+      "dew_point_c": 13.9,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T02:05:51.745953+00:00"
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-22 02:53",
+      "temp_c": 17.8,
+      "dew_point_c": 14.4,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T03:11:26.481191+00:00"
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-22 03:53",
+      "temp_c": 17.2,
+      "dew_point_c": 14.4,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T04:17:14.762430+00:00"
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-22 04:53",
+      "temp_c": 17.2,
+      "dew_point_c": 14.4,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T05:06:21.574195+00:00"
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-22 05:53",
+      "temp_c": 17.2,
+      "dew_point_c": 14.4,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T06:11:52.838098+00:00"
+    },
+    {
+      "station": "LAX",
+      "time_utc": "2026-06-22 06:53",
+      "temp_c": 16.7,
+      "dew_point_c": 14.4,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T07:17:21.830980+00:00"
+    }
+  ],
+  "t_max": 20.0,
+  "t_min": 16.7,
+  "t_avg": 17.9,
+  "dew_point_avg": 14.3,
+  "wind_max_knots": 14.0
+}

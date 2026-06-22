@@ -1,0 +1,305 @@
+{
+  "city": "karachi",
+  "station": "OPKC",
+  "date": "2026-06-11",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "OPKC",
+  "fetched_at": "2026-06-11T15:37:28.153367+00:00",
+  "fetch_count": 33,
+  "n_records": 32,
+  "records": [
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 00:00",
+      "temp_c": 31.0,
+      "dew_point_c": 27.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T00:10:03.023580+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 00:30",
+      "temp_c": 31.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T00:42:54.236202+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 01:00",
+      "temp_c": 31.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T01:15:50.962053+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 01:30",
+      "temp_c": 31.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T01:32:19.807717+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 02:00",
+      "temp_c": 31.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T02:05:28.717902+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 02:30",
+      "temp_c": 31.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T02:38:10.817154+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 03:00",
+      "temp_c": 32.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T03:11:08.252425+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 03:30",
+      "temp_c": 32.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T03:44:09.570590+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 04:00",
+      "temp_c": 33.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T04:17:33.899844+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 04:30",
+      "temp_c": 33.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T04:34:12.358460+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 05:00",
+      "temp_c": 35.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T05:07:20.768554+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 05:30",
+      "temp_c": 36.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T05:40:45.409668+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 06:00",
+      "temp_c": 37.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T06:13:50.838419+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 06:30",
+      "temp_c": 38.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T06:46:58.084436+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 07:00",
+      "temp_c": 38.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T07:03:31.045052+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 07:30",
+      "temp_c": 39.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T07:36:44.286354+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 08:00",
+      "temp_c": 39.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-11T08:10:42.703115+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 08:30",
+      "temp_c": 39.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T08:43:34.136099+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 09:00",
+      "temp_c": 40.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T09:16:17.771732+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 09:30",
+      "temp_c": 40.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T09:32:40.246772+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 10:00",
+      "temp_c": 40.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T10:05:26.911483+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 10:30",
+      "temp_c": 39.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T10:38:19.686474+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 11:00",
+      "temp_c": 39.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T11:11:25.845460+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 11:30",
+      "temp_c": 39.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T11:44:12.284614+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 12:00",
+      "temp_c": 37.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T12:17:47.404416+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 12:30",
+      "temp_c": 36.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T12:34:07.321520+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 13:00",
+      "temp_c": 35.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T13:07:09.021441+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 13:30",
+      "temp_c": 35.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 16.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T13:23:51.027800+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 14:00",
+      "temp_c": 33.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 17.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T14:13:17.042835+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 14:30",
+      "temp_c": 33.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T14:46:52.846055+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 15:00",
+      "temp_c": 32.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T15:03:43.576883+00:00"
+    },
+    {
+      "station": "OPKC",
+      "time_utc": "2026-06-11 15:30",
+      "temp_c": 32.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 16.0,
+      "pressure_alti": 29.5,
+      "fetched_at": "2026-06-11T15:37:28.153367+00:00"
+    }
+  ],
+  "t_max": 40.0,
+  "t_min": 31.0,
+  "t_avg": 35.2,
+  "dew_point_avg": 24.8,
+  "wind_max_knots": 17.0
+}

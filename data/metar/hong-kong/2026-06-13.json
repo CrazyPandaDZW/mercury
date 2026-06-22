@@ -1,0 +1,890 @@
+{
+  "city": "hong-kong",
+  "station": "VHHH",
+  "date": "2026-06-13",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "VHHH",
+  "fetched_at": "2026-06-13T15:45:44.886950+00:00",
+  "fetch_count": 26,
+  "n_records": 97,
+  "records": [
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 00:00",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 00:30",
+      "temp_c": 29.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 01:00",
+      "temp_c": 28.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 01:30",
+      "temp_c": 28.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 02:00",
+      "temp_c": 29.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 02:30",
+      "temp_c": 29.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 03:00",
+      "temp_c": 30.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 03:30",
+      "temp_c": 30.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 04:00",
+      "temp_c": 30.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 04:30",
+      "temp_c": 31.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 05:00",
+      "temp_c": 30.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 05:30",
+      "temp_c": 30.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 06:00",
+      "temp_c": 29.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 06:17",
+      "temp_c": 29.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 06:23",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 06:25",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 06:30",
+      "temp_c": 27.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 06:41",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 07:00",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 07:30",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 08:00",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 08:30",
+      "temp_c": 29.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 09:00",
+      "temp_c": 29.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 09:30",
+      "temp_c": 29.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 10:00",
+      "temp_c": 29.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 10:23",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 10:30",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 10:43",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 11:00",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 11:30",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 12:00",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 12:30",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 13:00",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 13:30",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 14:00",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 14:30",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 15:00",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 15:30",
+      "temp_c": 28.0,
+      "dew_point_c": 23.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 16:00",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 16:30",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 17:00",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 17:30",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 18:00",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 18:30",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 19:00",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 19:30",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 20:00",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 20:24",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 20:30",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 21:00",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 21:16",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 21:30",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 21:33",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 21:35",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 21:39",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 21:40",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 22:00",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 22:02",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 22:17",
+      "temp_c": 26.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 22:30",
+      "temp_c": 26.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 23:00",
+      "temp_c": 26.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-12 23:30",
+      "temp_c": 26.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 00:00",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 00:30",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 01:00",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 01:30",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 02:00",
+      "temp_c": 29.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 02:30",
+      "temp_c": 29.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 03:00",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 03:30",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:01:05.592353+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 04:00",
+      "temp_c": 31.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:25:41.498804+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 04:30",
+      "temp_c": 32.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T04:42:07.508815+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 05:00",
+      "temp_c": 32.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T05:15:12.570603+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 05:30",
+      "temp_c": 32.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T05:48:31.394500+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 05:38",
+      "temp_c": 31.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 16.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T06:05:16.815652+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 05:52",
+      "temp_c": 31.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T06:05:16.815652+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 06:00",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T06:22:00.608502+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 06:07",
+      "temp_c": 27.0,
+      "dew_point_c": 26.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T06:22:00.608502+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 06:30",
+      "temp_c": 28.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-13T06:55:09.909306+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 07:00",
+      "temp_c": 28.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T07:11:49.760345+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 07:30",
+      "temp_c": 29.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T07:45:06.437772+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 08:00",
+      "temp_c": 29.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T08:18:16.544792+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 08:30",
+      "temp_c": 29.0,
+      "dew_point_c": 24.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T08:51:17.418318+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 09:00",
+      "temp_c": 29.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T09:07:57.366846+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 09:30",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T09:57:32.912311+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 10:00",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T10:14:05.470766+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 10:30",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T10:46:59.156830+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 11:00",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 15.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T11:19:51.634478+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 11:30",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T11:52:40.411013+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 12:00",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T12:25:26.427230+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 12:30",
+      "temp_c": 29.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T12:41:49.642391+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 13:00",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T13:14:57.452204+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 13:30",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T13:47:56.282221+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 14:00",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 14.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T14:21:10.899728+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 14:30",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T14:54:33.195029+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 15:00",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 12.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T15:28:15.293490+00:00"
+    },
+    {
+      "station": "VHHH",
+      "time_utc": "2026-06-13 15:30",
+      "temp_c": 30.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 13.0,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-13T15:45:44.886950+00:00"
+    }
+  ],
+  "t_max": 32.0,
+  "t_min": 26.0,
+  "t_avg": 28.6,
+  "dew_point_avg": 24.2,
+  "wind_max_knots": 16.0
+}

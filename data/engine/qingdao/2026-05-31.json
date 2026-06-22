@@ -1,0 +1,93 @@
+{
+  "city": "qingdao",
+  "target_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:44:32.312838+00:00",
+  "generated_date": "2026-05-31",
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "blend_method": "deb_mae_weighted",
+  "t_ensemble": 28.8,
+  "t_std": 0.7,
+  "t_range": [
+    27.6,
+    29.9
+  ],
+  "t_calibrated": 28.9,
+  "bias_correction": -0.1,
+  "bias_source": "polywx-bootstrap (bias=-0.10°C)",
+  "buckets_normal": {
+    "27": 0.0224,
+    "28": 0.2611,
+    "29": 0.5205,
+    "30": 0.1845,
+    "31": 0.011
+  },
+  "buckets_voting": {
+    "30": 0.0,
+    "28": 0.0
+  },
+  "buckets_weighted_voting": {
+    "30": 0.363,
+    "28": 0.637
+  },
+  "buckets_range": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 29.6,
+      "deviation": 0.8,
+      "bucket": 30,
+      "weight": 0.138
+    },
+    "gfs_seamless": {
+      "t_max": 28.4,
+      "deviation": -0.4,
+      "bucket": 28,
+      "weight": 0.056
+    },
+    "jma_seamless": {
+      "t_max": 27.6,
+      "deviation": -1.2,
+      "bucket": 28,
+      "weight": 0.08
+    },
+    "icon_seamless": {
+      "t_max": 28.4,
+      "deviation": -0.4,
+      "bucket": 28,
+      "weight": 0.5
+    },
+    "gem_seamless": {
+      "t_max": 29.5,
+      "deviation": 0.7,
+      "bucket": 30,
+      "weight": 0.109
+    },
+    "ukmo_seamless": {
+      "t_max": 29.9,
+      "deviation": 1.1,
+      "bucket": 30,
+      "weight": 0.116
+    }
+  },
+  "metar_t_max": 32.0,
+  "forecast_error": -3.1
+}

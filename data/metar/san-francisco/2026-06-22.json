@@ -1,0 +1,80 @@
+{
+  "city": "san-francisco",
+  "station": "KSFO",
+  "date": "2026-06-22",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KSFO",
+  "fetched_at": "2026-06-22T07:17:28.118966+00:00",
+  "fetch_count": 8,
+  "n_records": 7,
+  "records": [
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-22 00:56",
+      "temp_c": 17.2,
+      "dew_point_c": 12.2,
+      "wind_knots": 18.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T01:16:41.220728+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-22 01:56",
+      "temp_c": 16.1,
+      "dew_point_c": 11.7,
+      "wind_knots": 17.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T02:05:58.195288+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-22 02:56",
+      "temp_c": 14.4,
+      "dew_point_c": 11.7,
+      "wind_knots": 17.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T03:11:32.811113+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-22 03:56",
+      "temp_c": 14.4,
+      "dew_point_c": 11.7,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T04:17:21.166099+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-22 04:56",
+      "temp_c": 13.9,
+      "dew_point_c": 11.1,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T05:06:27.965391+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-22 05:56",
+      "temp_c": 13.9,
+      "dew_point_c": 11.7,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T06:11:59.234746+00:00"
+    },
+    {
+      "station": "SFO",
+      "time_utc": "2026-06-22 06:56",
+      "temp_c": 13.9,
+      "dew_point_c": 11.7,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T07:17:28.118966+00:00"
+    }
+  ],
+  "t_max": 17.2,
+  "t_min": 13.9,
+  "t_avg": 14.8,
+  "dew_point_avg": 11.7,
+  "wind_max_knots": 18.0
+}

@@ -1,0 +1,132 @@
+{
+  "city": "karachi",
+  "target_date": "2026-06-05",
+  "generated_at": "2026-06-01T18:50:59.839712+00:00",
+  "generated_date": "2026-06-02",
+  "n_models": 6,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless"
+  ],
+  "blend_method": "live_rmse_weighted",
+  "t_ensemble": 36.1,
+  "t_std": 0.89,
+  "t_range": [
+    32.4,
+    39.3
+  ],
+  "t_calibrated": 36.2,
+  "bias_correction": -0.1,
+  "bias_source": "own-track (n=5d, bias=-0.10°C)",
+  "buckets_normal": {
+    "36": 0.8351,
+    "32": 0.0273,
+    "37": 0.1133,
+    "39": 0.0243
+  },
+  "buckets_voting": {
+    "36": 0.0,
+    "32": 0.0,
+    "37": 0.0,
+    "39": 0.0
+  },
+  "buckets_weighted_voting": {
+    "36": 0.8351,
+    "32": 0.0273,
+    "37": 0.1133,
+    "39": 0.0243
+  },
+  "buckets_range": [
+    32,
+    36,
+    37,
+    39
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 36.0,
+      "deviation": -0.1,
+      "bucket": 36,
+      "weight": 0.489,
+      "live_rmse": 0.52
+    },
+    "gfs_seamless": {
+      "t_max": 32.4,
+      "deviation": -3.7,
+      "bucket": 32,
+      "weight": 0.027,
+      "live_rmse": 2.2
+    },
+    "jma_seamless": {
+      "t_max": 35.5,
+      "deviation": -0.6,
+      "bucket": 36,
+      "weight": 0.183,
+      "live_rmse": 0.85
+    },
+    "icon_seamless": {
+      "t_max": 36.9,
+      "deviation": 0.8,
+      "bucket": 37,
+      "weight": 0.113,
+      "live_rmse": 1.08
+    },
+    "gem_seamless": {
+      "t_max": 36.5,
+      "deviation": 0.4,
+      "bucket": 36,
+      "weight": 0.163,
+      "live_rmse": 0.9
+    },
+    "ukmo_seamless": {
+      "t_max": 39.3,
+      "deviation": 3.2,
+      "bucket": 39,
+      "weight": 0.024,
+      "live_rmse": 2.33
+    }
+  },
+  "metar_t_max": 36.0,
+  "forecast_error": 0.2,
+  "live_weights": true,
+  "live_n_points": 32,
+  "live_rmse_summary": {
+    "ecmwf_ifs": 0.52,
+    "gfs_seamless": 2.2,
+    "jma_seamless": 0.85,
+    "icon_seamless": 1.08,
+    "gem_seamless": 0.9,
+    "ukmo_seamless": 2.33
+  },
+  "l1_curve": {
+    "0": 29.1,
+    "1": 28.9,
+    "2": 28.8,
+    "3": 28.7,
+    "4": 28.5,
+    "5": 28.4,
+    "6": 28.9,
+    "7": 29.9,
+    "8": 31.0,
+    "9": 32.4,
+    "10": 33.9,
+    "11": 35.1,
+    "12": 35.7,
+    "13": 36.0,
+    "14": 35.9,
+    "15": 35.6,
+    "16": 34.9,
+    "17": 34.1,
+    "18": 33.1,
+    "19": 32.0,
+    "20": 31.1,
+    "21": 30.5,
+    "22": 30.0,
+    "23": 29.7
+  },
+  "snapshot_hour": 23
+}

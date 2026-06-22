@@ -1,0 +1,141 @@
+{
+  "city": "helsinki",
+  "target_date": "2026-06-04",
+  "generated_at": "2026-06-01T18:52:36.503475+00:00",
+  "generated_date": "2026-06-02",
+  "n_models": 7,
+  "models_available": [
+    "ecmwf_ifs",
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless",
+    "icon_eu"
+  ],
+  "blend_method": "live_rmse_weighted",
+  "t_ensemble": 23.6,
+  "t_std": 0.91,
+  "t_range": [
+    21.2,
+    24.1
+  ],
+  "t_calibrated": 23.9,
+  "bias_correction": -0.32,
+  "bias_source": "own-track (n=4d, bias=-0.32°C)",
+  "buckets_normal": {
+    "24": 0.7685,
+    "23": 0.036,
+    "21": 0.0224,
+    "22": 0.1731
+  },
+  "buckets_voting": {
+    "24": 0.0,
+    "23": 0.0,
+    "21": 0.0,
+    "22": 0.0
+  },
+  "buckets_weighted_voting": {
+    "24": 0.7685,
+    "23": 0.036,
+    "21": 0.0224,
+    "22": 0.1731
+  },
+  "buckets_range": [
+    21,
+    22,
+    23,
+    24
+  ],
+  "models": {
+    "ecmwf_ifs": {
+      "t_max": 24.1,
+      "deviation": 0.5,
+      "bucket": 24,
+      "weight": 0.768,
+      "live_rmse": 0.47
+    },
+    "gfs_seamless": {
+      "t_max": 23.1,
+      "deviation": -0.5,
+      "bucket": 23,
+      "weight": 0.036,
+      "live_rmse": 2.17
+    },
+    "jma_seamless": {
+      "t_max": 21.2,
+      "deviation": -2.4,
+      "bucket": 21,
+      "weight": 0.022,
+      "live_rmse": 2.75
+    },
+    "icon_seamless": {
+      "t_max": 21.8,
+      "deviation": -1.8,
+      "bucket": 22,
+      "weight": 0.034,
+      "live_rmse": 2.25
+    },
+    "gem_seamless": {
+      "t_max": 22.0,
+      "deviation": -1.6,
+      "bucket": 22,
+      "weight": 0.068,
+      "live_rmse": 1.58
+    },
+    "ukmo_seamless": {
+      "t_max": 21.9,
+      "deviation": -1.7,
+      "bucket": 22,
+      "weight": 0.038,
+      "live_rmse": 2.11
+    },
+    "icon_eu": {
+      "t_max": 21.8,
+      "deviation": -1.8,
+      "bucket": 22,
+      "weight": 0.034,
+      "live_rmse": 2.25
+    }
+  },
+  "metar_t_max": 24.0,
+  "forecast_error": -0.1,
+  "live_weights": true,
+  "live_n_points": 32,
+  "live_rmse_summary": {
+    "ecmwf_ifs": 0.47,
+    "gfs_seamless": 2.17,
+    "jma_seamless": 2.75,
+    "icon_seamless": 2.25,
+    "gem_seamless": 1.58,
+    "ukmo_seamless": 2.11,
+    "icon_eu": 2.25
+  },
+  "l1_curve": {
+    "0": 13.2,
+    "1": 12.7,
+    "2": 12.5,
+    "3": 11.8,
+    "4": 11.6,
+    "5": 11.8,
+    "6": 12.9,
+    "7": 14.5,
+    "8": 16.7,
+    "9": 18.7,
+    "10": 20.2,
+    "11": 21.2,
+    "12": 22.1,
+    "13": 22.6,
+    "14": 23.1,
+    "15": 23.5,
+    "16": 23.5,
+    "17": 22.7,
+    "18": 21.9,
+    "19": 21.3,
+    "20": 20.1,
+    "21": 18.9,
+    "22": 17.5,
+    "23": 16.3
+  },
+  "snapshot_hour": 21
+}

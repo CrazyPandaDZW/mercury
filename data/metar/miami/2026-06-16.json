@@ -1,0 +1,179 @@
+{
+  "city": "miami",
+  "station": "KMIA",
+  "date": "2026-06-16",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KMIA",
+  "fetched_at": "2026-06-16T15:09:31.415808+00:00",
+  "fetch_count": 19,
+  "n_records": 18,
+  "records": [
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 00:53",
+      "temp_c": 30.0,
+      "dew_point_c": 22.2,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T01:06:04.400649+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 01:53",
+      "temp_c": 29.4,
+      "dew_point_c": 22.8,
+      "wind_knots": 8.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T02:12:14.515605+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 02:53",
+      "temp_c": 28.9,
+      "dew_point_c": 22.8,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-16T03:01:42.654012+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 03:53",
+      "temp_c": 28.3,
+      "dew_point_c": 22.8,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-16T04:07:48.516230+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 04:53",
+      "temp_c": 28.3,
+      "dew_point_c": 22.8,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.1,
+      "fetched_at": "2026-06-16T05:14:06.510375+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 05:53",
+      "temp_c": 27.8,
+      "dew_point_c": 23.3,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T06:04:03.892029+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 06:53",
+      "temp_c": 26.7,
+      "dew_point_c": 22.8,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T07:10:39.063051+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 07:53",
+      "temp_c": 26.7,
+      "dew_point_c": 23.3,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T08:16:38.222198+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 08:53",
+      "temp_c": 26.7,
+      "dew_point_c": 23.3,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T09:06:12.567421+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 08:59",
+      "temp_c": 26.7,
+      "dew_point_c": 23.3,
+      "wind_knots": 0.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T09:22:37.323714+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 09:29",
+      "temp_c": 26.1,
+      "dew_point_c": 23.3,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T09:55:27.735444+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 09:53",
+      "temp_c": 26.1,
+      "dew_point_c": 23.3,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T10:11:53.960893+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 10:18",
+      "temp_c": 26.7,
+      "dew_point_c": 23.3,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T10:28:19.948213+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 10:53",
+      "temp_c": 26.7,
+      "dew_point_c": 23.3,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T11:17:21.419280+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 11:53",
+      "temp_c": 28.3,
+      "dew_point_c": 24.4,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T12:06:35.760459+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 12:53",
+      "temp_c": 30.0,
+      "dew_point_c": 23.3,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T13:12:21.672642+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 13:53",
+      "temp_c": 31.7,
+      "dew_point_c": 21.7,
+      "wind_knots": 7.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T14:01:56.840487+00:00"
+    },
+    {
+      "station": "MIA",
+      "time_utc": "2026-06-16 14:53",
+      "temp_c": 32.8,
+      "dew_point_c": 21.1,
+      "wind_knots": 9.0,
+      "pressure_alti": 30.0,
+      "fetched_at": "2026-06-16T15:09:31.415808+00:00"
+    }
+  ],
+  "t_max": 32.8,
+  "t_min": 26.1,
+  "t_avg": 28.2,
+  "dew_point_avg": 23.0,
+  "wind_max_knots": 9.0
+}

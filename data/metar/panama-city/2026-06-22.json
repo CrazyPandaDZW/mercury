@@ -1,0 +1,89 @@
+{
+  "city": "panama-city",
+  "station": "MPTO",
+  "date": "2026-06-22",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "MPTO",
+  "fetched_at": "2026-06-22T07:34:32.357635+00:00",
+  "fetch_count": 9,
+  "n_records": 8,
+  "records": [
+    {
+      "station": "MPTO",
+      "time_utc": "2026-06-22 00:00",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 1.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-22T00:11:47.208469+00:00"
+    },
+    {
+      "station": "MPTO",
+      "time_utc": "2026-06-22 01:00",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-22T01:17:25.250323+00:00"
+    },
+    {
+      "station": "MPTO",
+      "time_utc": "2026-06-22 02:00",
+      "temp_c": 26.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 1.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-22T02:06:40.600381+00:00"
+    },
+    {
+      "station": "MPTO",
+      "time_utc": "2026-06-22 03:00",
+      "temp_c": 26.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-22T03:12:15.263553+00:00"
+    },
+    {
+      "station": "MPTO",
+      "time_utc": "2026-06-22 04:00",
+      "temp_c": 27.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-22T04:34:26.999013+00:00"
+    },
+    {
+      "station": "MPTO",
+      "time_utc": "2026-06-22 05:00",
+      "temp_c": 25.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 1.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-22T05:56:17.689218+00:00"
+    },
+    {
+      "station": "MPTO",
+      "time_utc": "2026-06-22 06:00",
+      "temp_c": 26.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-22T06:12:41.456566+00:00"
+    },
+    {
+      "station": "MPTO",
+      "time_utc": "2026-06-22 07:00",
+      "temp_c": 25.0,
+      "dew_point_c": 25.0,
+      "wind_knots": 1.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-22T07:34:32.357635+00:00"
+    }
+  ],
+  "t_max": 27.0,
+  "t_min": 25.0,
+  "t_avg": 26.1,
+  "dew_point_avg": 25.0,
+  "wind_max_knots": 3.0
+}

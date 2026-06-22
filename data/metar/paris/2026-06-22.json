@@ -1,0 +1,152 @@
+{
+  "city": "paris",
+  "station": "LFPB",
+  "date": "2026-06-22",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "LFPB",
+  "fetched_at": "2026-06-22T07:17:49.196186+00:00",
+  "fetch_count": 16,
+  "n_records": 15,
+  "records": [
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 00:00",
+      "temp_c": 26.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T00:27:49.353562+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 00:30",
+      "temp_c": 26.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T00:44:17.607042+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 01:00",
+      "temp_c": 25.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T01:17:02.178282+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 01:30",
+      "temp_c": 25.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T01:49:55.750670+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 02:00",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 2.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T02:22:40.669624+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 02:30",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T02:55:30.092517+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 03:00",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T03:11:53.978523+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 03:30",
+      "temp_c": 24.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T03:44:37.216285+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 04:00",
+      "temp_c": 23.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T04:17:54.924941+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 04:30",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T04:50:27.492891+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 05:00",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T05:23:12.289650+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 05:30",
+      "temp_c": 25.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T05:55:56.250288+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 06:00",
+      "temp_c": 26.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T06:12:20.429344+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 06:30",
+      "temp_c": 27.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 4.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T06:45:03.622698+00:00"
+    },
+    {
+      "station": "LFPB",
+      "time_utc": "2026-06-22 07:00",
+      "temp_c": 28.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 6.0,
+      "pressure_alti": 30.2,
+      "fetched_at": "2026-06-22T07:17:49.196186+00:00"
+    }
+  ],
+  "t_max": 28.0,
+  "t_min": 23.0,
+  "t_avg": 24.9,
+  "dew_point_avg": 20.9,
+  "wind_max_knots": 6.0
+}

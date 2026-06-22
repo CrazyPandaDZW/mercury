@@ -1,0 +1,99 @@
+{
+  "city": "london",
+  "target_date": "2026-05-31",
+  "generated_at": "2026-05-31T15:22:56.186619+00:00",
+  "generated_date": "2026-05-31",
+  "n_models": 7,
+  "models_available": [
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless",
+    "ukmo_seamless",
+    "icon_eu",
+    "icon_d2"
+  ],
+  "blend_method": "deb_mae_weighted",
+  "t_ensemble": 22.8,
+  "t_std": 0.1,
+  "t_range": [
+    21.0,
+    23.2
+  ],
+  "t_calibrated": 23.2,
+  "bias_correction": -0.42,
+  "bias_source": "polywx-bootstrap (bias=-0.42°C)",
+  "buckets_normal": {
+    "23": 0.9987,
+    "24": 0.0013
+  },
+  "buckets_voting": {
+    "23": 0.0,
+    "21": 0.0,
+    "22": 0.0
+  },
+  "buckets_weighted_voting": {
+    "23": 0.9833,
+    "21": 0.0018,
+    "22": 0.0148
+  },
+  "buckets_range": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "models": {
+    "gfs_seamless": {
+      "t_max": 23.2,
+      "deviation": 0.4,
+      "bucket": 23,
+      "weight": 0.008
+    },
+    "jma_seamless": {
+      "t_max": 21.0,
+      "deviation": -1.8,
+      "bucket": 21,
+      "weight": 0.002
+    },
+    "icon_seamless": {
+      "t_max": 22.8,
+      "deviation": 0.0,
+      "bucket": 23,
+      "weight": 0.5
+    },
+    "gem_seamless": {
+      "t_max": 22.5,
+      "deviation": -0.3,
+      "bucket": 22,
+      "weight": 0.015
+    },
+    "ukmo_seamless": {
+      "t_max": 22.8,
+      "deviation": 0.0,
+      "bucket": 23,
+      "weight": 0.022
+    },
+    "icon_eu": {
+      "t_max": 22.7,
+      "deviation": -0.1,
+      "bucket": 23,
+      "weight": 0.14
+    },
+    "icon_d2": {
+      "t_max": 22.8,
+      "deviation": 0.0,
+      "bucket": 23,
+      "weight": 0.314
+    }
+  },
+  "metar_t_max": 23.0,
+  "forecast_error": 0.2
+}

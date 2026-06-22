@@ -1,0 +1,19 @@
+{
+  "city": "london",
+  "date": "2026-06-02",
+  "fetched_at": "2026-05-31T14:26:18.793639+00:00",
+  "t_max": {
+    "gfs_seamless": 18.8,
+    "jma_seamless": 18.8,
+    "icon_seamless": 20.1,
+    "gem_seamless": 17.1
+  },
+  "t_ensemble": 18.7,
+  "n_models": 4,
+  "models_available": [
+    "gfs_seamless",
+    "jma_seamless",
+    "icon_seamless",
+    "gem_seamless"
+  ]
+}

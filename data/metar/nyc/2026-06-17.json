@@ -1,0 +1,152 @@
+{
+  "city": "nyc",
+  "station": "KJFK",
+  "date": "2026-06-17",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "KJFK",
+  "fetched_at": "2026-06-17T15:06:37.422044+00:00",
+  "fetch_count": 16,
+  "n_records": 15,
+  "records": [
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 00:51",
+      "temp_c": 18.9,
+      "dew_point_c": 14.4,
+      "wind_knots": 16.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T01:01:58.467023+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 01:51",
+      "temp_c": 18.9,
+      "dew_point_c": 15.0,
+      "wind_knots": 16.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-17T02:08:01.742229+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 02:51",
+      "temp_c": 18.3,
+      "dew_point_c": 15.6,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-17T03:14:03.360578+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 03:51",
+      "temp_c": 18.3,
+      "dew_point_c": 16.1,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-17T04:03:20.253781+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 04:51",
+      "temp_c": 18.3,
+      "dew_point_c": 16.1,
+      "wind_knots": 11.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T05:10:00.624255+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 05:51",
+      "temp_c": 18.3,
+      "dew_point_c": 16.1,
+      "wind_knots": 10.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T06:17:02.756716+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 06:51",
+      "temp_c": 17.8,
+      "dew_point_c": 14.4,
+      "wind_knots": 9.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T07:06:42.826124+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 07:51",
+      "temp_c": 17.2,
+      "dew_point_c": 15.0,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T08:13:05.593768+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 08:51",
+      "temp_c": 16.7,
+      "dew_point_c": 14.4,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T09:02:54.067894+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 09:51",
+      "temp_c": 16.7,
+      "dew_point_c": 14.4,
+      "wind_knots": 4.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T10:08:37.195514+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 10:51",
+      "temp_c": 18.3,
+      "dew_point_c": 15.6,
+      "wind_knots": 0.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T11:14:27.645470+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 11:51",
+      "temp_c": 20.0,
+      "dew_point_c": 16.1,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-17T12:03:43.747874+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 12:51",
+      "temp_c": 20.6,
+      "dew_point_c": 16.1,
+      "wind_knots": 6.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-17T13:09:26.607623+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 13:51",
+      "temp_c": 21.1,
+      "dew_point_c": 16.1,
+      "wind_knots": 7.0,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-17T14:16:11.358306+00:00"
+    },
+    {
+      "station": "JFK",
+      "time_utc": "2026-06-17 14:51",
+      "temp_c": 22.2,
+      "dew_point_c": 15.6,
+      "wind_knots": 8.0,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-17T15:06:37.422044+00:00"
+    }
+  ],
+  "t_max": 22.2,
+  "t_min": 16.7,
+  "t_avg": 18.8,
+  "dew_point_avg": 15.4,
+  "wind_max_knots": 16.0
+}

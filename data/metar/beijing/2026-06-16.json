@@ -1,0 +1,791 @@
+{
+  "city": "beijing",
+  "station": "ZBAA",
+  "date": "2026-06-16",
+  "source": "IEM ASOS (NOAA)",
+  "icao": "ZBAA",
+  "fetched_at": "2026-06-16T15:41:58.642631+00:00",
+  "fetch_count": 28,
+  "n_records": 86,
+  "records": [
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 00:00",
+      "temp_c": 22.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 00:30",
+      "temp_c": 22.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 01:00",
+      "temp_c": 23.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 01:30",
+      "temp_c": 23.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 02:00",
+      "temp_c": 23.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 02:30",
+      "temp_c": 23.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 03:00",
+      "temp_c": 23.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 03:30",
+      "temp_c": 23.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 04:00",
+      "temp_c": 23.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 04:30",
+      "temp_c": 24.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 05:00",
+      "temp_c": 24.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 05:30",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 06:00",
+      "temp_c": 25.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 06:30",
+      "temp_c": 25.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 07:00",
+      "temp_c": 26.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 07:30",
+      "temp_c": 27.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 08:00",
+      "temp_c": 26.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 08:30",
+      "temp_c": 26.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 09:00",
+      "temp_c": 26.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 09:30",
+      "temp_c": 26.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 10:00",
+      "temp_c": 26.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 10:30",
+      "temp_c": 25.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 11:00",
+      "temp_c": 25.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 11:30",
+      "temp_c": 25.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 12:00",
+      "temp_c": 25.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 12:30",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 13:00",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 13:30",
+      "temp_c": 23.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 11.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 14:00",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 14:30",
+      "temp_c": 23.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 15:00",
+      "temp_c": 23.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 15:30",
+      "temp_c": 23.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.9,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 16:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 16:30",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 16:37",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 17:00",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 17:30",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 18:00",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 18:30",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 19:00",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 19:30",
+      "temp_c": 21.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 20:00",
+      "temp_c": 21.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 20:30",
+      "temp_c": 21.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 21:00",
+      "temp_c": 20.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 21:30",
+      "temp_c": 21.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 22:00",
+      "temp_c": 21.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 22:30",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 23:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-15 23:30",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 00:00",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 00:30",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 01:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 01:30",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 02:00",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 02:30",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 03:00",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 03:30",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:00:12.745860+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 04:00",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:23:38.397730+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 04:30",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T04:56:44.563538+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 05:00",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T05:13:23.291254+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 05:30",
+      "temp_c": 24.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T05:46:40.932772+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 06:00",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T06:20:08.869578+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 06:30",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T06:53:22.472801+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 07:00",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T07:26:29.670848+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 07:30",
+      "temp_c": 25.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T07:42:56.518815+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 08:00",
+      "temp_c": 25.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 1.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T08:16:03.217021+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 08:30",
+      "temp_c": 24.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T08:49:00.699656+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 09:00",
+      "temp_c": 23.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T09:22:03.342112+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 09:30",
+      "temp_c": 23.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T09:54:53.436554+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 10:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T10:27:45.933004+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 10:30",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 3.9,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T10:44:08.554495+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 10:43",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T11:00:29.588253+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 11:00",
+      "temp_c": 23.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 7.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T11:16:49.268503+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 11:19",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T11:33:15.532377+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 11:30",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T11:49:42.616778+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 11:39",
+      "temp_c": 22.0,
+      "dew_point_c": 22.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T12:06:02.585344+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 12:00",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T12:22:24.338655+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 12:30",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T12:55:16.484462+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 12:53",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T13:11:45.816852+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 13:00",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.6,
+      "fetched_at": "2026-06-16T13:11:45.816852+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 13:23",
+      "temp_c": 21.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T13:44:37.706216+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 13:30",
+      "temp_c": 21.0,
+      "dew_point_c": 20.0,
+      "wind_knots": 9.7,
+      "pressure_alti": 29.7,
+      "fetched_at": "2026-06-16T13:44:37.706216+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 14:00",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T14:17:56.465838+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 14:30",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T14:51:25.409952+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 15:00",
+      "temp_c": 22.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T15:25:15.774662+00:00"
+    },
+    {
+      "station": "ZBAA",
+      "time_utc": "2026-06-16 15:30",
+      "temp_c": 21.0,
+      "dew_point_c": 21.0,
+      "wind_knots": 5.8,
+      "pressure_alti": 29.8,
+      "fetched_at": "2026-06-16T15:41:58.642631+00:00"
+    }
+  ],
+  "t_max": 27.0,
+  "t_min": 20.0,
+  "t_avg": 23.1,
+  "dew_point_avg": 21.1,
+  "wind_max_knots": 11.7
+}
